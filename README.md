@@ -25,5 +25,5 @@
 
 <p align="left">✈ Emmanuel Usme <br>:Lina Naranjo <br>✈ Valentina Flórez<br>✈ Cristian Vélez<br>✈ Vanessa Sánchez</p>
 Bootcamp Front End Cohorte 7 Makaia 💛💙❤️
-###
+
 
