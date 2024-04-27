@@ -2,7 +2,9 @@
 
 ###
 
-<p align="left">Discover Colombia like never before through our website <strong>Ruta Bacana</strong> dedicated to Colombian tourism. Our purpose is to guide travelers to undiscovered corners, where the authentic essence of the country unfolds in a symphony of flavors, culture, and breathtaking landscapes. <br><br>From the vibrant streets of colonial towns to the lush natural scenery, each corner has something special to offer. On our platform, you'll find a detailed guide to local gastronomy, cultural traditions, and iconic landmarks, all narrated through the reviews and experiences of travelers who have been captivated by the magic of Colombia.</p>
+<p align="left">Discover Colombia like never before through our website <strong>Ruta Bacana</strong> dedicated to Colombian tourism. Our purpose is to guide travelers to undiscovered corners, where the authentic essence of the country unfolds in a symphony of flavors, culture, and breathtaking landscapes. <br><br>
+  
+From the vibrant streets of colonial towns to the lush natural scenery, each corner has something special to offer. On our platform, you'll find a detailed guide to local gastronomy, cultural traditions, and iconic landmarks, all narrated through the reviews and experiences of travelers who have been captivated by the magic of Colombia.</p>
 
 ###
 
