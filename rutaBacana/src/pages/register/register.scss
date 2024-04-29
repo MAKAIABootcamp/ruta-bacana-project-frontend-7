@@ -1,0 +1,101 @@
+@import 'src/assets/styles/variables.scss';
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+.loginBody {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../../assets/images/loginBackground.png');
+    background-size: 100% 100%; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    align-items: center;
+    justify-content: center;
+    font-family: $fuente-michroma;
+    color: #ffffff;
+
+
+    .loginMain{
+        
+
+        .loginSectionContainer{
+            background-color: rgb(75, 75, 75, 65%);
+            display: flex;
+            flex-direction: column;
+            height: 80vh;
+            border-radius: 18px;
+
+
+            .logoContainer{
+                display: flex;
+                flex-direction: column;
+                width: 7rem;
+                align-self: center;
+                margin-bottom: 2.5rem;
+                margin-top: 1rem;
+
+                .loginTitle{
+                    display: flex;
+                    align-self: center;
+                    font-size: 2rem;
+                }
+            }
+            .loginInputsContainer{
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                margin-left: 2rem;
+                margin-right: 2rem;
+
+                .inputContainer{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.8rem;
+                    
+                    input{
+                        border: none;
+                        height: 2rem;
+                        outline: none;
+                        cursor: default;
+                        background-color: rgba(255, 255, 255, 0.60);
+
+                    }
+                    
+                }
+            }
+            .interactionsContianer{
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+                margin-top: 2rem;
+                margin-left: 2rem;
+                margin-right: 2rem;
+                width: 70%;
+                text-align: center;
+
+                .loginButton{
+                    display: flex;
+                    border: none;
+                    color: black;
+                    align-self: center;
+                    background-color: rgba(255, 255, 255, 0.60);
+
+                    margin-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 0.3rem;
+                    padding-bottom: 0.3rem;
+
+                }
+                button:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
