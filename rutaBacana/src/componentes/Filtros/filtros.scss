@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&family=Michroma&display=swap");
+
+.containerBusqueda {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & span::first-letter{
+    font-family: "michroma";
+  }
+  & span {
+    font-family: "Marvel";
+    font-size: 3rem;
+    padding-right: 3rem;
+  }
+  & input {
+    width: 50%;
+    height: 4rem;
+    border: none;
+    border-radius: 25px;
+    background-color: #d9d9d9;
+  }
+}
+
+.containerFiltros {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px 30px 30px;
+  & button::first-letter{
+    font-family: "Michroma";
+  }
+  & button {
+    border: none;
+    width: 18%;
+    height: 3rem;
+    border-radius: 20px;
+    background-color: #d9d9d9;
+    font-size: 1.7rem;
+    font-family: "Marvel";
+    text-align: center;
+  }
+}
