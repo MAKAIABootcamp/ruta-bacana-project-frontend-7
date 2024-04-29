@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&family=Michroma&display=swap");
+
+.containerButtonCalificacion {
+  padding: 10px 0px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & button {
+    background-color: rgba(75, 75, 75, 0.62);
+    border-radius: 25px;
+    border: none;
+    width: 90%;
+    height: 5rem;
+    font-family: "Michroma";
+    font-size: 1.5rem;
+    color: white;
+  }
+}
+
+.imageCalificacion {
+  padding: 20px 0px 20px 55px;
+}
+.containerInputCalificacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+  background-color: rgba(217, 217, 217, 0.6);
+  border-radius: 25px;
+  margin: 0px 55px 0px 55px;
+  & textarea {
+    border: none;
+    width: 92%;
+    height: 7rem;
+    font-family: "Michroma";
+    font-size: 1.5rem;
+    text-align: left;
+    resize: none;
+    padding: 10px;
+    box-sizing: border-box;
+  overflow-y: auto;
+  }
+}
