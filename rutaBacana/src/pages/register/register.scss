@@ -1,0 +1,73 @@
+@import 'src/assets/styles/variables.scss';
+
+.container {
+    flex-direction: column;
+    background-image: url('../../assets/images/Registerbackground.png'); /* Reemplaza 'ruta_de_tu_imagen.jpg' con la ruta de tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Ajusta la altura según sea necesario */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1{
+        color: #fff;
+        font-family: $fuente-michroma;
+        text-align: center;
+    }
+  }
+  
+  .form-container {
+    width: 400px; /* Ancho del formulario */
+    height: 500px;
+    padding: 20px;
+    margin-top: 15px;
+    background-color: rgb(75, 75, 75, 65%); /* Fondo semi-transparente para el formulario */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra del formulario */
+    position: relative; /* Añadimos posición relativa */
+    z-index: 0; /* Asegura que el formulario esté por debajo del encabezado */
+    display: flex; /* Añadimos display flex para activar el modelo de caja flexible */
+    flex-direction: column; /* Indicamos que los elementos hijos se muestren en columna */
+    text-align:left; /* Centra el contenido del formulario */
+    font-family: $fuente-michroma;
+  }
+  
+  .form-container > div {
+    margin-bottom: 30px; /* Espacio entre cada elemento del formulario */
+  }
+  
+  label {
+    font-weight: bold; /* Hace que las etiquetas sean más visibles */
+    color: #f8f2f2; /* Color de las etiquetas */
+  }
+  
+  input,
+  textarea,
+  select {
+    
+    width: 90%; /* Ancho completo */
+    padding: 8px; /* Ajusta el espacio interior */
+    margin-top: 10px; /* Añade un pequeño espacio arriba */
+    background-color: rgba(190, 185, 185, 0.65);
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 4px; /* Bordes redondeados */
+    box-sizing: border-box; /* Asegura que el ancho incluya el relleno y el borde */
+    
+  }
+  
+  button {
+   
+    margin-top: 30px;
+    width: 50%; /* Ancho completo */
+    padding: 10px; /* Ajusta el espacio interior */
+    background-color:rgba(134, 131, 131, 0.65); /* Color de fondo del botón */
+    color: #fff; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Color de fondo del botón al pasar por encima */
+  }
