@@ -1,8 +1,16 @@
-import React from 'react'
+import React from "react";
+import ImagenHome from "../../componentes/ImagenHome/ImagenHome";
+
+
 
 const home = () => {
   return (
-    <div>home</div>
-  )
-}
-export default home
+    <div>
+      <div className="fondoHome">
+      <ImagenHome />
+      </div>
+      
+    </div>
+  );
+};
+export default home;
