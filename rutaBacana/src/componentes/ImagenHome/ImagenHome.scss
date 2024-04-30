@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
+// $color-fondo-imagen-home: rgb(235, 245, 251);
+
+body {
+    font-family: 'Michroma', sans-serif; 
+    // background-color: rgb(235, 245, 251);
+    // background-repeat: no-repeat;
+  }
+
+
+  /* Estilos para pantallas pequeñas */
+@media screen and (max-width: 600px) {
+    .contenedor {
+      width: 100%; /* Ancho completo en pantallas pequeñas */
+      font-size: 14px; /* Tamaño de letra para pantallas pequeñas */
+    }
+  }
+  
+  /* Estilos para pantallas medianas */
+  @media screen and (min-width: 601px) and (max-width: 1024px) {
+    .contenedor {
+      width: 80%; /* Ancho del 80% en pantallas medianas */
+      font-size: 16px; /* Tamaño de letra para pantallas medianas */
+    }
+  }
+  
+  /* Estilos para pantallas grandes */
+  @media screen and (min-width: 1025px) {
+    .contenedor {
+      width: 60%; /* Ancho del 60% en pantallas grandes */
+      font-size: 18px; /* Tamaño de letra para pantallas grandes */
+    }
+  }
+
+  div{
+
+    .FilaUno{
+        justify-content: space-between;
+        display: flex;
+        .FtoUno{
+            img{
+              margin-left: 40px;
+              width: 386px;
+              height: 331px;
+            }
+            h3{
+                position: relative;
+                left: 100px;
+                top: -80px;
+                width: 50%;
+                height: 10%; 
+                background-color: rgba(229, 232, 232, 0.5); 
+                border-radius: 10px;
+                display: flex; 
+                justify-content: center; 
+                text-align: center;
+                align-items: center;
+                font-size: 14px;
+            }
+           
+        }
+        .FtoMedio{
+            
+            img{
+              width: 259px;
+              height: 331px;
+              margin-left: 15%;
+            }
+            h3{
+                position: relative;
+                left: 80px;
+                top: -80px;
+                width: 50%;
+                height: 10%;
+                background-color: rgba(229, 232, 232, 0.5); 
+                border-radius: 10px;
+                display: flex; 
+                justify-content: center; 
+                align-items: center;
+                font-size: 14px;
+            }
+        }
+        .FtoFinal{
+            justify-content: space-between;
+            img{
+                margin-right: 40px;
+              width: 386px;
+              height: 331px;
+            }
+            h3{
+                position: relative;
+                left: 90px;
+                top: -80px;
+                width: 50%;
+                height: 10%; 
+                background-color: rgba(229, 232, 232, 0.5); 
+                border-radius: 10px;
+                display: flex; 
+                justify-content: center; 
+                align-items: center;
+                text-align: center;
+                font-size: 14px;
+            }
+        }
+    }
+    .FilaDos{
+        display: flex;
+        justify-content: space-between;
+        .ImagenUno{
+            img{
+              margin-left: 40px;
+              width: 490px;
+              height: 331px;
+            }
+            h3{
+                position: relative;
+                left: 60px;
+                top: -80px;
+                width: 50%;
+                height: 10%;
+                background-color: rgba(229, 232, 232, 0.5); 
+                border-radius: 10px;
+                display: flex; 
+                justify-content: center; 
+                align-items: center;
+                font-size: 14px;
+            }
+        }
+        .ImagenDos{
+            
+            img{
+              width: 593px;
+              height: 331px;
+              margin-right: 40px;
+            }
+            h3{
+                position: relative;
+                left: 60px;
+                top: -80px;
+                width: 50%;
+                height: 10%;
+                background-color: rgba(229, 232, 232, 0.5); 
+                border-radius: 10px;
+                display: flex; 
+                justify-content: center; 
+                align-items: center;
+                font-size: 14px;
+            }
+        }
+    }
+    .FilaTres{
+        display: flex;
+        justify-content: space-between;
+        .FotoUno{
+            img{
+              margin-left: 40px;
+              width: 302px;
+              height: 331px;
+            }
+            h3{
+                position: relative;
+                
+                left: 60px;
+                top: -80px;
+                width: 50%;
+                height: 10%; 
+                background-color: rgba(229, 232, 232, 0.5); 
+                border-radius: 10px;
+                display: flex; 
+                justify-content: center; 
+                align-items: center;
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+        .FotoDos{
+            
+            img{
+              width: 484px;
+              height: 331px;
+            }
+            h3{
+                position: relative;
+                left: 60px;
+                top: -80px;
+                width: 50%;
+                height: 10%;  
+                background-color: rgba(229, 232, 232, 0.5); 
+                border-radius: 10px;
+                display: flex; 
+                justify-content: center; 
+                align-items: center;
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+        .FotoTres{
+            justify-content: space-between;
+            img{
+              margin-right: 40px;
+              width: 302px;
+              height: 331px;
+            }
+            h3{
+                position: relative;
+                left: 60px;
+                top: -80px;
+                width: 50%;
+                height: 10%;  
+                background-color: rgba(229, 232, 232, 0.5); 
+                border-radius: 10px;
+                display: flex; 
+                justify-content: center; 
+                align-items: center;
+                font-size: 14px;
+            }
+        }
+    }
+    }
