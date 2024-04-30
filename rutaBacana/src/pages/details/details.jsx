@@ -1,11 +1,15 @@
-import React from "react";
-import InfoInteres from "../../componentes/InfoInteres/InfoInteres";
+import React from 'react'
+import Header from '../../componentes/Header/Header'
+import Details from '../../componentes/Details/Details'
+import InfoInteres from "../../componentes/InfoInteres/InfoInteres"
 
 const details = () => {
   return (
-    <>
+    <div>
+      <Header />
+      <Details />
       <InfoInteres />
-    </>
-  );
-};
-export default details;
+    </div>
+  )
+}
+export default details
