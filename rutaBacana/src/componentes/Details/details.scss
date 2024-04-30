@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+body{
+    font-family: "Michroma", sans-serif;
+}
+
+div {
+    .ContenedorUno{
+        align-items: center;
+        text-align: center;
+        margin-top: 30px;
+     }
+     .TituloDetalle{
+        font-size: 27px;
+        margin-bottom: 25px;
+        font-weight: normal;
+     }
+     .ImagenPrin{
+       img{
+        width: auto;
+        height: 700px;
+       }
+     }
+     .TextoUno{
+        h3{
+            font-size: 36px;
+            font-weight: normal;
+        }
+     }
+     .ImagenSec{
+        img{
+            width: 100%;
+            height: 350px;
+        }
+     }
+     .InfoInter{
+        h2{
+            width: 650px;
+            font-size: 45px;
+            background-color: #ECFA9B; 
+            padding: 20px; 
+            border: 1px solid #ccc;
+            border-radius: 40px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            left: 25.5%;
+            font-weight: normal;
+
+        }
+     }
+    
+}
