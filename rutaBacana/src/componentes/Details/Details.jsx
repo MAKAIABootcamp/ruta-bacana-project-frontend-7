@@ -32,9 +32,7 @@ export default function Details() {
         <div className='ImagenSec'>
             <img src={moreImg} alt="" />
         </div>
-        <div className='InfoInter'>
-            <h2>informacion de interés</h2>
-        </div>
+       
         </div>
     </div>
     

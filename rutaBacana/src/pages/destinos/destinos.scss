@@ -1,0 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$color-1: rgb(252, 243, 207);
+$color-2: rgb(240, 178, 122);
+$color-3: rgb(31, 97, 141);
+
+div {
+    .fondo{
+      background: linear-gradient(to bottom, $color-1, $color-2, $color-3);
+      background-repeat: no-repeat;
+    }
+}
+

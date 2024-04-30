@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&family=Michroma&display=swap");
+
+.containerButton {
+  padding-top: 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & button {
+    background-color: #ecfa9b;
+    border-radius: 25px;
+    border: none;
+    width: 60vw;
+    height: 5rem;
+    font-family: "Michroma";
+    font-size: 2rem;
+  }
+}
+.containerComercio {
+  padding: 30px 15px 0px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  & h3 {
+    font-family: "Michroma";
+    font-size: 1.5rem;
+  }
+  & p {
+    font-family: "Michroma";
+    font-size: 1rem;
+    padding-left: 2rem;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) { 
+    & button {
+      width: 80vw;
+    }
+  }
+
+  .imagenComercio {
+    max-width: 100%;
+    padding-left: 2rem;
+  }
+}
+
+// .carousel {
+//   position: relative;
+//   width: 100%;
+//   overflow: hidden;
+
+//   .slides {
+//     display: flex;
+//     transition: transform 0.5s ease; // Agrega una transición suave al cambiar las imágenes
+//     width: calc(100% * 3); // Ajusta el ancho del contenedor para mostrar tres imágenes
+//   }
+
+//   img {
+//     width: calc(100% / 3); // Ajusta el ancho de las imágenes para mostrar tres en el contenedor
+//     height: auto;
+//     display: block;
+//   }
+
+//   .prev,
+//   .next {
+//     position: absolute;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     background-color: rgba(0, 0, 0, 0.5);
+//     color: white;
+//     border: none;
+//     cursor: pointer;
+//     padding: 10px;
+//   }
+
+//   .prev {
+//     left: 0;
+//   }
+
+//   .next {
+//     right: 0;
+//   }
+// }
