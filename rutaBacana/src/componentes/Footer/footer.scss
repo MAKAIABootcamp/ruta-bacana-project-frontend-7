@@ -73,7 +73,7 @@
             p {
                 display: flex;
                 width: 90%;
-                color: $font-color-white;
+                color: $color-white;
             }
         }
     }
@@ -87,11 +87,11 @@
     align-items: center;
 
 
-    background-color: $background-color-black;
+    background-color: $color-black;
     height: 4rem;
 
     .copyRightTextContainer{
         display: flex;
-        color: $font-color-white;
+        color: $color-white;
     }
 }
