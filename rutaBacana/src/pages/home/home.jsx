@@ -3,6 +3,7 @@ import ImagenHome from "../../componentes/ImagenHome/ImagenHome";
 import Filtros from "../../componentes/Filtros/Filtros";
 import "./home.scss";
 import Header from "../../componentes/Header/Header";
+import Footer from "../../componentes/Footer/Footer"
 
 const home = () => {
   return (
@@ -11,6 +12,7 @@ const home = () => {
         <Header />
         <Filtros />
         <ImagenHome />
+        <Footer />
       </div>
     </div>
   );
