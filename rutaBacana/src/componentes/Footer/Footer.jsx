@@ -11,7 +11,7 @@ const Footer = () => {
                     <p className='socialName'>RutaBacana12</p>
                 </article>
                 <article className='socialContainer'>
-                    <img className='socialIcon' src="src\assets\images\Rectangle 129.png" alt="" />
+                    <img className='socialIcon' src="src\assets\images\gmail.png" alt="" />
                     <p className='socialName'>rutabacana@gmail.com</p>
                 </article>
                 <article className='socialContainer'>
@@ -19,7 +19,7 @@ const Footer = () => {
                     <p className='socialName'>Ruta Bacana</p>
                 </article>
                 <article className='socialContainer'>
-                    <img className='socialIcon' src="src\assets\images\image 32.png" alt="" />
+                    <img className='socialIcon' src="src\assets\images\x.png" alt="" />
                     <p className='socialName'>@RutaBacana12</p>
                 </article>
 

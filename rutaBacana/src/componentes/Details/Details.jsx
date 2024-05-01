@@ -1,11 +1,11 @@
 import React from 'react'
 import "./details.scss"
-import placeimg from "../../assest/imagenes/placeimg.png"
-import moreImg from "../../assest/imagenes/moreImg.png"
-import first from "../../assest/imagenes/first.png"
-import second from "../../assest/imagenes/second.png"
-import third from "../../assest/imagenes/third.png"
-import arrow from "../../assest/imagenes/arrowblack.png"
+import placeimg from "../../assets/images/placeimg.png"
+import moreImg from "../../assets/images/moreImg.png"
+import first from "../../assets/images/first.png"
+import second from "../../assets/images/second.png"
+import third from "../../assets/images/third.png"
+import arrow from "../../assets/images/arrowblack.png"
 export default function Details() {
   return (
     <div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import imagenRaquira from "../../assest/imagenes/imageRaquira.png"
+import imagenRaquira from "../../assets/images/imageRaquira.png"
 import "./fotoRaquira.scss"
 
 function FotoRaquira() {

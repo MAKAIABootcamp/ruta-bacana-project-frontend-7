@@ -15,7 +15,7 @@ const Comentarios = () => {
             </div>
             <div className="estrellas">
               {/* <p>★★★☆☆</p> */}
-              <img src="../../../assets/ImagenDestinos/estrella.png"  alt="Imagen 5" />
+              <img src="src\assets\images\ImagenDestinos\estrella.png"  alt="Imagen 5" />
             </div>
           </div>
 
@@ -26,7 +26,7 @@ const Comentarios = () => {
             </div>
             <div className="estrellas">
               {/* <p>★★★☆☆</p> */}
-              <img src="../../../assets/ImagenDestinos/estrella.png" alt="Imagen 5" />
+              <img src="src\assets\images\ImagenDestinos\estrella.png" alt="Imagen 5" />
             </div>
           </div>
         </div>
@@ -34,10 +34,10 @@ const Comentarios = () => {
         {/* Columna de imágenes */}
         <div className="columnaImagenes">
           <div>
-            <img src="../../../assets/ImagenDestinos/usuario1.png" alt="Imagen 1" />
+            <img src="src\assets\images\ImagenDestinos\usuario1.png" alt="Imagen 1" />
           </div>
           <div>
-            <img src="../../../assets/ImagenDestinos/usuario2.png" alt="Imagen 2" />
+            <img src="src\assets\images\ImagenDestinos\usuario2.png" alt="Imagen 2" />
           </div>
         </div>
       </div>
