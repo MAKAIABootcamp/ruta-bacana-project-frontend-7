@@ -1,10 +1,12 @@
+@import "../../assets/styles/variables.scss";
+
 header {
     background-color: #F9D99A;
     width: 100%;
     height: 125px;
     display: flex;
     align-items: center;
-
+    
     
     
 }
@@ -14,12 +16,12 @@ header {
     position: relative;
     width: 170px;
     left: 25px;
-   top: 8px;
+    top: 8px;
     
     }
 
     nav a {
-        color: #000000; 
+        color: $color-black; 
         text-decoration: none;
         font-weight: normal;
       }
