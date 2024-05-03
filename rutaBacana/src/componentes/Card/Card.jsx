@@ -9,7 +9,7 @@ const Card = ({ destino = {} }) => {
   const dispatch = useDispatch();
   return (
     <figure className="card">
-      <img src={destino?.imagen} alt={destino?.name} />
+      <img src={destino?.imagen} alt={destino?.nombre} />
       <div className="actionButtons">
         {/* <img
           src={deleteImage}
@@ -19,7 +19,7 @@ const Card = ({ destino = {} }) => {
 
         {/* <img src={editImage} alt="editar" /> */}
       </div>
-      <figcaption>{destino?.name}</figcaption>
+      <figcaption>{destino?.nombre}</figcaption>
     </figure>
   );
 };

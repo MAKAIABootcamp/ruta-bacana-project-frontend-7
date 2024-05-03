@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 //   genero,
 //   tipoMascota,
 // } from "../../data/mascotasOptions";
-// import imageUpload from "../../assets/upload_9427985.png";
+import imageUpload from "../../assets/images/ImagenHome/upload_9427985.png";
 // import RadioButtonsGroup from "../../components/RadioButtonsGroup/RadioButtonsGroup";
 import { useFormik } from "formik";
 import "./agregarDestinos.scss";
@@ -16,12 +16,13 @@ import { actionAddDestinos } from "../../redux/Destinos/destinosActions";
 import Cargando from "../../componentes/cargando/Cargando";
 import Swal from "sweetalert2";
 import { setSuccessRequest } from "../../redux/Destinos/destinosSlice";
+import { categoria } from "../../data/destinosOptions";
 
 const AgregarDestinos = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [image, setImage] = useState(
-    "https://www.shutterstock.com/image-photo/portrait-cat-dog-front-bright-260nw-1927527212.jpg"
+    "https://www.shutterstock.com/shutterstock/photos/2252183671/display_1500/stock-photo-colombian-flag-in-the-national-park-2252183671.jpg"
   );
   const [file, setFile] = useState(null);
   const { successRequest, errorDestinos, isLoadingDestinos } = useSelector(
@@ -36,10 +37,11 @@ const AgregarDestinos = () => {
 
   const formik = useFormik({
     initialValues: {
-      name: "",
-      edad: "",
-      personalidad1: "",
-      personalidad2: [],
+      nombre: "",
+      categoria: "",
+      descripcion: "",
+      // personalidad1: "",
+      // personalidad2: [],
       // genero: genero[0],
       // tipoMascota: tipoMascota[0],
     },
@@ -55,7 +57,7 @@ const AgregarDestinos = () => {
   if (errorDestinos) {
     Swal.fire({
       title: "Oops!",
-      text: "Ha ocurrido un error en la creación de la mascota",
+      text: "Ha ocurrido un error en la creación del nuevo destino",
       icon: "error",
     });
   }
@@ -63,7 +65,7 @@ const AgregarDestinos = () => {
   if (successRequest) {
     Swal.fire({
       title: "Excelente!",
-      text: "Has guardado con éxito una mascota para adoptar",
+      text: "Has guardado con éxito un nuevo destino",
       icon: "success",
     }).then((result) => {
       if (result.isConfirmed) {
@@ -79,54 +81,54 @@ const AgregarDestinos = () => {
       </button>
       <h1>Agregar Destino</h1>
       <form onSubmit={formik.handleSubmit}>
-        <label htmlFor="name">
-          <span>Nombre</span>
+        <label htmlFor="nombre">
+          <span>Nombre Destino</span>
           <input
-            id="name"
+            id="nombre"
             type="text"
-            placeholder="Loki"
-            {...formik.getFieldProps("name")}
+            placeholder="Piedra del peñon"
+            {...formik.getFieldProps("nombre")}
           />
         </label>
-        <label htmlFor="edad">
-          <span>Edad en meses</span>
+        <label htmlFor="categoria">
+          <span>Categoria</span>
           <input
-            id="edad"
+            id="categoria"
             type="text"
-            placeholder="18"
-            {...formik.getFieldProps("edad")}
+            placeholder="Pueblos"
+            {...formik.getFieldProps("categoria")}
           />
         </label>
-        <label htmlFor="raza">
-          <span>Raza</span>
-          <input id="raza" type="text" placeholder="Labrador" />
+        <label htmlFor="descripcion">
+          <span>Descripción</span>
+          <input id="descripcion" type="text" placeholder="" {...formik.getFieldProps("descripcion")}/>
         </label>
         <label htmlFor="imagen">
           <span>Foto</span>
-          {/* <figure className="upload">
+          <figure className="upload">
             <img src={imageUpload} alt="upload" />
             <figcaption>Cargar imagen</figcaption>
-          </figure> */}
+          </figure>
           <img className="image" src={image} alt="pet" />
           <input id="imagen" type="file" onChange={handleChangeFile} />
         </label>
-        <label htmlFor="personalidad">
+        {/* <label htmlFor="personalidad">
           <span>Personalidad</span>
           <select
             name=""
             id="personalidad1"
             {...formik.getFieldProps("personalidad1")}
           >
-            {/* <option value={""} disabled>
+            <option value={""} disabled>
               Seleccione una opción
             </option>
             {personalidades.map((item) => (
               <option key={item} value={item}>
                 {item}
               </option>
-            ))} */}
+            ))}
           </select>
-        </label>
+        </label> */}
         {/* <MultipleSelectChip
           personalidades={personalidades}
           labelName="Personalidad"
@@ -148,7 +150,7 @@ const AgregarDestinos = () => {
           value={formik.values.tipoMascota}
           handleChange={formik.handleChange}
         /> */}
-        <button type="submit">Guardar Mascota</button>
+        <button type="submit">Guardar Destino</button>
       </form>
     </main>
   );
