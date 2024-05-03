@@ -7,6 +7,7 @@ import Register from "../pages/register/register";
 import About from "../pages/about/about";
 import Details from "../pages/details/details";
 import Destinos from "../pages/destinos/destinos";
+import AgregarDestinos from "../pages/agregarDestinos/AgregarDestinos";
 
 
 const AppRouter = () => {
@@ -20,6 +21,7 @@ const AppRouter = () => {
           <Route path="about" element={<About />} />
           <Route path="details" element={<Details />} />
           <Route path="destinos" element={<Destinos />} />
+          <Route path="agregarDestinos" element={<AgregarDestinos />} />
         </Route>
       </Routes>
     </BrowserRouter>
