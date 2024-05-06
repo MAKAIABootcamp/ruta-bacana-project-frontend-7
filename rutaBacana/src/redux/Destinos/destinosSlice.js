@@ -37,7 +37,7 @@ const destinosSlice = createSlice({
       state.destinos = state.destinos.map((item) =>
         action.payload.id == item.id ? { ...item, ...action.payload } : item
       );
-      state.successRequest = true;
+      state.successRequest = "editDestinos";
     },
     deleteDestino: (state, action) => {
       state.isLoadingDestinos = false;

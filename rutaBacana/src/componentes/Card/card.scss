@@ -1,35 +1,51 @@
+// $imageBorderRadius: 30px;
+
 .card {
-    width: 133px;
+    width: 250px;
     height: 200px;
     position: relative;
     cursor: pointer;
     &:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
       z-index: 10;
     }
-   
-    
     img {
+      border-radius: 20px;
       width: 100%;
       height: 100%;
       object-fit: cover;
+    //   @mixin roundedImage {
+    //   border-radius: $imageBorderRadius;
+    // }
+    
+    // // Clases para tamaños de imagen
+    // .largeImage {
+    //   width: 500px; // Ancho de imagen grande
+    // }
+    
+    // .mediumImage {
+    //   width: 300px; // Ancho de imagen mediana
+    // }
     }
     figcaption {
+      border-radius: 20px;
       position: absolute;
-      bottom: 0;
-      background-color: rgba(0, 0, 0, 0.329);
+      top: 80%;
+      // bottom: 0;
+      background-color: rgba(0, 0, 0, 0.291);
       color: white;
       width: 100%;
+      font-size: 12px;
       text-align: center;
     }
   }
-  
    .actionButtons {
         position: absolute ;
         display: flex;
         top: 0 ;
         right: 0 ;
         img{
+          // background-color: rgba(255, 255, 255, 0.284);
           width: 20px;
           height: 20px;
           &:hover{

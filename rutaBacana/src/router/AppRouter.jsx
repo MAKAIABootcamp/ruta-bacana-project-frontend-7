@@ -22,6 +22,8 @@ const AppRouter = () => {
           <Route path="details" element={<Details />} />
           <Route path="destinos" element={<Destinos />} />
           <Route path="agregarDestinos" element={<AgregarDestinos />} />
+          <Route path="edit/:idDestino" element={<AgregarDestinos />} />
+
         </Route>
       </Routes>
     </BrowserRouter>

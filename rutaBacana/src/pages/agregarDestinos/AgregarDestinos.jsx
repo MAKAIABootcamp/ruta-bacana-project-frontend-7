@@ -1,33 +1,48 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-// import MultipleSelectChip from "../../components/MultipleSelectChip/MultipleSelectChip";
-// import {
-//   personalidades,
-//   genero,
-//   tipoMascota,
-// } from "../../data/mascotasOptions";
 import imageUpload from "../../assets/images/ImagenHome/upload_9427985.png";
-// import RadioButtonsGroup from "../../components/RadioButtonsGroup/RadioButtonsGroup";
 import { useFormik } from "formik";
 import "./agregarDestinos.scss";
 import fileUpload from "../../services/fileUpload";
-import { actionAddDestinos } from "../../redux/Destinos/destinosActions";
+import { actionAddDestinos, actionEditDestinos, } from "../../redux/Destinos/destinosActions";
 import Cargando from "../../componentes/cargando/Cargando";
 import Swal from "sweetalert2";
 import { setSuccessRequest } from "../../redux/Destinos/destinosSlice";
 import { categoria } from "../../data/destinosOptions";
 
 const AgregarDestinos = () => {
+  const { idDestino } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [image, setImage] = useState(
     "https://www.shutterstock.com/shutterstock/photos/2252183671/display_1500/stock-photo-colombian-flag-in-the-national-park-2252183671.jpg"
   );
   const [file, setFile] = useState(null);
-  const { successRequest, errorDestinos, isLoadingDestinos } = useSelector(
+  const [initalState, setInitialState] = useState({});
+  const { successRequest, errorDestinos, isLoadingDestinos, destinos } = useSelector(
     (store) => store.destinos
   );
+  
+
+  useEffect(() => {
+    if (idDestino) {
+      const editDestino = destinos.find((item) => item.id === idDestino);
+      if (editDestino) {
+        setInitialState(editDestino);
+        setImage(editDestino.imagen);
+        formik.values.nombre = editDestino.nombre;
+        formik.values.categoria = editDestino.categoria;
+        formik.values.descripcion = editDestino.descripcion;
+      }
+    }
+  }, [idDestino, destinos]);
+
+  const getInitialValues = () => ({
+    nombre: initalState.nombre || "",
+    categoria: initalState.categoria || "",
+    descripcion: initalState.descripcion || "",
+  });
 
   const handleChangeFile = (event) => {
     const fileItem = event.target.files[0];
@@ -36,20 +51,19 @@ const AgregarDestinos = () => {
   };
 
   const formik = useFormik({
-    initialValues: {
-      nombre: "",
-      categoria: "",
-      descripcion: "",
-      // personalidad1: "",
-      // personalidad2: [],
-      // genero: genero[0],
-      // tipoMascota: tipoMascota[0],
-    },
+    initialValues: getInitialValues(),
     onSubmit: async (values) => {
-      const avatar = await fileUpload(file);
+      const avatar = file ? await fileUpload(file) : image;
       values.imagen = avatar;
+      if (idDestino) {
+        //Vamos a editar
+        dispatch(actionEditDestinos(idDestino, values));
+      } else {
+        //Vamos a agregar
+        // values.idTenedor = id;
       dispatch(actionAddDestinos(values));
-    },
+    }
+  },
   });
 
   if (isLoadingDestinos) return <Cargando />;
@@ -57,15 +71,19 @@ const AgregarDestinos = () => {
   if (errorDestinos) {
     Swal.fire({
       title: "Oops!",
-      text: "Ha ocurrido un error en la creación del nuevo destino",
+      text: idDestino
+      ? "Ha ocurrido un error en la edición de los datos de la destino"
+      :"Ha ocurrido un error en la creación del nuevo destino",
       icon: "error",
     });
   }
 
-  if (successRequest) {
+  if (successRequest === "addDestinos" || successRequest === "editDestinos") {
     Swal.fire({
       title: "Excelente!",
-      text: "Has guardado con éxito un nuevo destino",
+      text: idDestino 
+      ? "Has editado con éxito los datos del destino"
+      : "Has guardado con éxito un nuevo destino",
       icon: "success",
     }).then((result) => {
       if (result.isConfirmed) {
@@ -79,7 +97,7 @@ const AgregarDestinos = () => {
       <button className="back" onClick={() => navigate(-1)} type="button">
         Ir atrás
       </button>
-      <h1>Agregar Destino</h1>
+      <h1>{idDestino ? "Editar Destino" : "Agregar Destino"}</h1>
       <form onSubmit={formik.handleSubmit}>
         <label htmlFor="nombre">
           <span>Nombre Destino</span>
@@ -87,6 +105,8 @@ const AgregarDestinos = () => {
             id="nombre"
             type="text"
             placeholder="Piedra del peñon"
+            value={formik.values.nombre}
+            onChange={formik.handleChange}
             {...formik.getFieldProps("nombre")}
           />
         </label>
@@ -112,45 +132,7 @@ const AgregarDestinos = () => {
           <img className="image" src={image} alt="pet" />
           <input id="imagen" type="file" onChange={handleChangeFile} />
         </label>
-        {/* <label htmlFor="personalidad">
-          <span>Personalidad</span>
-          <select
-            name=""
-            id="personalidad1"
-            {...formik.getFieldProps("personalidad1")}
-          >
-            <option value={""} disabled>
-              Seleccione una opción
-            </option>
-            {personalidades.map((item) => (
-              <option key={item} value={item}>
-                {item}
-              </option>
-            ))}
-          </select>
-        </label> */}
-        {/* <MultipleSelectChip
-          personalidades={personalidades}
-          labelName="Personalidad"
-          label={"personalidad2"}
-          value={formik.values.personalidad2}
-          handleChange={formik.handleChange}
-        /> */}
-        {/* <RadioButtonsGroup
-          options={genero}
-          label="Género"
-          labelName={"genero"}
-          value={formik.values.genero}
-          handleChange={formik.handleChange}
-        /> */}
-        {/* <RadioButtonsGroup
-          options={tipoMascota}
-          label="Tipo de Mascota"
-          labelName="tipoMascota"
-          value={formik.values.tipoMascota}
-          handleChange={formik.handleChange}
-        /> */}
-        <button type="submit">Guardar Destino</button>
+        <button type="submit">{idDestino ? "Editar" : "Guardar Destino"}</button>
       </form>
     </main>
   );
