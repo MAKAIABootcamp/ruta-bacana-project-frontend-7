@@ -10,23 +10,9 @@ const Card = ({ destino = {} }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  function getImageSizeClass(dimensions) {
-    if (!dimensions) return '';
-  
-    const { width, height } = dimensions;
-  
-    if (width > 500 && height > 500) {
-      return 'largeImage';
-    } else if (width > 300 && height > 300) {
-      return 'mediumImage';
-    } else {
-      return 'smallImage';
-    }
-  }
-
   return (
-    <figure className={`card ${getImageSizeClass(destino?.dimensiones)}`}>
-      <img className="roundedImage" src={destino?.imagen} alt={destino?.nombre}/>
+    <figure className="card">
+      <img src={destino?.imagen} alt={destino?.nombre}/>
       <div className="actionButtons">
         <img
           src={deleteImage}
