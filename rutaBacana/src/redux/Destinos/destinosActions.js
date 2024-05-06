@@ -80,7 +80,6 @@ export const actionFilterDestinos = (fieldName, fieldValue) => {
   };
 };
 
-
 export const actionDeleteDestinos = (idDestino) => {
   return async (dispatch) => {
     dispatch(destinosRequest())
