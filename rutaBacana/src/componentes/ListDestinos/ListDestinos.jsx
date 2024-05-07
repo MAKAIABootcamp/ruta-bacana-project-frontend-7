@@ -8,6 +8,7 @@ import Cargando from "../cargando/Cargando";
 import Card from "../Card/Card";
 import "./listDestinos.scss";
 import FilterButtons from "../FilterButtons/FilterButtons";
+import { Link } from "react-router-dom";
 
 const ListDestinos = () => {
   const dispatch = useDispatch();
@@ -46,7 +47,9 @@ const ListDestinos = () => {
       <FilterButtons setTipo={setTipo} />
       <section className="cards">
         {destinos.map((item) => (
-          <Card key={item.id} destino={item} />
+          <Link to={`/details/${item.id}`}>
+            <Card key={item.id} destino={item} />
+          </Link>
         ))}
       </section>
     </>

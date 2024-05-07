@@ -12,7 +12,7 @@ const destinos = () => {
   return (
     <div>
       <div className="fondo">
-        <Header />
+        {/* <Header /> */}
         <FotoRaquira />
         <Destinos />
         <CalificacionUsuario />
