@@ -1,8 +1,9 @@
-import { addDoc, collection, deleteDoc, doc, getDocs, query, where } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDocs, query, updateDoc, where } from "firebase/firestore";
 import { dataBase } from "../../firebase/firebaseconfig";
 import {
   addDestinos,
   deleteDestino,
+  editDestino,
   fillDestinos,
   filterDestinos,
   destinosFail,
@@ -54,6 +55,8 @@ export const actionGetDestinos = () => {
 
 export const actionFilterDestinos = (fieldName, fieldValue) => {
   return async (dispatch) => {
+    console.log("fieldName:", fieldName);
+    console.log("fieldValue:", fieldValue);
     dispatch(destinosRequest());
     const destinos = [];
     try {
@@ -68,6 +71,7 @@ export const actionFilterDestinos = (fieldName, fieldValue) => {
           ...doc.data(),
         });
       });
+      console.log("Destinos filtrados:", destinos);
       dispatch(filterDestinos(destinos));
     } catch (error) {
       console.error(error);
@@ -75,7 +79,6 @@ export const actionFilterDestinos = (fieldName, fieldValue) => {
     }
   };
 };
-
 
 export const actionDeleteDestinos = (idDestino) => {
   return async (dispatch) => {
@@ -88,4 +91,24 @@ export const actionDeleteDestinos = (idDestino) => {
       dispatch(destinosFail(error.message));
     }
   }
-}
+};
+
+export const actionEditDestinos = (idDestino, editedDestino) => {
+  return async (dispatch) => {
+    dispatch(destinosRequest());
+    try {
+      const destinoRef = doc(dataBase, COLLECTION_NAME, idDestino);
+
+      await updateDoc(destinoRef, editedDestino);
+      dispatch(
+        editDestino({
+          id: idDestino,
+          ...editedDestino,
+        })
+      );
+    } catch (error) {
+      console.error(error);
+      dispatch(destinosFail(error.message));
+    }
+  };
+};

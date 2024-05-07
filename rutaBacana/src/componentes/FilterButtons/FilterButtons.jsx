@@ -1,4 +1,5 @@
 import React from "react";
+import "./filterButtons.scss"
 
 import { categoria } from "../../data/destinosOptions";
 
@@ -8,7 +9,7 @@ const FilterButtons = ({ setTipo }) => {
   };
 
   return (
-    <div>
+    <div className="containerFiltros">
       <button onClick={() => handleClick()}>All</button>
       {categoria.map((item) => (
         <button key={item} onClick={() => handleClick(item)}>
