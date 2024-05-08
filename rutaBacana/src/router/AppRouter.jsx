@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation, useNavigate, useBeforeUnload} from "react-router-dom";
 import Layout from "../componentes/layout/Layout";
-import Home from "../pages/home/Home";
-import Login from "../pages/login/Login";
+import Home from "../pages/home/home";
+import Login from "../pages/login/login";
 import Register from "../pages/register/Register";
 import About from "../pages/about/About";
-import Details from "../pages/details/Details";
-import Destinos from "../pages/destinos/Destinos";
+import DetailsPage from '../pages/details/details'
+import Destinos from "../pages/destinos/destinos";
 import AgregarDestinos from "../pages/agregarDestinos/AgregarDestinos";
 import PhoneLogin from "../pages/phoneLogin/PhoneLogin";
 import InsertCode from "../pages/insertCode/InsertCode";
@@ -57,8 +57,9 @@ const AppRouter = () => {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
+          <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="details" element={<Details />} />
+          <Route path="details/:id" element={<DetailsPage />} />
           <Route path="destinos" element={<Destinos />} />
           <Route path="agregarDestinos" element={<AgregarDestinos />} />
           <Route path="edit/:idDestino" element={<AgregarDestinos />} />

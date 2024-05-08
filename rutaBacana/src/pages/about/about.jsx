@@ -6,6 +6,7 @@ import './about.scss'
 const About = () => {
   return (
     <>
+    {/* <Header /> */}
     <main className='aboutUsMainContainer'>
       <section className='logoBanner'>
 

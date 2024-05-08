@@ -45,7 +45,7 @@ const Login = () => {
     });
   }
 
-  if (isAuth && user) {
+  if (isAuth && user.name) {
     Swal.fire({
       title: `¡Hola ${user.name}!`,
       text: "Has iniciado sesión exitosamente",

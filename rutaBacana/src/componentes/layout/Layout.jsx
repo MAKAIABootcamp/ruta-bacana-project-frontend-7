@@ -6,6 +6,7 @@ import Footer from '../Footer/Footer';
 import FooterMinimo from '../FooterMinimo/FooterMinimo';
 import {useNavigate} from 'react-router-dom'
 
+
 const Layout = () => {
   const navigate = useNavigate()
   const isAuthenticated = localStorage.getItem("isAuthenticated")
@@ -28,7 +29,6 @@ const Layout = () => {
           <FooterMinimo /> 
           </>: null
         }
-        
     </div>
   )
 }

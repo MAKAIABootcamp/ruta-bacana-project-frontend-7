@@ -12,15 +12,21 @@ const Card = ({ destino = {} }) => {
 
   return (
     <figure className="card">
-      <img src={destino?.imagen} alt={destino?.nombre}/>
+      <img src={destino?.imagen} alt={destino?.nombre} />
       <div className="actionButtons">
         <img
           src={deleteImage}
           alt="eliminar"
           onClick={() => dispatch(actionDeleteDestinos(destino.id))}
         />
-
-        <img onClick={() => navigate(`edit/${destino.id}`)} src={editImage} alt="editar" />
+        <button onClick={() => navigate(`/details/${destino.id}`)}>
+          Ir a detalle
+        </button>
+        <img
+          onClick={() => navigate(`edit/${destino.id}`)}
+          src={editImage}
+          alt="editar"
+        />
       </div>
       <figcaption>{destino?.nombre}</figcaption>
     </figure>

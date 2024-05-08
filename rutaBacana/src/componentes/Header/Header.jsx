@@ -1,12 +1,18 @@
 import React from "react";
-import "./header.scss";
 import { useDispatch } from "react-redux";
 import { actionLogout } from "../../redux/userAuth/userAuthActions";
+import { Link } from "react-router-dom";
+import "./header.scss";
 
 function Header() {
   const dispatch = useDispatch();
-  
 
+  const items = [
+    ["/", "Home"],
+    ["destinos", "Destinos"],
+    ["contactanos", "Contactanos"],
+    ["sobreNosotros", "Sobre nosotros"],
+  ];
   return (
     <header className="headerComponent">
       <div className="ImgLogo">
@@ -15,25 +21,25 @@ function Header() {
       <div className="NavButton">
         <nav className="nav">
           <ul className="ul">
+            {items.map((item, index) => {
+              return (
+                <li key={index}>
+                  <Link to={item[0]}>{item[1]}</Link>
+                </li>
+              );
+            })}
             <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">Destinos</a>
-            </li>
-            <li>
-              <a href="#">Contáctanos</a>
-            </li>
-            <li>
-              <a href="#">Sobre Nosotros</a>
-            </li>
-            <li>
-              <div className="dropdown">
+            <div className="dropdown">
                 <img src="src\assets\images\User.png" alt="" />
                 <div className="dropdown-content">
-                <button onClick={() => {
-                  console.log("Antes de despachar la acción")
-                  dispatch(actionLogout())}}>Salir</button>
+                  <button
+                    onClick={() => {
+                      console.log("Antes de despachar la acción");
+                      dispatch(actionLogout());
+                    }}
+                  >
+                    Salir
+                  </button>
                 </div>
               </div>
             </li>
