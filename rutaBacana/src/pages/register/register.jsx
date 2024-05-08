@@ -2,8 +2,14 @@ import React from "react";
 import "./register.scss";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { registerUser } from "../../redux/UserAuth/userAuthActions";
+import {useDispatch} from 'react-redux'
+
+import { useNavigate } from "react-router-dom"
 
 const Register = () => {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   return (
     <div className="container"> {/* Contenedor con imagen de fondo */}
     <h1>Ruta Bacana</h1>
@@ -19,7 +25,13 @@ const Register = () => {
           })}
           onSubmit={(values, actions) => {
             console.log(values); // Aquí puedes enviar los datos al servidor
-            actions.setSubmitting(false);
+            try {
+              dispatch(registerUser(values))
+              actions.setSubmitting(false);
+              navigate("/login")
+            } catch (error) {
+              // sacar alerta de error
+            }
           }}
         >
           {({ isSubmitting }) => (
