@@ -4,7 +4,7 @@ import Layout from "../componentes/layout/Layout";
 import Home from "../pages/home/home";
 import Login from "../pages/login/login";
 import Register from "../pages/register/Register";
-import About from "../pages/about/About";
+import About from "../pages/about/about";
 import DetailsPage from '../pages/details/details'
 import Destinos from "../pages/destinos/destinos";
 import AgregarDestinos from "../pages/agregarDestinos/AgregarDestinos";
