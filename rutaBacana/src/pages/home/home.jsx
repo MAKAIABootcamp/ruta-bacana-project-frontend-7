@@ -13,7 +13,7 @@ const home = () => {
   return (
     <div>
       <div className="containerHome">
-        {/* <Header /> */}
+       
         <Header />
         <Carrusel />
         <Filtros />
