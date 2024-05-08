@@ -34,7 +34,6 @@ function Header() {
                 <div className="dropdown-content">
                   <button
                     onClick={() => {
-                      console.log("Antes de despachar la acción");
                       dispatch(actionLogout());
                     }}
                   >

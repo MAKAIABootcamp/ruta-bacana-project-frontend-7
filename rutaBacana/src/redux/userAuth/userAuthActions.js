@@ -64,7 +64,6 @@ import {
   };
   
   export const actionLogout = () => {
-    console.log("Acción de logout despachada");
     return async (dispatch) => {
       dispatch(loginRequest());
       try {

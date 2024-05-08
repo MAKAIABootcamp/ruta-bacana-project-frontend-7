@@ -22,6 +22,7 @@ const ProvidersLogin = ({
   };
 
   return (
+    <div className="containerButtons">
     <button
       type="button"
       className="loginButton"
@@ -33,6 +34,7 @@ const ProvidersLogin = ({
         <figcaption>Continúe con {name}</figcaption>
       </figure>
     </button>
+    </div>
   );
 };
 

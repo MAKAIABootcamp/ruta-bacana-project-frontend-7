@@ -26,7 +26,6 @@ const userAuthSlice = createSlice({
       state.error = action.payload;
     },
     logout: (state) => {
-      console.log("si la paso");
       state.user = initialUser.user;
       state.isAuth = initialUser.isAuth;
       state.isLoading = initialUser.isLoading;
