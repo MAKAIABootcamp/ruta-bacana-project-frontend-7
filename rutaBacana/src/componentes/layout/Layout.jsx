@@ -1,4 +1,29 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from "react";
+import { Outlet } from "react-router-dom";
+import "./layout.scss";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import FooterMinimo from "../FooterMinimo/FooterMinimo";
+
+const Layout = () => {
+  return (
+    <div>
+      <Header />
+      <Outlet />
+      <Footer />
+      <FooterMinimo />
+    </div>
+  );
+};
+
+export default Layout;
+
+
+
+
+
+
+/*import React, {useEffect} from 'react'
 import { Outlet } from 'react-router-dom';
 import './layout.scss';
 import Header from '../Header/Header';
@@ -33,4 +58,4 @@ const Layout = () => {
   )
 }
 
-export default Layout
+export default Layout*/

@@ -1,11 +1,18 @@
 import React, { useCallback, useEffect } from "react";
-import { BrowserRouter, Routes, Route, useLocation, useNavigate, useBeforeUnload} from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+  useNavigate,
+  useBeforeUnload,
+} from "react-router-dom";
 import Layout from "../componentes/layout/Layout";
 import Home from "../pages/home/home";
 import Login from "../pages/login/login";
 import Register from "../pages/register/Register";
 import About from "../pages/about/about";
-import DetailsPage from '../pages/details/details'
+import DetailsPage from "../pages/details/details";
 import Destinos from "../pages/destinos/destinos";
 import AgregarDestinos from "../pages/agregarDestinos/AgregarDestinos";
 import PhoneLogin from "../pages/phoneLogin/PhoneLogin";
@@ -14,7 +21,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 import { loginSuccess } from "../redux/userAuth/userAuthSlice";
 import { auth } from "../firebase/firebaseconfig";
-
+import PrivateRoutes from "./PrivateRoutes";
+import PublicRoutes from "./PublicRoutes";
 
 const AppRouter = () => {
   const { user } = useSelector((store) => store.userAuth);
@@ -56,19 +64,30 @@ const AppRouter = () => {
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="details/:id" element={<DetailsPage />} />
-          <Route path="destinos" element={<Destinos />} />
-          <Route path="agregarDestinos" element={<AgregarDestinos />} />
-          <Route path="edit/:idDestino" element={<AgregarDestinos />} />
+          <Route element={<PrivateRoutes />}>
+            <Route path="/" element={<Home />} />
+            <Route index element={<Home />} />
+            <Route path="agregarDestinos" element={<AgregarDestinos />} />
+            <Route path="edit/:idDestino" element={<AgregarDestinos />} />
+            {user?.role === "admin" ? (
+              <>
+                <Route path="agregar-mascota" element={<MascotaForm />} />
+                {/* Aquí van el resto de rutas para usuarios con rol admin */}
+              </>
+            ) : null}
+            {/* Aquí van el resto de rutas privadas */}
+          </Route>
+          <Route element={<PublicRoutes />}>
+            <Route path="about" element={<About />} />
+            <Route path="details/:id" element={<DetailsPage />} />
+            <Route path="destinos" element={<Destinos />} />
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
+            <Route path="phone" element={<PhoneLogin />} />
+            <Route path="phone/insertCode/:phone" element={<InsertCode />} />
+             {/* Aquí van el resto de rutas públicas */}
+          </Route>
         </Route>
-        
-        <Route path="login" element={<Login />} />
-        <Route path="register" element={<Register />} />
-        <Route path="phone" element={<PhoneLogin />} />
-        <Route path="phone/insertCode/:phone" element={<InsertCode />} />
       </Routes>
     </BrowserRouter>
   );
