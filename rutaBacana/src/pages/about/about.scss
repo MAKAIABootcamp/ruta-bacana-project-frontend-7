@@ -1,0 +1,191 @@
+@import "../../assets/styles/variables.scss";
+
+.aboutUsMainContainer {
+    display: flex;
+    flex-direction: column;
+    background-image: url("src/assets/images/about/about background image.png");
+    background-repeat: no-repeat;
+    background-size: cover; /* Para cubrir todo el contenedor */
+    background-position: center; /* Para centrar la imagen */
+
+
+    .logoBanner{
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+        height: 20rem;
+
+
+
+        .logoContainer{
+            height: 20rem;
+
+            img{
+                width: 20rem;
+            }
+        }
+        .figcapion{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            margin-top: -4rem;
+
+            .figcaptionTitle{
+                font-weight: bold;
+                font-size: 2.5rem;
+            }
+
+            .figcaptionText{}
+        }
+    }
+
+
+
+    .ourMission{
+        margin-top: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 7%;
+        margin-right: 7%;
+        gap: 2%;
+
+        .missionContainer{
+            display: flex;
+            flex-direction: column;
+
+            background-color: $background-color-black;
+            border-radius: $border-radius-18px;
+
+            text-align: center;
+
+            gap: 2rem;
+            width: 22rem;
+            height: 39rem;
+
+            .missionTitle{
+                padding-left: 2rem;
+                padding-right: 2rem;
+                padding-top: 2rem;
+
+                font-size: 1.3rem;
+            }
+
+            .missionText{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                color: $color-white;
+
+
+                padding-left: 2rem;
+                padding-right: 2rem;
+                height: 100%;
+
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+
+    .collaboratorContainer{
+        margin-left: 7%;
+        margin-right: 7%;
+        margin-top: 36rem;
+        .collabs{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 5%;
+
+            .collaboratorIconContainer{
+                display: flex;
+                flex-direction: column;
+
+
+                p{
+                    color: $color-white;
+                    display: flex;
+                    align-self: center;
+                    text-align: center;
+                    width: 70%;
+                }
+            }
+        }
+
+    }
+    .footerBannerContainer{
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+        margin-left: 7%;
+        margin-right: 7%;
+        line-height: 1.6rem;
+
+
+        .passionContainer{
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+
+            margin-bottom: 4rem;
+            width: 80%;
+            padding: 2rem;
+
+            .passionTitle{
+                margin-bottom: 1rem;
+                font-size: 1.5rem;
+            }
+            .passionText{
+                font-size: 1.2rem;
+                color: $color-white;
+            }
+        }
+
+        .joinUs{
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            background-color: $background-color-black;
+            border-radius: $border-radius-18px;
+
+            margin-bottom: 5rem;
+            width: 80%;
+            padding: 1rem;
+
+            .joinUsTitle{
+                margin-bottom: 1rem;
+                font-size: 1.5rem;
+            }
+            .joinUsText{
+                font-size: 1.2rem;
+                color: $color-white;
+                line-height: 2rem;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+        }
+        .thanks{
+            margin-bottom: 5rem;
+            font-size: 1.8rem;
+            width: 40%;
+            text-align: center;
+        }
+    }
+   
+}

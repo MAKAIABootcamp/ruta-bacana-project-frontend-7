@@ -7,19 +7,23 @@ import Register from "../pages/register/register";
 import About from "../pages/about/about";
 import Details from "../pages/details/details";
 import Destinos from "../pages/destinos/destinos";
+import AgregarDestinos from "../pages/agregarDestinos/AgregarDestinos";
 
 
 const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="about" element={<About />} />
-          <Route path="details" element={<Details />} />
+          <Route path="details/:id" element={<Details />} />
           <Route path="destinos" element={<Destinos />} />
+          <Route path="agregarDestinos" element={<AgregarDestinos />} />
+          <Route path="edit/:idDestino" element={<AgregarDestinos />} />
+
         </Route>
       </Routes>
     </BrowserRouter>

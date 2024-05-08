@@ -1,0 +1,25 @@
+@import "../../assets/styles/variables.scss";
+
+
+.minimalFooterComponent{
+    display: flex;
+    padding-top: 1rem;
+    
+
+    background-color: $color-black;
+
+
+    .minimalFooterCopyRight{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        gap: 1%;
+
+        img{
+            height: 3rem;
+            width: 3rem;
+        }
+    }
+}
