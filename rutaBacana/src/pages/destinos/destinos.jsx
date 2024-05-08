@@ -12,12 +12,10 @@ const destinos = () => {
   return (
     <div>
       <div className="fondo">
-        <Header />
         <FotoRaquira />
         <Destinos />
         <CalificacionUsuario />
         <Comentarios />
-        <Footer />
       </div>
     </div>
   );

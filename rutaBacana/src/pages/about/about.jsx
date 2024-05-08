@@ -3,10 +3,9 @@ import Header from '../../componentes/Header/Header'
 import FooterMinimo from '../../componentes/FooterMinimo/FooterMinimo'
 import './about.scss'
 
-const about = () => {
+const About = () => {
   return (
     <>
-    <Header />
     <main className='aboutUsMainContainer'>
       <section className='logoBanner'>
 
@@ -109,8 +108,7 @@ const about = () => {
 
 
     </main>
-    <FooterMinimo />
     </>
   )
 }
-export default about
+export default About
