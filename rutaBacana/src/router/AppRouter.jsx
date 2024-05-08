@@ -1,29 +1,93 @@
-import React from "react";
-import { BrowserRouter, Routes, Route} from "react-router-dom";
+import React, { useCallback, useEffect } from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+  useNavigate,
+  useBeforeUnload,
+} from "react-router-dom";
 import Layout from "../componentes/layout/Layout";
 import Home from "../pages/home/home";
 import Login from "../pages/login/login";
-import Register from "../pages/register/register";
+import Register from "../pages/register/Register";
 import About from "../pages/about/about";
-import Details from "../pages/details/details";
+import DetailsPage from "../pages/details/details";
 import Destinos from "../pages/destinos/destinos";
 import AgregarDestinos from "../pages/agregarDestinos/AgregarDestinos";
-
+import PhoneLogin from "../pages/phoneLogin/PhoneLogin";
+import InsertCode from "../pages/insertCode/InsertCode";
+import { useDispatch, useSelector } from "react-redux";
+import { onAuthStateChanged } from "firebase/auth";
+import { loginSuccess } from "../redux/userAuth/userAuthSlice";
+import { auth } from "../firebase/firebaseconfig";
+import PrivateRoutes from "./PrivateRoutes";
+import PublicRoutes from "./PublicRoutes";
 
 const AppRouter = () => {
+  const { user } = useSelector((store) => store.userAuth);
+  const dispatch = useDispatch();
+  //const location = useLocation();
+  //const navigate = useNavigate();
+
+  //Nos aseguramos de guardar la última ruta en la que estuvimos antes de que sucediera la recarga
+  /*useBeforeUnload(
+    useCallback(() => {
+      sessionStorage.setItem("currentRoute", JSON.stringify(location.pathname));
+    }, [location.pathname])
+  );*/
+
+  /*useEffect(() => {
+    const storeRoute = JSON.parse(sessionStorage.getItem("currentRoute"));
+    if (storeRoute) {
+      navigate(storeRoute);
+    }
+  }, []);*/
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (userCredential) => {
+      if (userCredential && !user) {
+        dispatch(
+          loginSuccess({
+            id: userCredential.uid,
+            name: userCredential.displayName,
+            photo: userCredential.photoURL,
+            accessToken: userCredential.accessToken,
+            email: userCredential.email || null,
+            phone: userCredential.phoneNumber || null,
+          })
+        );
+      }
+    });
+  }, [user, dispatch]);
   return (
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
-          <Route path="about" element={<About />} />
-          <Route path="details/:id" element={<Details />} />
-          <Route path="destinos" element={<Destinos />} />
-          <Route path="agregarDestinos" element={<AgregarDestinos />} />
-          <Route path="edit/:idDestino" element={<AgregarDestinos />} />
-
+          <Route element={<PrivateRoutes />}>
+            <Route path="/" element={<Home />} />
+            <Route index element={<Home />} />
+            <Route path="agregarDestinos" element={<AgregarDestinos />} />
+            <Route path="edit/:idDestino" element={<AgregarDestinos />} />
+            {user?.role === "admin" ? (
+              <>
+                <Route path="agregarDestinos" element={<AgregarDestinos />} />
+                <Route path="edit/:idDestino" element={<AgregarDestinos />} />
+                {/* Aquí van el resto de rutas para usuarios con rol admin */}
+              </>
+            ) : null}
+            {/* Aquí van el resto de rutas privadas */}
+          </Route>
+          <Route element={<PublicRoutes />}>
+            <Route path="about" element={<About />} />
+            <Route path="details/:id" element={<DetailsPage />} />
+            <Route path="destinos" element={<Destinos />} />
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
+            <Route path="phone" element={<PhoneLogin />} />
+            <Route path="phone/insertCode/:phone" element={<InsertCode />} />
+             {/* Aquí van el resto de rutas públicas */}
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

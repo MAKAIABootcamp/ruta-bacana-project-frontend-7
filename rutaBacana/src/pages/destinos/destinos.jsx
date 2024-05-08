@@ -17,7 +17,6 @@ const destinos = () => {
         <Destinos />
         <CalificacionUsuario />
         <Comentarios />
-        <Footer />
       </div>
     </div>
   );

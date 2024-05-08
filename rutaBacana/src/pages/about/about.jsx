@@ -3,7 +3,7 @@ import Header from '../../componentes/Header/Header'
 import FooterMinimo from '../../componentes/FooterMinimo/FooterMinimo'
 import './about.scss'
 
-const about = () => {
+const About = () => {
   return (
     <>
     {/* <Header /> */}
@@ -109,8 +109,7 @@ const about = () => {
 
 
     </main>
-    <FooterMinimo />
     </>
   )
 }
-export default about
+export default About

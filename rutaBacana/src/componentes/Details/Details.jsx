@@ -11,6 +11,7 @@ import arrow from "../../assets/images/arrowblack.png"
 export default function Details(props) {
 
     const destinoSeleccionado = props.destinoSeleccionado;
+    console.log(destinoSeleccionado)
     
   return (
     <div>

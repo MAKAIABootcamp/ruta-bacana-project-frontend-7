@@ -5,16 +5,19 @@ import "./home.scss";
 import Header from "../../componentes/Header/Header";
 import Footer from "../../componentes/Footer/Footer"
 import ListDestinos from "../../componentes/ListDestinos/ListDestinos";
+import Carrusel from "../../componentes/Carrusel/Carrusel";
 
 const home = () => {
+ 
+
   return (
     <div>
       <div className="containerHome">
-        {/* <Header /> */}
+         {/* <Header /> */}
+        <Carrusel />
         <Filtros />
         {/* <ImagenHome /> */}
         <ListDestinos/>
-        <Footer />
       </div>
     </div>
   );
