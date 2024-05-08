@@ -2,7 +2,7 @@ import React from "react";
 import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
-//import phoneImage from "../../assets/phone-call_3059446.png";
+import phoneImage from "../../assets/phone-call_3059446.png";
 import "./phoneLogin.scss";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { auth } from "../../firebase/firebaseconfig";
@@ -76,6 +76,7 @@ const PhoneLogin = () => {
           htmlFor="phone"
           className={formik.touched.phone && formik.errors.phone ? "error" : ""}
         >
+          <img src={phoneImage} alt="phone" />
           <input
             type="text"
             placeholder="Ingrese un número celular"

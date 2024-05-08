@@ -71,7 +71,8 @@ const AppRouter = () => {
             <Route path="edit/:idDestino" element={<AgregarDestinos />} />
             {user?.role === "admin" ? (
               <>
-                <Route path="agregar-mascota" element={<MascotaForm />} />
+                <Route path="agregarDestinos" element={<AgregarDestinos />} />
+                <Route path="edit/:idDestino" element={<AgregarDestinos />} />
                 {/* Aquí van el resto de rutas para usuarios con rol admin */}
               </>
             ) : null}
