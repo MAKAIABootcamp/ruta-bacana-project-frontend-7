@@ -1,18 +1,28 @@
-import React from "react";
-import { useDispatch } from "react-redux";
+import React, {useEffect} from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { actionLogout } from "../../redux/userAuth/userAuthActions";
-import { Link } from "react-router-dom";
+import { setRequest } from "../../redux/userAuth/userAuthSlice";
+import { Link, useNavigate } from "react-router-dom";
+import userImage from "../../assets/images/User.png";
 import "./header.scss";
 
 function Header() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { user, isAuth, request } = useSelector((store) => store.userAuth);
 
   const items = [
     ["/", "Home"],
-    ["destinos", "Destinos"],
-    ["contactanos", "Contactanos"],
-    ["sobreNosotros", "Sobre nosotros"],
+    ["/destinos", "Destinos"],
+    ["/contactanos", "Contactanos"],
+    ["/sobreNosotros", "Sobre nosotros"],
   ];
+  useEffect(() => {
+    if (request == 'logout') {
+      navigate('/');
+      dispatch(setRequest());
+    }
+  },[request])
   return (
     <header className="headerComponent">
       <div className="ImgLogo">
@@ -29,8 +39,11 @@ function Header() {
               );
             })}
             <li>
-            <div className="dropdown">
-                <img src="src\assets\images\User.png" alt="" />
+              <div className="dropdown">
+                <img
+                  src={user?.photo || userImage}
+                  alt={user?.name || "avatar"}
+                />
                 <div className="dropdown-content">
                   <button
                     onClick={() => {

@@ -13,11 +13,11 @@ const home = () => {
   return (
     <div>
       <div className="containerHome">
-        <header />
-        <Carrusel />
+        <Header />
+        {/*<Carrusel />*/}
         <Filtros />
-        {/* <ImagenHome /> */}
         <ListDestinos/>
+        <Footer />
       </div>
     </div>
   );

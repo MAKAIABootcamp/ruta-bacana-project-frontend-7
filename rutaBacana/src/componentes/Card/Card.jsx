@@ -19,7 +19,7 @@ const Card = ({ destino = {} }) => {
           alt="eliminar"
           onClick={() => dispatch(actionDeleteDestinos(destino.id))}
         />
-        <button onClick={() => navigate(`/details/${destino.id}`)}>
+        <button onClick={() => navigate(`/DetailsPage/${destino.id}`)}>
           Ir a detalle
         </button>
         <img

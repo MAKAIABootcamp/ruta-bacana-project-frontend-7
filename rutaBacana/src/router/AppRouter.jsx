@@ -12,7 +12,7 @@ import Home from "../pages/home/home";
 import Login from "../pages/login/login";
 import Register from "../pages/register/Register";
 import About from "../pages/about/about";
-import DetailsPage from "../pages/details/details";
+import DetailsPage from "../pages/detailsPage/DetailsPage";
 import Destinos from "../pages/destinos/destinos";
 import AgregarDestinos from "../pages/agregarDestinos/AgregarDestinos";
 import PhoneLogin from "../pages/phoneLogin/PhoneLogin";
@@ -64,11 +64,14 @@ const AppRouter = () => {
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="DetailsPage/:id" element={<DetailsPage />} />
+          <Route path="destinos" element={<Destinos />} />
           <Route element={<PrivateRoutes />}>
-            <Route path="/" element={<Home />} />
-            <Route index element={<Home />} />
-            <Route path="agregarDestinos" element={<AgregarDestinos />} />
-            <Route path="edit/:idDestino" element={<AgregarDestinos />} />
+            {/* Aquí van el resto de rutas privadas */}
+
             {user?.role === "admin" ? (
               <>
                 <Route path="agregarDestinos" element={<AgregarDestinos />} />
@@ -76,17 +79,13 @@ const AppRouter = () => {
                 {/* Aquí van el resto de rutas para usuarios con rol admin */}
               </>
             ) : null}
-            {/* Aquí van el resto de rutas privadas */}
           </Route>
           <Route element={<PublicRoutes />}>
-            <Route path="about" element={<About />} />
-            <Route path="details/:id" element={<DetailsPage />} />
-            <Route path="destinos" element={<Destinos />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
             <Route path="phone" element={<PhoneLogin />} />
             <Route path="phone/insertCode/:phone" element={<InsertCode />} />
-             {/* Aquí van el resto de rutas públicas */}
+            {/* Aquí van el resto de rutas públicas */}
           </Route>
         </Route>
       </Routes>

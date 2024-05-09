@@ -4,9 +4,13 @@ import {
     signInWithPopup,
     signOut,
     updateProfile,
-  } from "firebase/auth";
+} from "firebase/auth";
+  import { collection } from "firebase/firestore";
   import { loginFail, loginRequest, loginSuccess, logout } from "./userAuthSlice";
-  import { auth } from "../../firebase/firebaseconfig";
+  import { auth, dataBase } from "../../firebase/firebaseconfig";
+
+    const COLLECTION_NAME = "usuarios";
+    const collectionRef = collection(dataBase, COLLECTION_NAME);
   
   /*export const actionRegisterWithEmailAndPassword = ({
     email,
@@ -46,16 +50,25 @@ import {
     return async (dispatch) => {
       dispatch(loginRequest());
       try {
-        const { user } = await signInWithEmailAndPassword(auth, email, password);
-        dispatch(
-          loginSuccess({
-            id: user.uid,
-            name: user.displayName,
-            photo: user.photoURL,
-            email: email,
-            accessToken: user.accessToken,
-          })
+        const { user } = await signInWithEmailAndPassword(
+          auth,
+          email,
+          password
         );
+        //Obtenemos los datos del usuario logueado con firebase Auth desde la colección
+        const userRef = doc(dataBase, COLLECTION_NAME, user.uid);
+        const userSnap = await getDoc(userRef);
+
+        if (userRef.exists()) {
+          dispatch(
+            loginSuccess({
+              id: user.uid,
+              ...userSnap.data(),
+            })
+          );
+        } else {
+          dispatch(loginFail("El usuario no existe en nuestra base de datos"));
+        }
       } catch (error) {
         console.error(error);
         dispatch(loginFail(error.message));

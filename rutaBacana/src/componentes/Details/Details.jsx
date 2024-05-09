@@ -8,7 +8,7 @@ import third from "../../assets/images/third.png"
 import arrow from "../../assets/images/arrowblack.png"
 
 
-export default function Details(props) {
+const Details = (props) => {
 
     const destinoSeleccionado = props.destinoSeleccionado;
     console.log(destinoSeleccionado)
@@ -37,3 +37,4 @@ export default function Details(props) {
 
   )
 }
+export default Details

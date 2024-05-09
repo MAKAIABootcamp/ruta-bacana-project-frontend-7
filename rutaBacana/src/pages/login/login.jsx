@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
 import { actionLoginWithEmailAndPassword } from "../../redux/userAuth/userAuthActions";
 import Cargando from "../../componentes/cargando/Cargando";
 import { logout } from "../../redux/userAuth/userAuthSlice";
+import FooterMinimo from "../../componentes/FooterMinimo/FooterMinimo";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -56,82 +57,90 @@ const Login = () => {
   }
 
   return (
-    <div className="loginBody">
-      <main className="loginMain">
-        <section className="loginSectionContainer">
-          <figure className="logoContainer">
-            <img
-              className="logoImage"
-              src="src\assets\images\rutaBacanaLogo.png"
-              alt=""
-            />
-          </figure>
-          <form className="loginInputsContainer" onSubmit={formik.handleSubmit}>
-            <article className="inputContainer">
-              <label
-                htmlFor="email"
-                className={
-                  formik.touched.email && formik.errors.email ? "error" : ""
-                }
-              >Correo Electrónico</label>
-              <input
-                type="email"
-                name="email"
-                onChange={formik.handleChange}
-                placeholder="ejemplo@email.com"
-                id="email"
-                {...formik.getFieldProps("email")}
+    <>
+      <div className="loginBody">
+        <main className="loginMain">
+          <section className="loginSectionContainer">
+            <figure className="logoContainer">
+              <img
+                className="logoImage"
+                src="src\assets\images\rutaBacanaLogo.png"
+                alt=""
               />
-            </article>
-            {formik.touched.email && formik.errors.email ? (
-              <div className="errorText">{formik.errors.email}</div>
-            ) : null}
-            <article className="inputContainer">
-              <label
-                htmlFor="password"
-                className={
-                  formik.touched.password && formik.errors.password
-                    ? "error"
-                    : ""
-                }
-              >
-                Contraseña
-              </label>
-              <input
-                type="password"
-                placeholder="Contraseña"
-                id="password"
-                {...formik.getFieldProps("password")}
-              />
-            </article>
-            {formik.touched.password && formik.errors.password ? (
-              <div className="errorText">{formik.errors.password}</div>
-            ) : null}
-            <button className="loginButton" type="submit">
-              Ingresar
-            </button>
-            {loginProviders.map((item, index) => (
-              <ProvidersLogin
-                key={index}
-                name={item.name}
-                image={item.image}
-                colorButton={item.colorButton}
-                provider={item.provider}
-              />
-            ))}
-          </form>
-          <article className="interactionsContianer">
-            <p
-              className="registerButton"
-              type="text"
-              onClick={() => navigate("/register")}
+            </figure>
+            <form
+              className="loginInputsContainer"
+              onSubmit={formik.handleSubmit}
             >
-              Si aún no estás registrado da click aquí
-            </p>
-          </article>
-        </section>
-      </main>
-    </div>
+              <article className="inputContainer">
+                <label
+                  htmlFor="email"
+                  className={
+                    formik.touched.email && formik.errors.email ? "error" : ""
+                  }
+                >
+                  Correo Electrónico
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  onChange={formik.handleChange}
+                  placeholder="ejemplo@email.com"
+                  id="email"
+                  {...formik.getFieldProps("email")}
+                />
+              </article>
+              {formik.touched.email && formik.errors.email ? (
+                <div className="errorText">{formik.errors.email}</div>
+              ) : null}
+              <article className="inputContainer">
+                <label
+                  htmlFor="password"
+                  className={
+                    formik.touched.password && formik.errors.password
+                      ? "error"
+                      : ""
+                  }
+                >
+                  Contraseña
+                </label>
+                <input
+                  type="password"
+                  placeholder="Contraseña"
+                  id="password"
+                  {...formik.getFieldProps("password")}
+                />
+              </article>
+              {formik.touched.password && formik.errors.password ? (
+                <div className="errorText">{formik.errors.password}</div>
+              ) : null}
+              <button className="loginButton" type="submit">
+                Ingresar
+              </button>
+              {loginProviders.map((item, index) => (
+                <ProvidersLogin
+                  key={index}
+                  name={item.name}
+                  image={item.image}
+                  colorButton={item.colorButton}
+                  provider={item.provider}
+                />
+              ))}
+            </form>
+            <article className="interactionsContianer">
+              <p
+                className="registerButton"
+                type="text"
+                onClick={() => navigate("/register")}
+              >
+                Si aún no estás registrado da click aquí
+              </p>
+            </article>
+          </section>
+        </main>
+      </div>
+      <FooterMinimo />
+    </>
   );
 };
 
