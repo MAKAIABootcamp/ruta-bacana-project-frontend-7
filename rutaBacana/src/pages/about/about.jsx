@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../../componentes/Header/Header'
-import FooterMinimo from '../../componentes/FooterMinimo/FooterMinimo'
-import './about.scss'
+import Header from '../../componentes/Header/Header';
+import FooterMinimo from '../../componentes/FooterMinimo/FooterMinimo';
+import './about.scss';
 
-const about = () => {
+const About = () => {
   const [showMission, setShowMission] = useState(false);
+  const [showCollaborators, setShowCollaborators] = useState(false);
+  const [showFooterContent, setShowFooterContent] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,50 +21,21 @@ const about = () => {
           setShowMission(true);
         }
       }
-    };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [showMission]);
-
-
-  const [showCollaborators, setShowCollaborators] = useState(false);
-
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
       const collaboratorsSection = document.querySelector('.collaboratorContainer');
 
       if (collaboratorsSection && !showCollaborators) {
         const sectionOffset = collaboratorsSection.offsetTop;
-        const windowHeight = window.innerHeight;
 
         if (scrollPosition > sectionOffset - windowHeight) {
           setShowCollaborators(true);
         }
       }
-    };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [showCollaborators]);
-
-
-  const [showFooterContent, setShowFooterContent] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
       const footerSection = document.querySelector('.footerBannerContainer');
 
       if (footerSection && !showFooterContent) {
         const sectionOffset = footerSection.offsetTop;
-        const windowHeight = window.innerHeight;
 
         if (scrollPosition > sectionOffset - windowHeight) {
           setShowFooterContent(true);
@@ -74,117 +47,101 @@ const about = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [showFooterContent]);
-
-
+  }, [showMission, showCollaborators, showFooterContent]);
 
   return (
     <>
-    <Header />
-    <main className='aboutUsMainContainer'>
-      <section className='logoBanner'>
-
-        <figure className='logoContainer'>
-          <img src="src\assets\images\rutaBacanaLogo.png" alt="" />
-        </figure>
-        <figcaption className='figcapion'>
-          <p className='figcaptionTitle'>Ruta Bacana</p>
-          <p className='figcaptionText'>Descubre nuestra historia</p>
-        </figcaption>
-
-      </section>
-
-
-      <section className={`ourMission ${showMission ? '' : 'hidden'}`}>
-
-        <article className='missionContainer'>
-          <p className='missionTitle'>Un Sueño Colombianamente Inspirador</p>
-          <p className='missionText'>Todo comenzó con una fusión del gusto por los viajes y la pasión por la tecnologia,
-           arraigado en el amor por nuestro país y la convicción de que cada rincón de Colombia tiene una historia que contar.
-            Nos unimos con un propósito común: mostrar al mundo la riqueza cultural, natural e histórica de nuestra tierra a través de una página web innovadora.
-          </p>
-        </article>
-
-        <article className='missionContainer'>
-          <p className='missionTitle'>Explorando Nuestro Territorio</p>
-          <p className='missionText'>
-          Desde las cumbres de los Andes hasta las costas del Caribe, 
-          cada kilómetro de nuestro hermoso país nos inspira. Nos sumergimos en la exploración de las maravillas de Colombia, 
-          desde las selvas tropicales hasta las ciudades coloniales, 
-          buscando capturar la esencia de nuestra tierra en cada aspecto de nuestra aplicación de turismo.
-          </p>
-        </article>
-
-        <article className='missionContainer'>
-          <p className='missionTitle'>La Esencia de Colombia en Nuestro Proyecto</p>
-          <p className='missionText'>
-          Es un tributo apasionado a la magia y la diversidad de Colombia. 
-          Nos esforzamos por destacar la autenticidad y la calidez de nuestra cultura, 
-          promoviendo un turismo responsable que respete y celebre la biodiversidad única y las tradiciones arraigadas de nuestro país.
-          </p>
-        </article>
-
-      </section>
-
-      <section className='collaboratorContainer'>
-        <section className={`collabs ${showCollaborators ? '' : 'hidden'}`}>
-        <article className='collaboratorIconContainer'>
-          <img src="src\assets\images\about\emmanuel.png" alt="" />
-          <p>Emmanuel Usme</p>
-        </article>
-
-        <article className='collaboratorIconContainer'>
-          <img src="src\assets\images\about\vanessa.png" alt="" />
-          <p>Vanessa Sánchez</p>
-        </article>
-
-        <article className='collaboratorIconContainer'>
-          <img src="src\assets\images\about\valentina.png" alt="" />
-          <p>Valentina Flórez</p>
-        </article>
-
-        <article className='collaboratorIconContainer'>
-          <img src="src\assets\images\about\lina.png" alt="" />
-          <p>Lina Naranjo</p>
-        </article>
-
-        <article className='collaboratorIconContainer'>
-          <img src="src\assets\images\about\cristian.png" alt="" />
-          <p>Cristian Ojito</p>
-        </article>
+      <Header />
+      <main className='aboutUsMainContainer'>
+        <section className='logoBanner'>
+          <figure className='logoContainer'>
+            <img src="src\assets\images\rutaBacanaLogo.png" alt="" />
+          </figure>
+          <figcaption className='figcapion'>
+            <p className='figcaptionTitle'>Ruta Bacana</p>
+            <p className='figcaptionText'>Descubre nuestra historia</p>
+          </figcaption>
         </section>
-        
 
-      </section>
+        <section className={`ourMission ${showMission ? '' : 'hidden'}`}>
+          <article className='missionContainer'>
+            <p className='missionTitle'>Un Sueño Colombianamente Inspirador</p>
+            <p className='missionText'>Todo comenzó con una fusión del gusto por los viajes y la pasión por la tecnología,
+              arraigado en el amor por nuestro país y la convicción de que cada rincón de Colombia tiene una historia que contar.
+              Nos unimos con un propósito común: mostrar al mundo la riqueza cultural, natural e histórica de nuestra tierra a través de una página web innovadora.
+            </p>
+          </article>
 
-      <section className={`footerBannerContainer ${showFooterContent ? 'show' : ''}`}>
+          <article className='missionContainer'>
+            <p className='missionTitle'>Explorando Nuestro Territorio</p>
+            <p className='missionText'>Desde las cumbres de los Andes hasta las costas del Caribe,
+              cada kilómetro de nuestro hermoso país nos inspira. Nos sumergimos en la exploración de las maravillas de Colombia,
+              desde las selvas tropicales hasta las ciudades coloniales,
+              buscando capturar la esencia de nuestra tierra en cada aspecto de nuestra aplicación de turismo.
+            </p>
+          </article>
 
-        <article className="passionContainer">
-          <p className='passionTitle'>Un equipo apasionado</p>
-          <p className='passionText'>
-          Detrás de cada línea de código y cada diseño cuidadosamente elaborado, se encuentra un equipo apasionado y comprometido. 
-          Somos un grupo diverso de mentes creativas, unidas por nuestra determinación de hacer de este proyecto una realidad. 
-          Con habilidades complementarias y una visión compartida, hemos convertido desafíos en oportunidades y sueños en logros tangibles.
-          </p>
-        </article>
+          <article className='missionContainer'>
+            <p className='missionTitle'>La Esencia de Colombia en Nuestro Proyecto</p>
+            <p className='missionText'>Es un tributo apasionado a la magia y la diversidad de Colombia.
+              Nos esforzamos por destacar la autenticidad y la calidez de nuestra cultura,
+              promoviendo un turismo responsable que respete y celebre la biodiversidad única y las tradiciones arraigadas de nuestro país.
+            </p>
+          </article>
+        </section>
 
-        <article className='joinUs'>
-          <p className='joinUsTitle'>¡Únete a nuestra aventura!</p>
-          <p className='joinUsText'>
-          Estamos emocionados de compartir nuestro viaje contigo y esperamos que te unas a nosotros en esta emocionante aventura. 
-          </p>
-        </article>
+        <section className='collaboratorContainer'>
+          <section className={`collabs ${showCollaborators ? '' : 'hidden'}`}>
+            <article className='collaboratorIconContainer'>
+              <img src="src\assets\images\about\emmanuel.png" alt="" />
+              <p>Emmanuel Usme</p>
+            </article>
 
-        <article className='thanks'>
-          <p>¡Gracias por ser parte de nuestra historia!</p>
-        </article>
+            <article className='collaboratorIconContainer'>
+              <img src="src\assets\images\about\vanessa.png" alt="" />
+              <p>Vanessa Sánchez</p>
+            </article>
 
-      </section>
+            <article className='collaboratorIconContainer'>
+              <img src="src\assets\images\about\valentina.png" alt="" />
+              <p>Valentina Flórez</p>
+            </article>
 
+            <article className='collaboratorIconContainer'>
+              <img src="src\assets\images\about\lina.png" alt="" />
+              <p>Lina Naranjo</p>
+            </article>
 
-    </main>
-    <FooterMinimo />
+            <article className='collaboratorIconContainer'>
+              <img src="src\assets\images\about\cristian.png" alt="" />
+              <p>Cristian Ojito</p>
+            </article>
+          </section>
+        </section>
+
+        <section className={`footerBannerContainer ${showFooterContent ? 'show' : ''}`}>
+          <article className="passionContainer">
+            <p className='passionTitle'>Un equipo apasionado</p>
+            <p className='passionText'>
+              Detrás de cada línea de código y cada diseño cuidadosamente elaborado, se encuentra un equipo apasionado y comprometido.
+              Somos un grupo diverso de mentes creativas, unidas por nuestra determinación de hacer de este proyecto una realidad.
+              Con habilidades complementarias y una visión compartida, hemos convertido desafíos en oportunidades y sueños en logros tangibles.
+            </p>
+          </article>
+
+          <article className="joinUs">
+            <p className="joinUsTitle">¡Únete a nuestra aventura!</p>
+            <p className="joinUsText">Estamos emocionados de compartir nuestro viaje contigo y esperamos que te unas a nosotros en esta emocionante aventura.</p>
+          </article>
+
+          <article className="thanks">
+            <p>¡Gracias por ser parte de nuestra historia!</p>
+          </article>
+        </section>
+      </main>
+      <FooterMinimo />
     </>
-  )
-}
-export default about
+  );
+};
+
+export default About;

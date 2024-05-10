@@ -11,33 +11,46 @@
   }
   & span {
     font-family: "Marvel";
-    font-size: 3rem;
-    padding-right: 3rem;
+    font-size: 2rem;
   }
   & input {
-    width: 50%;
-    height: 4rem;
+    width: 100%;
     border: none;
     border-radius: 25px;
     background-color: #d9d9d9;
+    padding-left: 1rem;
+    font-family: "Marvel";
+    font-size: 1.2rem;
   }
+}
+.inputWithIcon {
+  width: 50%;
+  position: relative;
+}
+.searchIcon {
+  position: absolute;
+  right: 10px; // Ajusta la posición del ícono a la derecha del input
+  top: 50%;
+  transform: translateY(-15%);
+  cursor: pointer;
 }
 
 .containerFiltros {
   display: flex;
   justify-content: space-between;
-  padding: 10px 30px 30px 30px;
+  padding: 0px 30px 10px 30px;
   & button::first-letter{
     font-family: "Michroma";
   }
   & button {
+    margin: 0;
     border: none;
     width: 18%;
-    height: 3rem;
     border-radius: 20px;
     background-color: #d9d9d9;
-    font-size: 1.7rem;
+    font-size: 1.2rem;
     font-family: "Marvel";
     text-align: center;
+    color: black;
   }
 }

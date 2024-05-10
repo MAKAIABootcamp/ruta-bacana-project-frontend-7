@@ -6,7 +6,6 @@ import FotoRaquira from "../../componentes/FotoRaquira/FotoRaquira";
 import Header from "../../componentes/Header/Header";
 import CalificacionUsuario from "../../componentes/CalificacionUsuario/CalificacionUsuario";
 import Footer from "../../componentes/Footer/Footer"
-// import "./comentarios.scss";
 
 const destinos = () => {
   return (
