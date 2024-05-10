@@ -45,6 +45,7 @@ function Header() {
                   alt={user?.name || "avatar"}
                 />
                 <div className="dropdown-content">
+                  <button onClick={() => navigate(`/login/`)}>Iniciar Sesión</button>
                   <button
                     onClick={() => {
                       dispatch(actionLogout());

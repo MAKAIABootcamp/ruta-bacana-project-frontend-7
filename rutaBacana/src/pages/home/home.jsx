@@ -14,7 +14,7 @@ const home = () => {
     <div>
       <div className="containerHome">
         <Header />
-        {/*<Carrusel />*/}
+        <Carrusel />
         <Filtros />
         <ListDestinos/>
         <Footer />

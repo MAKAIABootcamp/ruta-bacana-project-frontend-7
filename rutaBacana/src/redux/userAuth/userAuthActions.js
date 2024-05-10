@@ -100,7 +100,7 @@ import {
             id: user.uid,
             name: user.displayName,
             photo: user.photoURL,
-            email: email,
+            email: user.email,
             accessToken: user.accessToken,
           })
         );

@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
 import { actionLoginWithEmailAndPassword } from "../../redux/userAuth/userAuthActions";
 import Cargando from "../../componentes/cargando/Cargando";
 import { logout } from "../../redux/userAuth/userAuthSlice";
+import { GoArrowLeft } from "react-icons/go";
 import FooterMinimo from "../../componentes/FooterMinimo/FooterMinimo";
 
 const Login = () => {
@@ -137,8 +138,15 @@ const Login = () => {
               </p>
             </article>
           </section>
+          <div className="contenedorFlechaAtras">
+            <GoArrowLeft
+              className="flechaAtras"
+              onClick={() => navigate("/")}
+            />
+          </div>
         </main>
       </div>
+
       <FooterMinimo />
     </>
   );
