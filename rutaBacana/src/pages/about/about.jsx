@@ -1,9 +1,83 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import Header from '../../componentes/Header/Header'
 import FooterMinimo from '../../componentes/FooterMinimo/FooterMinimo'
 import './about.scss'
 
 const about = () => {
+  const [showMission, setShowMission] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const missionSection = document.querySelector('.ourMission');
+
+      if (missionSection && !showMission) {
+        const missionOffset = missionSection.offsetTop;
+        const windowHeight = window.innerHeight;
+
+        if (scrollPosition > missionOffset - windowHeight) {
+          setShowMission(true);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [showMission]);
+
+
+  const [showCollaborators, setShowCollaborators] = useState(false);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const collaboratorsSection = document.querySelector('.collaboratorContainer');
+
+      if (collaboratorsSection && !showCollaborators) {
+        const sectionOffset = collaboratorsSection.offsetTop;
+        const windowHeight = window.innerHeight;
+
+        if (scrollPosition > sectionOffset - windowHeight) {
+          setShowCollaborators(true);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [showCollaborators]);
+
+
+  const [showFooterContent, setShowFooterContent] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const footerSection = document.querySelector('.footerBannerContainer');
+
+      if (footerSection && !showFooterContent) {
+        const sectionOffset = footerSection.offsetTop;
+        const windowHeight = window.innerHeight;
+
+        if (scrollPosition > sectionOffset - windowHeight) {
+          setShowFooterContent(true);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [showFooterContent]);
+
+
+
   return (
     <>
     <Header />
@@ -21,7 +95,7 @@ const about = () => {
       </section>
 
 
-      <section className='ourMission'>
+      <section className={`ourMission ${showMission ? '' : 'hidden'}`}>
 
         <article className='missionContainer'>
           <p className='missionTitle'>Un Sueño Colombianamente Inspirador</p>
@@ -53,7 +127,7 @@ const about = () => {
       </section>
 
       <section className='collaboratorContainer'>
-        <section className='collabs'>
+        <section className={`collabs ${showCollaborators ? '' : 'hidden'}`}>
         <article className='collaboratorIconContainer'>
           <img src="src\assets\images\about\emmanuel.png" alt="" />
           <p>Emmanuel Usme</p>
@@ -83,9 +157,9 @@ const about = () => {
 
       </section>
 
-      <section className='footerBannerContainer'>
+      <section className={`footerBannerContainer ${showFooterContent ? 'show' : ''}`}>
 
-        <article className='passionContainer'>
+        <article className="passionContainer">
           <p className='passionTitle'>Un equipo apasionado</p>
           <p className='passionText'>
           Detrás de cada línea de código y cada diseño cuidadosamente elaborado, se encuentra un equipo apasionado y comprometido. 
