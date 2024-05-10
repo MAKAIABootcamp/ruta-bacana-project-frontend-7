@@ -18,21 +18,23 @@ const ListDestinos = () => {
 
   const [tipo, setTipo] = useState("all");
 
+    const handleFilter = (categoria = "all") => {
+      if (categoria === "all") {
+        dispatch(actionGetDestinos());
+      } else {
+        dispatch(actionFilterDestinos("categoria", categoria));
+      }
+    };
+
+
   const fetchDestinos = useCallback(() => {
     handleFilter(tipo);
   }, [tipo]);
 
-  const handleFilter = (categoria = "all") => {
-    if (categoria === "all") {
-      dispatch(actionGetDestinos());
-    } else {
-      dispatch(actionFilterDestinos("categoria", categoria));
-    }
-  };
 
   useEffect(() => {
     dispatch(actionGetDestinos());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     fetchDestinos();
@@ -47,8 +49,8 @@ const ListDestinos = () => {
       <FilterButtons setTipo={setTipo} />
       <section className="cards">
         {destinos.map((item) => (
-          <Link to={`/details/${item.id}`}>
-            <Card key={item.id} destino={item} />
+          <Link key={item.id} to={`/details/${item.id}`}>
+            <Card destino={item} />
           </Link>
         ))}
       </section>

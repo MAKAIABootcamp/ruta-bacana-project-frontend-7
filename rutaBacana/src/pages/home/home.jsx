@@ -13,8 +13,6 @@ const home = () => {
   return (
     <div>
       <div className="containerHome">
-       
-        <Header />
         <Carrusel />
         <Filtros />
         {/* <ImagenHome /> */}
