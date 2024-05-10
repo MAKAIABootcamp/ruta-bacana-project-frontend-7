@@ -8,6 +8,7 @@ import FooterMinimo from "../FooterMinimo/FooterMinimo";
 const Layout = () => {
   return (
     <div>
+      <Header/>
       <Outlet />
     </div>
   );

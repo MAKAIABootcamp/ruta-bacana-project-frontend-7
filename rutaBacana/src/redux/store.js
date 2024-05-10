@@ -1,4 +1,3 @@
-
 import { configureStore } from "@reduxjs/toolkit";
 import userAuthReducer from "./userAuth/userAuthSlice";
 import destinosReducer from "./Destinos/destinosSlice";
