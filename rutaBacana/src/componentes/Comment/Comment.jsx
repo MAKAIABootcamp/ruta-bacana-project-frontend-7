@@ -1,9 +1,12 @@
 import React from "react";
+import userImage from "../../assets/images/User.png";
+//import { useSelector } from "react-redux";
 //import "./comment.scss"
 
 const Comment = ({ comentarios }) => {
+    //const { user, isAuth, request } = useSelector((store) => store.userAuth);
   return (
-    <div className="contenedorImagenes">
+    <div className="contenedorImagenes comentariosContainer">
       <div className="fila">
         <div className="columnaContenido">
           <div className="comentarioAlineado">
@@ -20,8 +23,8 @@ const Comment = ({ comentarios }) => {
         <div className="columnaImagenes">
           <div>
             <img
-              src="src\assets\images\ImagenDestinos\usuario1.png"
-              alt="Imagen 1"
+              src={userImage}
+              alt={"avatar"}
             />
           </div>
         </div>

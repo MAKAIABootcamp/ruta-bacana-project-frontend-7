@@ -27,7 +27,7 @@ const comentariosSlice = createSlice({
         (state.errorComentarios = action.payload),
         (state.successRequest = false);
     },
-    addcomentarios: (state, action) => {
+    addComentarios: (state, action) => {
       state.comentarios.push(action.payload);
       state.isLoadingComentarios = false;
       state.successRequest = "addComentarios";

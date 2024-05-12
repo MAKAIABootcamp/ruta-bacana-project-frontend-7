@@ -12,12 +12,11 @@ const destinos = () => {
   return (
     <div>
       <div className="fondo">
-        <Header />
         <FotoRaquira />
         <Destinos />
         <CalificacionUsuario />
         <ListComentarios/>
-        <Comentarios />
+        {/*<Comentarios />*/}
         <Footer />
       </div>
     </div>
