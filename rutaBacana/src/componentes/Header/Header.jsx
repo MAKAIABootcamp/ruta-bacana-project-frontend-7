@@ -19,7 +19,7 @@ function Header() {
   ];
   useEffect(() => {
     if (request == 'logout') {
-      navigate('/');
+      navigate('/login/');
       dispatch(setRequest());
     }
   },[request])

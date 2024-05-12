@@ -6,6 +6,7 @@ import FotoRaquira from "../../componentes/FotoRaquira/FotoRaquira";
 import Header from "../../componentes/Header/Header";
 import CalificacionUsuario from "../../componentes/CalificacionUsuario/CalificacionUsuario";
 import Footer from "../../componentes/Footer/Footer"
+import ListComentarios from "../../componentes/ListComentarios/ListComentarios";
 
 const destinos = () => {
   return (
@@ -15,6 +16,7 @@ const destinos = () => {
         <FotoRaquira />
         <Destinos />
         <CalificacionUsuario />
+        <ListComentarios/>
         <Comentarios />
         <Footer />
       </div>
