@@ -19,6 +19,8 @@
     font-family: $fuente-michroma;
     color: #ffffff;
 
+    
+
 
     .loginMain{
         
@@ -102,5 +104,20 @@
             }
         }
     }
+
+    .contenedorFlechaAtras{
+        //width: 20%;
+        //height: 70px;
+
+        .flechaAtras {
+            display: flex;
+            position: absolute;
+            top: 93%;
+            width: 6%;
+            height: 70px;
+            left: 0;
+        }
+    }
 }
+
 

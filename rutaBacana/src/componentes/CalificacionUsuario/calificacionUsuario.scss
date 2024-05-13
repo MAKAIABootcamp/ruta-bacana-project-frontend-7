@@ -17,29 +17,41 @@
     color: white;
   }
 }
+.estrellasCalificacion{
+  display: flex;
+  justify-content: center;
 
-.imageCalificacion {
-  padding: 20px 0px 20px 55px;
-  width: 20%;
+  .imageCalificacion {
+    padding: 20px 0px 20px 55px;
+    width: 20%;
+  }
 }
+
 .containerInputCalificacion {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10rem;
+  height: 7rem;
   background-color: rgba(217, 217, 217, 0.6);
   border-radius: 25px;
-  margin: 0px 55px 0px 55px;
+  margin: 0px 55px 30px 55px;
   & textarea {
     border: none;
-    width: 92%;
-    height: 7rem;
+    width: 85%;
+    height: 5rem;
     font-family: "Michroma";
     font-size: 1.5rem;
     text-align: left;
     resize: none;
     padding: 10px;
     box-sizing: border-box;
-  overflow-y: auto;
+    overflow-y: auto;
+    margin: 0;
+  }
+
+  .botonEnvio{
+    width: 10%;
+    margin-top: 0;
+    margin-left: 1rem;
   }
 }

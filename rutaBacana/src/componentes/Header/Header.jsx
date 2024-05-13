@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { actionLogout } from "../../redux/userAuth/userAuthActions";
 import { setRequest } from "../../redux/userAuth/userAuthSlice";
@@ -18,11 +18,11 @@ function Header() {
     ["/sobreNosotros", "Sobre nosotros"],
   ];
   useEffect(() => {
-    if (request == 'logout') {
-      navigate('/');
+    if (request == "logout") {
+      navigate('/login/');
       dispatch(setRequest());
     }
-  },[request])
+  }, [request]);
   return (
     <header className="headerComponent">
       <div className="ImgLogo">
@@ -45,13 +45,19 @@ function Header() {
                   alt={user?.name || "avatar"}
                 />
                 <div className="dropdown-content">
-                  <button
-                    onClick={() => {
-                      dispatch(actionLogout());
-                    }}
-                  >
-                    Salir
-                  </button>
+                  {isAuth ? (
+                    <button
+                      onClick={() => {
+                        dispatch(actionLogout());
+                      }}
+                    >
+                      Salir
+                    </button>
+                  ) : (
+                    <button onClick={() => navigate(`/login`)}>
+                      Iniciar Sesión
+                    </button>
+                  )}
                 </div>
               </div>
             </li>

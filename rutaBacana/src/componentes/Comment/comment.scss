@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
+
+// $color-1: rgb(252, 243, 207);
+// $color-2: rgb(240, 178, 122);
+// $color-3: rgb(31, 97, 141);
+
+body {
+  font-family: "Michroma", sans-serif;
+  // background: linear-gradient(to bottom, $color-1, $color-2, $color-3);
+  // background-repeat: no-repeat;
+}
+
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 600px) {
+  .contenedor {
+    width: 100%; /* Ancho completo en pantallas pequeñas */
+    font-size: 14px; /* Tamaño de letra para pantallas pequeñas */
+  }
+}
+
+/* Estilos para pantallas medianas */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .contenedor {
+    width: 80%; /* Ancho del 80% en pantallas medianas */
+    font-size: 16px; /* Tamaño de letra para pantallas medianas */
+  }
+}
+
+/* Estilos para pantallas grandes */
+@media screen and (min-width: 1025px) {
+  .contenedor {
+    width: 60%; /* Ancho del 60% en pantallas grandes */
+    font-size: 18px; /* Tamaño de letra para pantallas grandes */
+  }
+}
+
+.contenedorImagenes {
+  display: flex;
+  justify-content: flex-end;
+  width: 60%; 
+  margin-left: auto;
+
+}
+  .fila {
+    display: flex;
+    
+    .columnaImagenes {
+      order: 1;
+      margin-top: 4%;
+      margin-right: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 15%;
+      
+    }
+
+    .columnaContenido {
+      order: 2;
+      margin-left: 5%;
+    }
+   
+  }
+
+img {
+    width: 110%;
+    height:auto;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+
+.descripcion {
+  background-color: rgb(217, 217, 217);
+  height: auto;
+  width: 80%;
+  padding: 20px; 
+  margin-bottom: 10px; 
+  text-align: left; 
+  font-size: 15px;
+}
+
+.estrellas {
+    margin-right: 5px;
+    display: block;
+    margin-bottom: 5px;
+
+    img {
+
+      height: 40px;
+      width: 181px;
+     
+  }
+}
+
+.comentarioAlineado{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px; 
+  h2{
+    margin-bottom: 10px;
+    color: white;
+  }
+}
+
+  

@@ -70,23 +70,21 @@ const AppRouter = () => {
           <Route path="DetailsPage/:id" element={<DetailsPage />} />
           <Route path="destinos" element={<Destinos />} />
           <Route element={<PrivateRoutes />}>
-            {/* Aquí van el resto de rutas privadas */}
-
-            {user?.role === "admin" ? (
+            {user?.email === "rutabacana@gmail.com" && (
               <>
                 <Route path="agregarDestinos" element={<AgregarDestinos />} />
                 <Route path="edit/:idDestino" element={<AgregarDestinos />} />
-                {/* Aquí van el resto de rutas para usuarios con rol admin */}
+                {/* Agrega otras rutas privadas */}
               </>
-            ) : null}
+            )}
           </Route>
-          <Route element={<PublicRoutes />}>
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<Register />} />
-            <Route path="phone" element={<PhoneLogin />} />
-            <Route path="phone/insertCode/:phone" element={<InsertCode />} />
-            {/* Aquí van el resto de rutas públicas */}
-          </Route>
+        </Route>
+        <Route element={<PublicRoutes />}>
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="phone" element={<PhoneLogin />} />
+          <Route path="phone/insertCode/:phone" element={<InsertCode />} />
+          {/* Aquí van el resto de rutas públicas */}
         </Route>
       </Routes>
     </BrowserRouter>
