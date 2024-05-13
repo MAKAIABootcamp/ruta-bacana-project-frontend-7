@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import {actionGetDestinos} from "../../redux/Destinos/destinosActions";
 import Slider from "../../componentes/Slider/Slider"
+import "./details.scss"
 
 
 const details = () => {
@@ -24,7 +25,7 @@ const details = () => {
   const destinoSeleccionado = destinos.filter(destino => destino.id === id);
  
   return (
-    <div>
+    <div  className='fondoDegradado'>
       <Details destinoSeleccionado={destinoSeleccionado}/>
       <InfoInteres />
       <Slider />

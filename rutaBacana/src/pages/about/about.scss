@@ -88,7 +88,7 @@
         opacity: 0;
         transform: translateY(-50px);
 
-        animation: slideIn 1s ease forwards;
+        animation: slideIn 2s ease forwards;
 
         @keyframes slideIn {
             from {
@@ -143,49 +143,50 @@
     }
 
     .collaboratorContainer {
-        margin-left: 7%;
-        margin-right: 7%;
-        margin-top: 36rem;
-        margin-bottom: 20rem;
+      margin-left: 7%;
+      margin-right: 7%;
+      margin-top: 36rem;
+      margin-bottom: 5rem;
     
-        .collabs {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 5%;
-            opacity: 0;
-            transform: translateY(-50px);
-            animation: slideIn 1s ease forwards;
+      .collabs {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 5%;
+        opacity: 0;
+        transform: translateY(-50px);
+        animation: slideIn 2s ease forwards;
     
-            @keyframes slideIn {
-                from {
-                    opacity: 0;
-                    transform: translateY(-50px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-    
-            &.hidden {
-                display: none;
-            }
-    
-            .collaboratorIconContainer {
-                display: flex;
-                flex-direction: column;
-    
-                p {
-                    color: $color-white;
-                    display: flex;
-                    align-self: center;
-                    text-align: center;
-                    width: 70%;
-                }
-            }
+        &.hidden {
+          display: none;
         }
+    
+        .collaboratorIconContainer {
+          display: flex;
+          flex-direction: column;
+    
+          p {
+            color: $color-white;
+            display: flex;
+            align-self: center;
+            text-align: center;
+            width: 70%;
+          }
+        }
+      }
+    
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     }
+    
 
     .footerBannerContainer {
         display: flex;
@@ -195,6 +196,8 @@
         margin-left: 7%;
         margin-right: 7%;
         line-height: 1.6rem;
+
+        gap: 2rem;
       
         &.show {
           .passionContainer,

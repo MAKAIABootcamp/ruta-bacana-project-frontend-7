@@ -10,7 +10,7 @@ import {
 import Layout from "../componentes/layout/Layout";
 import Home from "../pages/home/home";
 import Login from "../pages/login/login";
-import Register from "../pages/register/Register";
+import Register from "../pages/register/register";
 import About from "../pages/about/about";
 import DetailsPage from "../pages/detailsPage/DetailsPage";
 import Destinos from "../pages/destinos/destinos";
