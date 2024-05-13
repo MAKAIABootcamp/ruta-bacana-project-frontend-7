@@ -11,8 +11,8 @@ const home = () => {
     <div>
       <div className="containerHome">
         <Carrusel />
-        <Filtros />
         <div className="destinosContainer">
+          <Filtros />
           <ListDestinos/>
         </div>
         <Footer />

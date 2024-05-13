@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&family=Michroma&display=swap");
+@import "../../assets/styles/variables.scss";
 
 .containerBusqueda {
   padding: 30px;
@@ -29,7 +30,7 @@
 }
 .searchIcon {
   position: absolute;
-  right: 10px; // Ajusta la posición del ícono a la derecha del input
+  right: 1rem; // Ajusta la posición del ícono a la derecha del input
   top: 50%;
   transform: translateY(-15%);
   cursor: pointer;
@@ -51,6 +52,6 @@
     font-size: 1.2rem;
     font-family: "Marvel";
     text-align: center;
-    color: black;
+    color: $color-black;
   }
 }
