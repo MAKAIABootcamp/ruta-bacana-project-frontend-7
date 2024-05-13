@@ -12,7 +12,9 @@ const home = () => {
       <div className="containerHome">
         <Carrusel />
         <Filtros />
-        <ListDestinos/>
+        <div className="destinosContainer">
+          <ListDestinos/>
+        </div>
         <Footer />
       </div>
     </div>
