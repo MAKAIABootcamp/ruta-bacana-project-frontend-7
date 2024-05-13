@@ -18,11 +18,12 @@
     width: 100%;
     border: none;
     border-radius: 25px;
-    background-color: #d9d9d9;
+    background-color: $color-light-white;
     padding-left: 1rem;
     font-family: "Marvel";
     font-size: 1.2rem;
   }
+  
 }
 .inputWithIcon {
   width: 50%;
@@ -48,10 +49,15 @@
     border: none;
     width: 18%;
     border-radius: 20px;
-    background-color: #d9d9d9;
+    background-color: $color-light-white;
     font-size: 1.2rem;
     font-family: "Marvel";
     text-align: center;
     color: $color-black;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    &:hover {
+      background-color: $color-light-blue; 
+      transform: scale(1.05);
+    }
   }
 }
