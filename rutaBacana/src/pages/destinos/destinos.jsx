@@ -12,7 +12,9 @@ const destinos = () => {
   return (
     <div>
       <div className="fondo">
-        <FotoRaquira />
+        <div className="bannerImageContainer">
+          <FotoRaquira />
+        </div>
         <Destinos />
         <CalificacionUsuario />
         <ListComentarios/>
