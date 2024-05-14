@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { actionGetDestinos } from "../../redux/Destinos/destinosActions";
 import Footer from "../../componentes/Footer/Footer";
+import Slider from "../../componentes/Slider/Slider"
 
 
 const DetailsPage = () => {
@@ -23,7 +24,8 @@ const DetailsPage = () => {
     <>
       <div>
         <Details destinoSeleccionado={destinoSeleccionado} />
-        <InfoInteres />
+        {/*<InfoInteres />*/}
+        <Slider/>
         <Footer />
       </div>
     </>

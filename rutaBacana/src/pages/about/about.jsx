@@ -51,7 +51,6 @@ const About = () => {
 
   return (
     <>
-      <Header />
       <main className='aboutUsMainContainer'>
         <section className='logoBanner'>
           <figure className='logoContainer'>

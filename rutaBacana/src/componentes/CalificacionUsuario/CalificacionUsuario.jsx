@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import "./calificacionUsuario.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-import {actionAddComentarios} from "../../redux/comentarios/comentariosActions"
+import { FaStar } from "react-icons/fa";
+import { actionAddComentarios } from "../../redux/comentarios/comentariosActions";
 
 const CalificacionUsuario = () => {
-  const { isAuth } = useSelector((store) => store.userAuth);
+  const { isAuth, user } = useSelector((store) => store.userAuth);
+  const { idDestino } = useParams();
   const [inputValue, setInputValue] = useState("");
   const [isClicked, setIsClicked] = useState(false);
+  const [rating, setRating] = useState(0);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -17,7 +20,6 @@ const CalificacionUsuario = () => {
   };
 
   const handleTextareaClick = () => {
-    // Mostrar alerta solo si el usuario no está autenticado y aún no ha hecho clic en el área de texto
     if (!isAuth && !isClicked) {
       Swal.fire({
         title: "¡Alerta!",
@@ -36,6 +38,10 @@ const CalificacionUsuario = () => {
     setIsClicked(true);
   };
 
+  const handleStarClick = (index) => {
+    setRating(index + 1);
+  };
+
   const handleSubmit = () => {
     if (inputValue.trim() === "") {
       Swal.fire({
@@ -46,13 +52,21 @@ const CalificacionUsuario = () => {
         confirmButtonText: "Aceptar",
       });
     } else {
-      dispatch(actionAddComentarios({ contenido: inputValue }));
+      dispatch(
+        actionAddComentarios({
+          contenido: inputValue,
+          idSender: user.photo,
+          nombre: user.name,
+          idDestino: "",
+          valoracion: rating,
+        })
+      );
       setInputValue("");
       Swal.fire({
         title: "¡Éxito!",
         text: "Tu comentario se envió correctamente.",
         icon: "success",
-      })
+      });
     }
     console.log("Calificación enviada:", inputValue);
     // Aquí puedes agregar la lógica para enviar la calificación
@@ -63,11 +77,17 @@ const CalificacionUsuario = () => {
         <button>Califica estos lugares y cuentanos tu experiencia</button>
       </div>
       <div className="estrellasCalificacion">
-        {/* <p>★★★☆☆</p> */}
-        <img className="imageCalificacion"
-          src="src\assets\images\ImagenDestinos\estrella.png"
-          alt="Imagen 5"
-        />
+        {Array(5)
+          .fill()
+          .map((_, index) => (
+            <FaStar
+              key={index}
+              size={35}
+              onClick={() => handleStarClick(index)}
+              color={index < rating ? "yellow" : "white"}
+              style={{ cursor: "pointer" }}
+            />
+          ))}
       </div>
       <div className="containerInputCalificacion">
         <textarea

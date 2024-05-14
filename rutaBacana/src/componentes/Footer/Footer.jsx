@@ -1,5 +1,11 @@
 import React from 'react'
 import "./footer.scss"
+import Instagram from "../../assets/images/Instagram.png"
+import gmail from "../../assets/images/gmail.png"
+import Facebook from "../../assets/images/Facebook.png"
+import x from "../../assets/images/x.png"
+import LogoRutaBacana from "../../assets/images/rutaBacanaLogo.png"
+
 
 const Footer = () => {
   return (
@@ -7,19 +13,19 @@ const Footer = () => {
         <section className='footer'>
             <section  className='leftColumn'>
                 <article className='socialContainer'>
-                    <img className='socialIcon' src="src\assets\images\Instagram.png" alt="" />
+                    <img className='socialIcon' src={Instagram} alt="Instagram" />
                     <p className='socialName'>RutaBacana12</p>
                 </article>
                 <article className='socialContainer'>
-                    <img className='socialIcon' src="src\assets\images\gmail.png" alt="" />
+                    <img className='socialIcon' src={gmail} alt="Gmail" />
                     <p className='socialName'>rutabacana@gmail.com</p>
                 </article>
                 <article className='socialContainer'>
-                    <img className='socialIcon' src="src\assets\images\Facebook.png" alt="" />
+                    <img className='socialIcon' src={Facebook} alt="Facebook" />
                     <p className='socialName'>Ruta Bacana</p>
                 </article>
                 <article className='socialContainer'>
-                    <img className='socialIcon' src="src\assets\images\x.png" alt="" />
+                    <img className='socialIcon' src={x} alt="X" />
                     <p className='socialName'>@RutaBacana12</p>
                 </article>
 
@@ -28,7 +34,7 @@ const Footer = () => {
 
             <section className='rightColumn'>
                 <article className='logoFooterContainer'>
-                    <img className='logoFooter' src="src\assets\images\rutaBacanaLogo.png" alt="" />
+                    <img className='logoFooter' src={LogoRutaBacana} alt="RutaBacana" />
                 </article>
 
                 <article className='textContainer'>
