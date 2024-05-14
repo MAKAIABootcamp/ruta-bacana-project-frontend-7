@@ -89,8 +89,8 @@ const About = () => {
           </article>
         </section>
 
-        <section className='collaboratorContainer'>
-          <section className={`collabs ${showCollaborators ? '' : 'hidden'}`}>
+        <section className={`collaboratorContainer ${showCollaborators ? '' : 'hidden'}`}>
+          <section className="collabs">
             <article className='collaboratorIconContainer'>
               <img src="src\assets\images\about\emmanuel.png" alt="" />
               <p>Emmanuel Usme</p>

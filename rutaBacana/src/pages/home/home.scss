@@ -1,3 +1,5 @@
+@import "../../assets/styles/variables.scss";
+
 *{
     margin: 0;
     padding: 0;
@@ -5,5 +7,9 @@
   }
 
 .containerHome{
-    background-color: rgb(173, 213, 250, 26%);
+    background-color: $color-light-blue;
+}
+.destinosContainer{
+  padding-left: 5%;
+  padding-right: 5%;
 }
