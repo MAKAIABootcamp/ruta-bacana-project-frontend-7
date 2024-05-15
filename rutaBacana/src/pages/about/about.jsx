@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import FooterMinimo from '../../componentes/FooterMinimo/FooterMinimo';
 import './about.scss';
+import LogoRutaBacana from "../../assets/images/rutaBacanaLogo.png"
+import ImageEmmanuel from "../../assets/images/about/emmanuel.png"
+import ImageValentina from "../../assets/images/about/valentina.png"
+import ImageVanessa from "../../assets/images/about//vanessa.png"
+import ImageLina from "../../assets/images/about/lina.png"
+import ImageCristian from "../../assets/images/about/cristian.png"
 
 const About = () => {
   const [showMission, setShowMission] = useState(false);
@@ -53,7 +59,7 @@ const About = () => {
       <main className='aboutUsMainContainer'>
         <section className='logoBanner'>
           <figure className='logoContainer'>
-            <img src="src\assets\images\rutaBacanaLogo.png" alt="" />
+            <img src={LogoRutaBacana} alt="RutaBacana" />
           </figure>
           <figcaption className='figcapion'>
             <p className='figcaptionTitle'>Ruta Bacana</p>
@@ -91,27 +97,27 @@ const About = () => {
         <section className={`collaboratorContainer ${showCollaborators ? '' : 'hidden'}`}>
           <section className="collabs">
             <article className='collaboratorIconContainer'>
-              <img src="src\assets\images\about\emmanuel.png" alt="" />
+              <img src={ImageEmmanuel} alt="ImageEmmanuel" />
               <p>Emmanuel Usme</p>
             </article>
 
             <article className='collaboratorIconContainer'>
-              <img src="src\assets\images\about\vanessa.png" alt="" />
+              <img src={ImageVanessa} alt="ImageVanessa" />
               <p>Vanessa Sánchez</p>
             </article>
 
             <article className='collaboratorIconContainer'>
-              <img src="src\assets\images\about\valentina.png" alt="" />
+              <img src={ImageValentina} alt="ImageValentina" />
               <p>Valentina Flórez</p>
             </article>
 
             <article className='collaboratorIconContainer'>
-              <img src="src\assets\images\about\lina.png" alt="" />
+              <img src={ImageLina} alt="ImageLina" />
               <p>Lina Naranjo</p>
             </article>
 
             <article className='collaboratorIconContainer'>
-              <img src="src\assets\images\about\cristian.png" alt="" />
+              <img src={ImageCristian} alt="ImageCristian" />
               <p>Cristian Ojito</p>
             </article>
           </section>

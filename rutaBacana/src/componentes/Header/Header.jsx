@@ -5,6 +5,8 @@ import { setRequest } from "../../redux/userAuth/userAuthSlice";
 import { Link, useNavigate } from "react-router-dom";
 import userImage from "../../assets/images/User.png";
 import "./header.scss";
+import LogoRutaBacana from "../../assets/images/rutaBacanaLogo.png"
+
 
 function Header() {
   const dispatch = useDispatch();
@@ -19,14 +21,14 @@ function Header() {
   ];
   useEffect(() => {
     if (request == "logout") {
-      navigate('/login/');
+      navigate("/login/");
       dispatch(setRequest());
     }
   }, [request]);
   return (
     <header className="headerComponent">
       <div className="ImgLogo">
-        <img src="src\assets\images\rutaBacanaLogo.png" alt="" />
+        <img src={LogoRutaBacana} alt="RutaBacana" />
       </div>
       <div className="NavButton">
         <nav className="nav">

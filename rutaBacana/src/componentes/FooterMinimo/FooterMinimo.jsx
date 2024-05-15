@@ -1,5 +1,9 @@
 import React from 'react'
 import "./footerMinimo.scss"
+import Instagram from "../../assets/images/Instagram.png"
+import gmail from "../../assets/images/gmail.png"
+import Facebook from "../../assets/images/Facebook.png"
+import x from "../../assets/images/x.png"
 
 const FooterMinimo = () => {
   return (
@@ -7,10 +11,10 @@ const FooterMinimo = () => {
         
         <section className='minimalFooterCopyRight'>
 
-                <img src="src\assets\images\gmail.png" alt="" />
-                <img src="src\assets\images\Facebook.png" alt="" />
-                <img src="src\assets\images\Instagram.png" alt="" />
-                <img src="src\assets\images\x.png" alt="" />
+                <img src={gmail} alt="Gmail" />
+                <img src={Facebook} alt="Facebook" />
+                <img src={Instagram} alt="Instagram" />
+                <img src={x} alt="x" />
 
         </section>
     </footer>
