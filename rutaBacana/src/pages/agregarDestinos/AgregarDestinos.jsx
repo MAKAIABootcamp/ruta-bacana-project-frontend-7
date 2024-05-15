@@ -123,16 +123,16 @@ const AgregarDestinos = () => {
           <span>Descripción</span>
           <input id="descripcion" type="text" placeholder="" {...formik.getFieldProps("descripcion")}/>
         </label>
-        <label htmlFor="imagen">
+        <label htmlFor="imagen" className="imagenContainer">
           <span>Foto</span>
           <figure className="upload">
-            <img src={imageUpload} alt="upload" />
+            <img  src={imageUpload} alt="upload" />
             <figcaption>Cargar imagen</figcaption>
           </figure>
           <img className="image" src={image} alt="pet" />
           <input id="imagen" type="file" onChange={handleChangeFile} />
         </label>
-        <button type="submit">{idDestino ? "Editar" : "Guardar Destino"}</button>
+        <button type="submit">{idDestino ? "Guardar cambios" : "Guardar Destino"}</button>
       </form>
     </main>
   );

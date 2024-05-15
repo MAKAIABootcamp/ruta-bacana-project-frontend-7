@@ -1,47 +1,65 @@
+@import "../../assets/styles/variables.scss";
+
 .form {
     z-index: 2;
-    background-color: red;
-    // background-color: rgba(255, 255, 255, 0.476);
-    border-radius: 10px;
+    background-color: $color-light-blue;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 20px;
-    height: 90vh;
+    // height: 90vh;
+
     .back {
       position: absolute;
-      top: -15px;
-      left: 0;
-      width: 70px;
-      height: 70px;
+      color: $color-black;
+      top: 1rem;
+      left: 2rem;
+      width: 3rem;
       border-radius: 50%;
       border: none;
       cursor: pointer;
       &:hover {
         box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
           0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+          
       }
     }
     h1 {
       text-align: center;
     }
     form {
+      background-color: $color-white;
+      border-radius: $border-radius-18px;
       display: flex;
+      align-self: center;
       flex-direction: column;
-      gap: 8px;
-      margin-top: 20px;
+      gap: 1rem;
       margin-bottom: 10px;
-      // overflow-x: hidden; /* Ocultar scrollbar horizontal */
       overflow-y: auto;
       width: 95%;
       height: 85%;
-      padding: 10px;
+      padding: 0.5rem;
+
+      .imagenContainer{
+
+        .image{
+          width: 80%;
+          border-radius: $border-radius-18px;
+        }
+
+
+      }
+
       label {
         display: flex;
-        gap: 5px;
+        color: $color-black;
+        gap: 1rem;
         align-items: center;
-        background-color: transparent;
+        // background-color: transparent;
+        span{
+          width: 10%;
+        }
+        
         input,
         select {
           flex-grow: 1;
@@ -57,6 +75,7 @@
         input[type="file"] {
           display: none;
         }
+        
         .upload {
           padding: 8px;
           background-color: #1976d2;
@@ -78,10 +97,13 @@
         }
       }
       button[type="submit"] {
+        color: $color-black;
+        font-size: 1.3rem;
         padding: 5px;
         position: fixed;
         bottom: 5%;
-        left: 40%;
+        right: 3rem;
+        width: 7rem;
         cursor: pointer;
       }
     }
