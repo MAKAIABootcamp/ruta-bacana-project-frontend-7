@@ -164,6 +164,8 @@
         .collaboratorIconContainer {
           display: flex;
           flex-direction: column;
+          transition: transform 0.3s ease, background-color 0.3s ease;
+          
     
           p {
             color: $color-white;
@@ -172,6 +174,9 @@
             text-align: center;
             width: 70%;
           }
+        }
+        .collaboratorIconContainer:hover{
+          transform: scale(1.1);
         }
       }
     
