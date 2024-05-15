@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../../componentes/Header/Header';
 import FooterMinimo from '../../componentes/FooterMinimo/FooterMinimo';
 import './about.scss';
 
@@ -51,7 +50,6 @@ const About = () => {
 
   return (
     <>
-      <Header />
       <main className='aboutUsMainContainer'>
         <section className='logoBanner'>
           <figure className='logoContainer'>
