@@ -1,24 +1,15 @@
 .carousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    padding-bottom: 20px; /* Agrega espacio para evitar que los slides se peguen al borde inferior */
+  margin-top: 20px; 
+  margin-left: 40px;
   
-    &::-webkit-scrollbar {
-      display: none;
+
+  .carousel-img {
+    width: 400px;
+    height: 300px;
+    transition: transform 0.2s ease; 
+
+    &:hover {
+      transform: scale(1.05);
     }
   }
-  
-  .slide {
-    flex: 0 0 auto;
-    width: 100%;
-    scroll-snap-align: start;
-    margin-right: 20px; /* Agrega espacio entre los slides */
-  }
-  
-  .slide img {
-    width: 100%;
-    height: auto;
-  }
+}

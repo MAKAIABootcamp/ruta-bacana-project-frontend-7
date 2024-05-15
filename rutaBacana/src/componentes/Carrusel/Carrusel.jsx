@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { actionGetDestinos } from "../../redux/Destinos/destinosActions";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./carrusel.scss"; 
 
 const Carrusel = () => {
   const dispatch = useDispatch();
@@ -12,22 +16,30 @@ const Carrusel = () => {
     }
   }, [dispatch, destinos.length]);
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 1500
+  };
 
-  // Renderizar el carrusel con las imágenes obtenidas
   return (
     <div className="carousel">
-      <h2>Carousel</h2>
-      <figure className="carousel-inner">
-        {destinos.length
-          ? destinos.map((destinos) => (
-              <img
-                key={destinos.id}
-                src={destinos.imagen}
-                alt={destinos.nombre}
-              />
-            ))
-          : null}
-      </figure>
+      
+      <Slider {...settings}>
+        {destinos.map((destino) => (
+          <div key={destino.id}>
+            <img
+              src={destino.imagen}
+              alt={destino.nombre}
+              className="carousel-img" 
+            />
+          </div>
+        ))}
+      </Slider>
     </div>
   );
 };
