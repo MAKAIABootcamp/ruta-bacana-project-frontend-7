@@ -6,8 +6,8 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: $color-light-blue;
-
+  // background-color: $color-light-blue;
+  background: linear-gradient(135deg, rgba(255, 255, 0, 0.257), rgba(0, 0, 255, 0.257), rgba(255, 0, 0, 0.257));
 }
 
 .phoneLogin {
@@ -22,6 +22,7 @@
     padding: 20px;
     border: 1px solid $color-white;
     border-radius: $border-radius-18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.5);
     h1{
       color: $color-deep-blue;
     }
@@ -79,7 +80,7 @@
           outline: none;
           color: $color-deep-blue;
 
-          background-color: #9c9fa07e;
+          background-color: transparent;
         }
       }
       button[type="submit"] {
