@@ -1,4 +1,18 @@
+@import "../../assets/styles/variables.scss";
+
+
+.mainPhoneContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: $color-light-blue;
+
+}
+
 .phoneLogin {
+  background-color: $color-white;
+    width: 30rem;
     z-index: 2;
     align-self: center;
     display: flex;
@@ -6,13 +20,13 @@
     align-items: center;
     gap: 20px;
     padding: 20px;
-    border: 1px solid white;
-    border-radius: 5px;
+    border: 1px solid $color-white;
+    border-radius: $border-radius-18px;
     h1{
-      color: white;
+      color: $color-deep-blue;
     }
     &__image {
-      border: 1px solid white;
+      border: 1px solid $color-white;
       border-radius: 50%;
       width: 200px;
       height: 200px;
@@ -30,19 +44,29 @@
     form {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      
       gap: 8px;
       .error {
         border: 2px solid #e54c4c;
       }
       label {
         display: flex;
-        background-color: #f7f9fa;
+        height: 4rem;
+        background-color: $color-light-blue;
+        padding: 1rem;
+        border: 2px solid $color-deep-blue;
+
+        border-radius: $border-radius-18px;
+
+        
         &:focus-within {
-          border: 2px solid #f7f9fa;
+          border: 2px solid $color-minor-white;
+          
         }
   
         img {
-          margin: 4px;
+          margin-top: 0.3rem;
           width: 30px;
           height: 30px;
           filter: invert(60%) sepia(0%) saturate(1163%) hue-rotate(288deg)
@@ -53,31 +77,41 @@
           border: none;
           padding: 5px;
           outline: none;
+          color: $color-deep-blue;
+
           background-color: #9c9fa07e;
         }
       }
       button[type="submit"] {
         padding: 6px;
         cursor: pointer;
-        color: #3a6c88;
-        background-color: #f7f9fa;
-        border: 2px solid #f7f9fa;
+        color: $color-deep-blue;
+        background-color: $color-minor-white;
+        border: 2px solid $color-deep-blue;
         font-weight: 600;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+
         &:hover {
-          background-color: transparent;
-          color: #f7f9fa;
+          color: $color-deep-blue;
+          transform: scale(1.1);
+
         }
       }
       .goToRegister {
         padding: 6px;
+        color: $color-deep-blue;
         cursor: pointer;
         font-weight: 600;
-        border: 2px solid #f7f9fa;
+        border: 2px solid $color-deep-blue;
         background-color: transparent;
-        color: #f7f9fa;
+        color: $color-deep-blue;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+
+
         &:hover {
-          color: #3a6c88;
-          background-color: #f7f9fa;
+          background-color: $color-minor-white;
+          transform: scale(1.1);
+
         }
       }
     }
