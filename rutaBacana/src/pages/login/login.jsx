@@ -1,49 +1,154 @@
-import React from 'react';
-import './login.scss'
-import { Formik, Form, Field } from 'formik';
-import { useNavigate } from 'react-router-dom';
+import "./login.scss";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
+import ProvidersLogin from "../../componentes/ProvidersLogin/ProvidersLogin";
+import { loginProviders } from "../../data/loginProvider";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Swal from "sweetalert2";
+import { actionLoginWithEmailAndPassword } from "../../redux/userAuth/userAuthActions";
+import Cargando from "../../componentes/cargando/Cargando";
+import { logout } from "../../redux/userAuth/userAuthSlice";
+import { GoArrowLeft } from "react-icons/go";
+import FooterMinimo from "../../componentes/FooterMinimo/FooterMinimo";
 
 const Login = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { user, isAuth, isLoading, error } = useSelector(
+    (store) => store.userAuth
+  );
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    validationSchema: Yup.object({
+      email: Yup.string()
+        .email("Por ingrese un correo válido")
+        .required("Debe digitar su correo electrónico"),
+      password: Yup.string().required("Debe digitar una contraseña"),
+    }),
+    onSubmit: async (values) => {
+      dispatch(actionLoginWithEmailAndPassword(values));
+    },
+  });
 
-  const handleLogin = (values, { setSubmitting }) => {
-    // Aquí iría la lógica de autenticación, por ahora simplemente redireccionamos
-    navigate('/');
-  };
+  if (isLoading) return <Cargando />;
+
+  if (error) {
+    Swal.fire({
+      title: "Oops!",
+      text: "Ha ocurrido un error en el inicio de sesión, por favor verifica tus credenciales",
+      icon: "error",
+    }).then((result) => {
+      if (result.isConfirmed) dispatch(logout());
+    });
+  }
+
+  if (isAuth && user.name) {
+    Swal.fire({
+      title: `¡Hola ${user.name}!`,
+      text: "Has iniciado sesión exitosamente",
+      icon: "success",
+    }).then((result) => {
+      if (result.isConfirmed) navigate("/");
+    });
+  }
 
   return (
-    <div className='loginBody'>
-      <main className='loginMain'>
-        <section className='loginSectionContainer'>
-
-          <figure className='logoContainer'>
-            <img className='logoImage' src="src\assets\images\rutaBacanaLogo.png" alt="" />
-            <p className='loginTitle'>Login</p>
-          </figure>
-
-          <Formik
-            initialValues={{ email: '', password: '' }}
-            onSubmit={handleLogin}
-          >
-            <Form className='loginInputsContainer'>
-              <article className='inputContainer'>
-                <label htmlFor='email'>Correo Electrónico</label>
-                <Field type='text' name='email' />
+    <>
+      <div className="loginBody">
+        <main className="loginMain">
+          <section className="loginSectionContainer">
+            <figure className="logoContainer">
+              <img
+                className="logoImage"
+                src="src\assets\images\rutaBacanaLogo.png"
+                alt=""
+              />
+            </figure>
+            <form
+              className="loginInputsContainer"
+              onSubmit={formik.handleSubmit}
+            >
+              <article className="inputContainer">
+                <label
+                  htmlFor="email"
+                  className={
+                    formik.touched.email && formik.errors.email ? "error" : ""
+                  }
+                >
+                  Correo Electrónico
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  onChange={formik.handleChange}
+                  placeholder="ejemplo@email.com"
+                  id="email"
+                  {...formik.getFieldProps("email")}
+                />
               </article>
-              <article className='inputContainer'>
-                <label htmlFor='password'>Contraseña</label>
-                <Field type='password' name='password' />
+              {formik.touched.email && formik.errors.email ? (
+                <div className="errorText">{formik.errors.email}</div>
+              ) : null}
+              <article className="inputContainer">
+                <label
+                  htmlFor="password"
+                  className={
+                    formik.touched.password && formik.errors.password
+                      ? "error"
+                      : ""
+                  }
+                >
+                  Contraseña
+                </label>
+                <input
+                  type="password"
+                  placeholder="Contraseña"
+                  id="password"
+                  {...formik.getFieldProps("password")}
+                />
               </article>
-            </Form>
-          </Formik>
+              {formik.touched.password && formik.errors.password ? (
+                <div className="errorText">{formik.errors.password}</div>
+              ) : null}
+              <button className="loginButton" type="submit">
+                Ingresar
+              </button>
+              {loginProviders.map((item, index) => (
+                <ProvidersLogin
+                  key={index}
+                  name={item.name}
+                  image={item.image}
+                  colorButton={item.colorButton}
+                  provider={item.provider}
+                />
+              ))}
+            </form>
+            <article className="interactionsContianer">
+              <p
+                className="registerButton"
+                type="text"
+                onClick={() => navigate("/register")}
+              >
+                Si aún no estás registrado da click aquí
+              </p>
+            </article>
+          </section>
+          <div className="contenedorFlechaAtras">
+            <GoArrowLeft
+              className="flechaAtras"
+              onClick={() => navigate("/")}
+            />
+          </div>
+        </main>
+      </div>
 
-          <article className='interactionsContianer'>
-            <button type='submit' className='loginButton'>Ingresar</button>
-            <p className='registerButton'>Si aún no estás registrado da click aquí</p>
-          </article>
-        </section>
-      </main>
-    </div>
+      <FooterMinimo />
+    </>
   );
 };
 

@@ -4,7 +4,7 @@ import "./fotoRaquira.scss"
 
 function FotoRaquira() {
   return (
-    <div>
+    <div className='fotoRaquira'>
         <img src={imagenRaquira} alt="" />
     </div>
   )

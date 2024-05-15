@@ -19,6 +19,8 @@
     font-family: $fuente-michroma;
     color: #ffffff;
 
+    
+
 
     .loginMain{
         
@@ -27,7 +29,7 @@
             background-color: rgb(75, 75, 75, 65%);
             display: flex;
             flex-direction: column;
-            height: 80vh;
+            height: 100vh;
             border-radius: 18px;
 
 
@@ -58,14 +60,18 @@
                     gap: 0.8rem;
                     
                     input{
-                        border: none;
+                        border: 2px solid transparent;;
                         height: 2rem;
                         outline: none;
                         cursor: default;
                         background-color: rgba(255, 255, 255, 0.60);
-
+                        transition: background-color 0.3s ease; /* Agregamos transición para un cambio suave */
+                        padding: 0.5rem;
                     }
-                    
+                      input:hover {
+                        background-color: rgba(29, 10, 240, 0.271);
+                        border-color: rgb(55, 8, 247); /* Resaltamos el borde al pasar el mouse */
+                      }
                 }
             }
             .interactionsContianer{
@@ -98,5 +104,20 @@
             }
         }
     }
+
+    .contenedorFlechaAtras{
+        //width: 20%;
+        //height: 70px;
+
+        .flechaAtras {
+            display: flex;
+            position: absolute;
+            top: 93%;
+            width: 6%;
+            height: 70px;
+            left: 0;
+        }
+    }
 }
+
 

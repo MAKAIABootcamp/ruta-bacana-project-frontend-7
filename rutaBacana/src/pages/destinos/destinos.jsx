@@ -6,17 +6,19 @@ import FotoRaquira from "../../componentes/FotoRaquira/FotoRaquira";
 import Header from "../../componentes/Header/Header";
 import CalificacionUsuario from "../../componentes/CalificacionUsuario/CalificacionUsuario";
 import Footer from "../../componentes/Footer/Footer"
-// import "./comentarios.scss";
+import ListComentarios from "../../componentes/ListComentarios/ListComentarios";
 
 const destinos = () => {
   return (
     <div>
       <div className="fondo">
-        <Header />
-        <FotoRaquira />
+        <div className="bannerImageContainer">
+          <FotoRaquira />
+        </div>
         <Destinos />
         <CalificacionUsuario />
-        <Comentarios />
+        <ListComentarios/>
+        {/*<Comentarios />*/}
         <Footer />
       </div>
     </div>
