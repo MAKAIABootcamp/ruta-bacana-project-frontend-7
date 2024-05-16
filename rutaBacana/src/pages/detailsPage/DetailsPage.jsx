@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import Details from "../../componentes/Details/Details";
-import InfoInteres from "../../componentes/InfoInteres/InfoInteres";
+// import InfoInteres from "../../componentes/InfoInteres/InfoInteres";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { actionGetDestinos } from "../../redux/Destinos/destinosActions";
 import Footer from "../../componentes/Footer/Footer";
 import Header from "../../componentes/Header/Header";
+import Slider from "../../componentes/Slider/Slider"
 
 const DetailsPage = () => {
   const { id } = useParams();
@@ -24,7 +25,8 @@ const DetailsPage = () => {
       <div>
         <Header />
         <Details destinoSeleccionado={destinoSeleccionado} />
-        <InfoInteres />
+        {/* <InfoInteres /> */}
+        <Slider />
         <Footer />
       </div>
     </>
