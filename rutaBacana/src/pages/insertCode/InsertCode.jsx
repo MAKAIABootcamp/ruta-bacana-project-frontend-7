@@ -55,35 +55,39 @@ const InsertCode = () => {
   }
 
   return (
-    <main className="codeLogin">
-      <h1>Ingrese el código de verificación</h1>
-      <form onSubmit={formik.handleSubmit}>
-        <label
-          htmlFor="code"
-          className={formik.touched.code && formik.errors.code ? "error" : ""}
-        >
-          <input
-            type="text"
-            placeholder="Ingrese su código de verificación"
-            id="code"
-            {...formik.getFieldProps("code")}
-          />
-        </label>
-        {formik.touched.code && formik.errors.code ? (
-          <div className="errorText">{formik.errors.code}</div>
-        ) : null}
 
-        <button type="submit">Iniciar Sesión</button>
-        <button
-          className="goToRegister"
-          type="button"
-          //   onClick={() => navigate(-1)}
-          onClick={() => navigate("/phone")}
-        >
-          Ir a inicio de sesión con celular
-        </button>
-      </form>
-    </main>
+    <div className="codeLoginContainer">
+      <main className="codeLogin">
+        <h1>Ingrese el código de verificación</h1>
+        <form onSubmit={formik.handleSubmit}>
+          <label
+            htmlFor="code"
+            className={formik.touched.code && formik.errors.code ? "error" : ""}
+          >
+            <input
+              type="text"
+              placeholder="Ingrese su código de verificación"
+              id="code"
+              {...formik.getFieldProps("code")}
+            />
+          </label>
+          {formik.touched.code && formik.errors.code ? (
+            <div className="errorText">{formik.errors.code}</div>
+          ) : null}
+
+          <button type="submit">Iniciar Sesión</button>
+          <button
+            className="goToRegister"
+            type="button"
+            //   onClick={() => navigate(-1)}
+            onClick={() => navigate("/phone")}
+          >
+            Ir a inicio de sesión con celular
+          </button>
+        </form>
+      </main>
+    </div>
+
   );
 };
 

@@ -69,7 +69,8 @@ const PhoneLogin = () => {
   });
 
   return (
-    <main className="phoneLogin">
+    <div className="mainPhoneContainer">
+<main className="phoneLogin">
       <h1>Iniciar sesión con número celular</h1>
       <form onSubmit={formik.handleSubmit}>
         <label
@@ -99,6 +100,8 @@ const PhoneLogin = () => {
       </form>
       <div id="recaptcha-container"></div>
     </main>
+    </div>
+    
   );
 };
 
