@@ -47,7 +47,7 @@ const ListDestinos = () => {
       <FilterButtons setTipo={setTipo} />
       <section className="cards">
         {destinos.map((item) => (
-          <Link to={`/details/${item.id}`}>
+          <Link  key={item.id} to={`/details/${item.id}`}>
             <Card key={item.id} destino={item} />
           </Link>
         ))}

@@ -4,6 +4,7 @@ import "./footer.scss"
 const Footer = () => {
   return (
     <footer className='footerComponent'>
+        
         <section className='footer'>
             <section  className='leftColumn'>
                 <article className='socialContainer'>

@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import {actionGetDestinos} from "../../redux/Destinos/destinosActions";
 
 
+
 const details = () => {
   
   const { id } = useParams();

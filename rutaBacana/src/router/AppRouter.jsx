@@ -8,6 +8,7 @@ import About from "../pages/about/about";
 import Details from "../pages/details/details";
 import Destinos from "../pages/destinos/destinos";
 import AgregarDestinos from "../pages/agregarDestinos/AgregarDestinos";
+import Footer from "../componentes/Footer/Footer";
 
 
 const AppRouter = () => {
@@ -20,9 +21,10 @@ const AppRouter = () => {
           <Route path="register" element={<Register />} />
           <Route path="about" element={<About />} />
           <Route path="details/:id" element={<Details />} />
-          <Route path="destinos" element={<Destinos />} />
+          <Route path="destinos/:id" element={<Destinos />} />
           <Route path="agregarDestinos" element={<AgregarDestinos />} />
           <Route path="edit/:idDestino" element={<AgregarDestinos />} />
+          <Route path="footer" element={<Footer />} />
 
         </Route>
       </Routes>

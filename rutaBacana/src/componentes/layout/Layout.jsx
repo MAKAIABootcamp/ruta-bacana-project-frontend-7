@@ -4,11 +4,14 @@ import './layout.scss';
 import Header from '../Header/Header';
 
 
+
+
 const Layout = () => {
   return (
       <div>
         <Header />
         <Outlet/>
+
     </div>
   )
 }

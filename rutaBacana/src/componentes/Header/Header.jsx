@@ -6,9 +6,8 @@ import "./header.scss"
 function Header() {
   const items = [
     ['/','Home'],
-    ['destinos','Destinos'],
-    ['contactanos','Contactanos'],
-    ['sobreNosotros','Sobre nosotros'],
+    ['footer','Contactanos'],
+    ['about','Sobre nosotros'],
 
 ]
   return (
@@ -27,6 +26,7 @@ function Header() {
                 <li><img src="src\assets\images\User.png" alt="" /></li>
    
             </ul>
+            
         </nav>
     </div>
     </header>
