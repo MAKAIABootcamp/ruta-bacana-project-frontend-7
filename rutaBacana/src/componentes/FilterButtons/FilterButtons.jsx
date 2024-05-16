@@ -19,7 +19,7 @@ const FilterButtons = ({ setTipo }) => {
         </button>
       ))}
       {isAuth && (
-        <button onClick={() => handleClick("favoritos")}>Favoritos</button>
+        <button>Favoritos</button>
       )}
     </div>
   );
