@@ -56,7 +56,6 @@ export const actionRegisterWithEmailAndPassword = ({
         photo: photo,
         accessToken: user.accessToken,
         role: "user",
-        favoritos: [],
         //Resto de la información que se necesita guardar en la colección
       });
       dispatch(
@@ -159,31 +158,3 @@ export const actionLoginWithCode = (code) => {
     }
   };
 };
-
-
-
-// export const updateFavoritos = (userId, favoritos) => {
-//   return async (dispatch) => {
-//     try {
-//       if (!userId) {
-//         console.error("ID de usuario no definido.");
-//         return;
-//       }
-
-//       // Actualizar los favoritos en Firestore
-//       const userRef = doc(dataBase, "usuarios", userId);
-//       await updateDoc(userRef, { favoritos: favoritos });
-
-//       console.log("Favoritos actualizados en Firestore:", favoritos);
-//       // Si es necesario, puedes desencadenar una acción de éxito
-//       // dispatch(updateFavoritesSuccess(favoritos));
-//     } catch (error) {
-//       console.error("Error al actualizar favoritos en Firestore:", error);
-//       // Desencadenar una acción de error si es necesario
-//       // dispatch(updateFavoritesFail(error.message));
-//     }
-//   };
-// };
-
-
-
