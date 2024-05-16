@@ -1,0 +1,53 @@
+.sliderContenedor {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+
+  .contenedorCarrusel {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+
+    .titulo {
+      width: 50%; // O ajusta el ancho según necesites
+      text-align: center; // Centrar el texto
+      margin-bottom: 20px; // Ajustar el espacio debajo del contenedor del título
+    }
+
+    .slider {
+      width: 50%;
+      margin-right: 20px;
+
+      h2 {
+        font-size: 1.2rem;
+        margin-bottom: 5rem; // Ajustar el margen inferior para aumentar el espacio vertical entre el título y el contenido siguiente
+        display: inline-block; // Hacer que el título sea un bloque en línea
+      }
+
+      .carousel {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+
+        div {
+          margin-right: 20px;
+        }
+
+        img {
+          max-height: 300px;
+          width: auto;
+        }
+
+        p {
+          margin-top: 5px;
+          text-align: center;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
