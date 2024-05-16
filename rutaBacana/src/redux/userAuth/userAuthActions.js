@@ -56,6 +56,7 @@ export const actionRegisterWithEmailAndPassword = ({
         photo: photo,
         accessToken: user.accessToken,
         role: "user",
+        favoritos: [],
         //Resto de la información que se necesita guardar en la colección
       });
       dispatch(
