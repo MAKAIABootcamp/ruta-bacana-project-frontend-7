@@ -14,7 +14,7 @@ From the vibrant streets of colonial towns to the lush natural scenery, each cor
 
 ###
 
-<h2 align="left">Technologies Used in the development of the project</h2>
+<h2 align="left">Stack</h2>
 
 ###
 [![My Skills](https://skillicons.dev/icons?i=git,github,js,html,css,sass,react,vite,firebase)](https://skillicons.dev)
