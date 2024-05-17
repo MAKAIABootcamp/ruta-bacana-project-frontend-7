@@ -17,14 +17,14 @@ const Details = (props) => {
     <div>
         <div className='ContenedorUno'>
         <div className='TituloDetalle'>
-            <h1> {destinoSeleccionado[0].nombre} </h1>
+            <h1> {destinoSeleccionado[0]?.nombre} </h1>
         </div>
         <div className='ImagenPrin'>
-        <img src={destinoSeleccionado[0].imagen} alt="" />
+        <img src={destinoSeleccionado[0]?.imagen} alt="" />
         </div>
         <div className='TextoUno'>
             <h3>
-            {destinoSeleccionado[0].descripcion}
+            {destinoSeleccionado[0]?.descripcion}
             </h3>
         </div>
         <div className='ImagenSec'>

@@ -1,45 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import { getDocs, collection, query, where } from 'firebase/firestore';
-import { dataBase } from '../../firebase/firebaseconfig'; 
-import { useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { actionGetNegociosByDestinoId } from "../../redux/negocios/negociosActions";
 import "./slider.scss";
 
-const Slider = () => {
-  const [restaurantImages, setRestaurantImages] = useState([]);
-  const [hotelImages, setHotelImages] = useState([]);
-  const location = useLocation();
+const CATEGORIAS_NEGOCIOS = {
+  hotel: "Hotel",
+  restaurante: "Restaurante",
+};
+
+const Slider = ({ destinoId = null }) => {
+  const dispatch = useDispatch();
+  const { negocios } = useSelector((store) => store.negocios);
+  const [restaurant, setRestaurant] = useState([]);
+  const [hotel, setHotel] = useState([]);
+  // const location = useLocation();
 
   useEffect(() => {
-    const fetchImages = async () => {
-      try {
-        let restaurantQuery = query(collection(dataBase, 'negocios'), where('categoria', '==', 'Restaurante'));
-        let hotelQuery = query(collection(dataBase, 'negocios'), where('categoria', '==', 'Hotel'));
+    dispatch(actionGetNegociosByDestinoId(destinoId));
+  }, [dispatch, destinoId]);
 
-        const restaurantSnapshot = await getDocs(restaurantQuery);
-        const hotelSnapshot = await getDocs(hotelQuery);
-
-        const restaurantData = restaurantSnapshot.docs.map(doc => {
-          return {
-            url: doc.data().imagen,
-            nombre: doc.data().nombre
-          };
-        });
-        const hotelData = hotelSnapshot.docs.map(doc => {
-          return {
-            url: doc.data().imagen,
-            nombre: doc.data().nombre 
-          };
-        });
-
-        setRestaurantImages(restaurantData);
-        setHotelImages(hotelData);
-      } catch (error) {
-        console.error("Error", error);
-      }
-    };
-
-    fetchImages();
-  }, [location]);
+  useEffect(() => {
+    setRestaurant(() =>
+      negocios.filter(
+        (item) => item.categoria === CATEGORIAS_NEGOCIOS.restaurante
+      )
+    );
+    setHotel(() =>
+      negocios.filter((item) => item.categoria === CATEGORIAS_NEGOCIOS.hotel)
+    );
+  }, [negocios]);
 
   return (
     <div className="sliderContenedor">
@@ -49,10 +38,10 @@ const Slider = () => {
         </div>
         <div className="slider">
           <div className="carousel">
-            {restaurantImages.map((image, index) => (
+            {restaurant.map((item, index) => (
               <div key={index}>
-                <img src={image.url} alt={`Restaurante ${index}`} />
-                <p>{image.nombre}</p>
+                <img src={item.imagen} alt={item.nombre} />
+                <p>{item.nombre}</p>
               </div>
             ))}
           </div>
@@ -64,10 +53,10 @@ const Slider = () => {
         </div>
         <div className="slider">
           <div className="carousel">
-            {hotelImages.map((image, index) => (
+            {hotel.map((item, index) => (
               <div key={index}>
-                <img src={image.url} alt={`Hotel ${index}`} />
-                <p>{image.nombre}</p>
+                <img src={item.imagen} alt={item.nombre} />
+                <p>{item.nombre}</p>
               </div>
             ))}
           </div>
@@ -75,7 +64,5 @@ const Slider = () => {
       </div>
     </div>
   );
-}  
+};
 export default Slider;
-
-
