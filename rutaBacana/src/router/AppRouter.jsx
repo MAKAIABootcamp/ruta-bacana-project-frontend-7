@@ -22,8 +22,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { loginSuccess } from "../redux/userAuth/userAuthSlice";
 import { auth } from "../firebase/firebaseconfig";
 import PrivateRoutes from "./PrivateRoutes";
-import PublicRoutes from "./PublicRoutes";import Footer from "../componentes/Footer/Footer";
-
+import PublicRoutes from "./PublicRoutes";
 
 const AppRouter = () => {
   const { user } = useSelector((store) => store.userAuth);
@@ -61,6 +60,7 @@ const AppRouter = () => {
       }
     });
   }, [user, dispatch]);
+  
   return (
     <BrowserRouter>
       <Routes>
@@ -69,10 +69,23 @@ const AppRouter = () => {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="DetailsPage/:id" element={<DetailsPage />} />
-          <Route path="destinos/:id" element={<Destinos />} />
-          <Route path="agregarDestinos" element={<AgregarDestinos />} />
-          <Route path="edit/:idDestino" element={<AgregarDestinos />} />
-
+          <Route path="destinos" element={<Destinos />} />
+          <Route element={<PrivateRoutes />}>
+            {user?.email === "rutabacana@gmail.com" && (
+              <>
+                <Route path="agregarDestinos" element={<AgregarDestinos />} />
+                <Route path="edit/:idDestino" element={<AgregarDestinos />} />
+                {/* Agrega otras rutas privadas */}
+              </>
+            )}
+          </Route>
+        </Route>
+        <Route element={<PublicRoutes />}>
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="phone" element={<PhoneLogin />} />
+          <Route path="phone/insertCode/:phone" element={<InsertCode />} />
+          {/* Aquí van el resto de rutas públicas */}
         </Route>
       </Routes>
     </BrowserRouter>
