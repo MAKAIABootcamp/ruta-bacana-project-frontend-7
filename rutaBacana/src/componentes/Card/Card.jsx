@@ -62,7 +62,7 @@ const Card = ({ destino = {} }) => {
         </div>
         <SlActionRedo
           className="botonDetalle"
-          onClick={() => navigate(`/details/${destino.id}`)}
+          onClick={() => navigate(`/DetailsPage/${destino.id}`)}
         />
 
         <figcaption>{destino?.nombre}</figcaption>

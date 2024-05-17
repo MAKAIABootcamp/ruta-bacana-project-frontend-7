@@ -22,7 +22,7 @@ const Details = (props) => {
             <h1> {destinoSeleccionado[0]?.nombre} </h1>
         </div>
         <div className='ImagenPrin'>
-        <img src={destinoSeleccionado[0]?.imagen} alt="" />
+        <img src={destinoSeleccionado[0]?.imgDetalles} alt="" />
         </div>
       
         <div className='TextoUno'>

@@ -68,7 +68,7 @@ const AppRouter = () => {
           <Route path="/" element={<Home />} />
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="details/:id" element={<DetailsPage />} />
+          <Route path="DetailsPage/:id" element={<DetailsPage />} />
           <Route path="destinos/:id" element={<Destinos />} />
           <Route path="agregarDestinos" element={<AgregarDestinos />} />
           <Route path="edit/:idDestino" element={<AgregarDestinos />} />

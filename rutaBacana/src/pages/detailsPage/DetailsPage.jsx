@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { actionGetDestinos } from "../../redux/Destinos/destinosActions";
 import Footer from "../../componentes/Footer/Footer";
 import Slider from "../../componentes/Slider/Slider";
+import "./details.scss"
 
 const DetailsPage = () => {
   const { id } = useParams();
@@ -21,7 +22,7 @@ const DetailsPage = () => {
 
   return (
     <>
-      <div>
+      <div className="fondoDegradado">
         <Details destinoSeleccionado={destinoSeleccionado} />
         {/*<InfoInteres />*/}
         <Slider destinoId={id} />
