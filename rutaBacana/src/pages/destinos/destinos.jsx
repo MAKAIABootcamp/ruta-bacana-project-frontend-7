@@ -11,6 +11,7 @@ import Footer from "../../componentes/Footer/Footer"
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import {actionGetDestinos} from "../../redux/Destinos/destinosActions";
+import ListComentarios from "../../componentes/ListComentarios/ListComentarios";
 
 const destinos = () => {
   const { id } = useParams();
@@ -31,9 +32,13 @@ const destinos = () => {
         {/* <Header /> */}
         {/* <ImgRelacionados /> */}
         <img src={destinoSeleccionado[0].imagen} alt="imagen" />
+        <div className="bannerImageContainer">
+          <FotoRaquira />
+        </div>
         <Destinos />
         <CalificacionUsuario />
-        <Comentarios />
+        <ListComentarios/>
+        {/*<Comentarios />*/}
         <Footer />
       </div>
     </div>

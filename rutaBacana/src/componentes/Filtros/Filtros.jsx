@@ -40,7 +40,7 @@ function Filtros() {
     setNoResults(false);
   };
 
-  const searchDestinos = async (term) => {
+  const searchDestinos = async () => {
     const destinosRef = collection(dataBase, "destinos");
     const querySnapshot = await getDocs(destinosRef);
 

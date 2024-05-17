@@ -8,7 +8,6 @@ import Cargando from "../cargando/Cargando";
 import Card from "../Card/Card";
 import "./listDestinos.scss";
 import FilterButtons from "../FilterButtons/FilterButtons";
-import { Link } from "react-router-dom";
 
 const ListDestinos = () => {
   const dispatch = useDispatch();
@@ -16,23 +15,27 @@ const ListDestinos = () => {
     (store) => store.destinos
   );
 
+
   const [tipo, setTipo] = useState("all");
+
+    const handleFilter = (categoria = "all") => {
+      if (categoria === "all") {
+        dispatch(actionGetDestinos());
+      } else {
+        dispatch(actionFilterDestinos("categoria", categoria));
+      }
+    };
+
+
 
   const fetchDestinos = useCallback(() => {
     handleFilter(tipo);
   }, [tipo]);
 
-  const handleFilter = (categoria = "all") => {
-    if (categoria === "all") {
-      dispatch(actionGetDestinos());
-    } else {
-      dispatch(actionFilterDestinos("categoria", categoria));
-    }
-  };
 
   useEffect(() => {
     dispatch(actionGetDestinos());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     fetchDestinos();
@@ -43,17 +46,17 @@ const ListDestinos = () => {
   }
 
   return (
-    <>
+      <>
       <FilterButtons setTipo={setTipo} />
       <section className="cards">
         {destinos.map((item) => (
-          <Link  key={item.id} to={`/details/${item.id}`}>
+          // <Link  key={item.id} to={`/details/${item.id}`}>
             <Card key={item.id} destino={item} />
-          </Link>
-        ))}
+        ))};
       </section>
     </>
   );
-};
+}
+
 
 export default ListDestinos;

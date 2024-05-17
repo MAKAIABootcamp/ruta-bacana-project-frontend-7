@@ -10,9 +10,10 @@ import { Link } from 'react-router-dom'
 
 
 
-export default function Details(props) {
+const Details = (props) => {
 
     const destinoSeleccionado = props.destinoSeleccionado;
+    console.log(destinoSeleccionado)
     
   return (
     <div>
@@ -42,3 +43,4 @@ export default function Details(props) {
 
   )
 }
+export default Details
