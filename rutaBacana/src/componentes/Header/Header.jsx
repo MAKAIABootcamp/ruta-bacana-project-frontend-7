@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { actionLogout } from "../../redux/userAuth/userAuthActions";
-import { setRequest } from "../../redux/userAuth/userAuthSlice";
+import { actionLogout } from "../../redux/UserAuth/userAuthActions";
+import { setRequest } from "../../redux/UserAuth/userAuthSlice";
 import { Link, useNavigate } from "react-router-dom";
 import userImage from "../../assets/images/User.png";
 import "./header.scss";

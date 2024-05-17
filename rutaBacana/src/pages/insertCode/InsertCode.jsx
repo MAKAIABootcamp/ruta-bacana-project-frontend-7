@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import * as Yup from "yup";
 import "./insertCode.scss";
-import { actionLoginWithCode } from "../../redux/userAuth/userAuthActions";
+import { actionLoginWithCode } from "../../redux/UserAuth/userAuthActions";
 import Cargando from "../../componentes/cargando/Cargando";
 import Swal from "sweetalert2";
-import { logout } from "../../redux/userAuth/userAuthSlice";
+import { logout } from "../../redux/UserAuth/userAuthSlice";
 
 const InsertCode = () => {
   const navigate = useNavigate();
