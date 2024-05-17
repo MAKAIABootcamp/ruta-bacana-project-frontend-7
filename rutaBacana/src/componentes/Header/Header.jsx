@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { actionLogout } from "../../redux/userAuth/userAuthActions";
-import { setRequest } from "../../redux/userAuth/userAuthSlice";
+import { actionLogout } from "../../redux/UserAuth/userAuthActions";
+import { setRequest } from "../../redux/UserAuth/userAuthSlice";
 import { Link, useNavigate } from "react-router-dom";
 import userImage from "../../assets/images/User.png";
 import "./header.scss";
@@ -14,10 +14,9 @@ function Header() {
   const { user, isAuth, request } = useSelector((store) => store.userAuth);
 
   const items = [
-    ["/", "Home"],
-    ["/destinos", "Destinos"],
-    ["/contactanos", "Contactanos"],
-    ["/sobreNosotros", "Sobre nosotros"],
+    ['/','Home'],
+    ['#Footer','Contactanos'],
+    ['about','Sobre nosotros'],
   ];
   useEffect(() => {
     if (request == "logout") {
@@ -30,13 +29,14 @@ function Header() {
       <div className="ImgLogo">
         <img src={LogoRutaBacana} alt="RutaBacana" />
       </div>
+            
       <div className="NavButton">
         <nav className="nav">
           <ul className="ul">
             {items.map((item, index) => {
               return (
                 <li key={index}>
-                  <Link to={item[0]}>{item[1]}</Link>
+                  <li key={index} ><Link to={item[0]}>{item[1]}</Link></li>
                 </li>
               );
             })}

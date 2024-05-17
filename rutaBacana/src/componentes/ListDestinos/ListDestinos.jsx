@@ -38,6 +38,7 @@ const ListDestinos = () => {
     }
   };
 
+
   const fetchDestinos = useCallback(() => {
     handleFilter(tipo);
   }, [tipo]);
@@ -69,7 +70,7 @@ const ListDestinos = () => {
   }
 
   return (
-    <>
+      <>
       <FilterButtons setTipo={setTipo} />
       <section className="cards">
         {destinosCard.map((item) => (
@@ -78,7 +79,8 @@ const ListDestinos = () => {
       </section>
     </>
   );
-};
+}
+
 
 export default ListDestinos;
 

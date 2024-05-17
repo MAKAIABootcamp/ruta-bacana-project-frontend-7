@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { actionRegisterWithEmailAndPassword } from "../../redux/userAuth/userAuthActions";
+import { actionRegisterWithEmailAndPassword } from "../../redux/UserAuth/userAuthActions";
 import { useDispatch } from "react-redux";
 import "./register.scss";
 

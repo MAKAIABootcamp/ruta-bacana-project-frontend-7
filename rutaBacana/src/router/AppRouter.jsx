@@ -19,7 +19,7 @@ import PhoneLogin from "../pages/phoneLogin/PhoneLogin";
 import InsertCode from "../pages/insertCode/InsertCode";
 import { useDispatch, useSelector } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
-import { loginSuccess } from "../redux/userAuth/userAuthSlice";
+import { loginSuccess } from "../redux/UserAuth/userAuthSlice";
 import { auth } from "../firebase/firebaseconfig";
 import PrivateRoutes from "./PrivateRoutes";
 import PublicRoutes from "./PublicRoutes";
@@ -69,7 +69,7 @@ const AppRouter = () => {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="DetailsPage/:id" element={<DetailsPage />} />
-          <Route path="destinos" element={<Destinos />} />
+          <Route path="destinos/:id" element={<Destinos />} />
           <Route element={<PrivateRoutes />}>
             {user?.email === "rutabacana@gmail.com" && (
               <>
