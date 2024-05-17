@@ -60,6 +60,7 @@ const AppRouter = () => {
       }
     });
   }, [user, dispatch]);
+  
   return (
     <BrowserRouter>
       <Routes>
