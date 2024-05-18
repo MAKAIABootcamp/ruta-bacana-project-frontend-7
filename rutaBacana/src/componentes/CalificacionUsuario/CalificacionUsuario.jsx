@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "./calificacionUsuario.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { FaStar } from "react-icons/fa";
 import { actionAddComentarios } from "../../redux/comentarios/comentariosActions";
 
 const CalificacionUsuario = () => {
   const { isAuth, user } = useSelector((store) => store.userAuth);
-  const { idDestino } = useParams();
+  //const { idDestino } = useParams();
   const [inputValue, setInputValue] = useState("");
   const [isClicked, setIsClicked] = useState(false);
   const [rating, setRating] = useState(0);
@@ -74,7 +74,7 @@ const CalificacionUsuario = () => {
   return (
     <>
       <div className="containerButtonCalificacion">
-        <button>Califica estos lugares y cuentanos tu experiencia</button>
+        <button>Cuéntanos que lugares has visitado y que calificación le darias</button>
       </div>
       <div className="estrellasCalificacion">
         {Array(5)

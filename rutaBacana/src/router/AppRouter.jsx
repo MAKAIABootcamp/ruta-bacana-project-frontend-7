@@ -60,6 +60,7 @@ const AppRouter = () => {
       }
     });
   }, [user, dispatch]);
+  
   return (
     <BrowserRouter>
       <Routes>
@@ -68,7 +69,7 @@ const AppRouter = () => {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="DetailsPage/:id" element={<DetailsPage />} />
-          <Route path="destinos" element={<Destinos />} />
+          <Route path="destinos/:id" element={<Destinos />} />
           <Route element={<PrivateRoutes />}>
             {user?.email === "rutabacana@gmail.com" && (
               <>

@@ -10,6 +10,7 @@ import LogoRutaBacana from "../../assets/images/rutaBacanaLogo.png"
 const Footer = () => {
   return (
     <footer className='footerComponent'>
+        
         <section className='footer'>
             <section  className='leftColumn'>
                 <article className='socialContainer'>

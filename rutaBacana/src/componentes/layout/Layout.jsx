@@ -5,6 +5,8 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import FooterMinimo from "../FooterMinimo/FooterMinimo";
 
+
+
 const Layout = () => {
   return (
     <div>
@@ -44,6 +46,9 @@ const Layout = () => {
 
   return (
       <div>
+        <Header />
+        <Outlet/>
+
         {
           isAuthenticated ? <>
           <Header />

@@ -39,22 +39,24 @@ const InfoInteres = () => {
     <div className="containerButton">
         <button>Información de interés</button>
       </div>
-      <div className="containerComercio">
-        <h3>Gastronomía</h3>
-        <div>
-          <img className="imagenComercio" src={imageDulceTentacion} alt="Dulce tradición" />
-          <p>Dulce Tradición</p>
-        </div>
-        <div>
-          <img className="imagenComercio" src={imageLaGuasca} alt="La Guasca" />
-          <p>La Guasca</p>
-        </div>
-        <div>
-          <img className="imagenComercio" src={imageLosTiest} alt="Los Tiest" />
-          <p>Los Tiest</p>
-        </div>
-        <div>
-          <img className="imagenComercio" src={imageFlecha} alt="Fecha" />
+      <div className="contComercio">
+        <div className="containerComercio">
+          <h3>Gastronomía</h3>
+          <div>
+            <img className="imagenComercio" src={imageDulceTentacion} alt="Dulce tradición" />
+            <p>Dulce Tradición</p>
+          </div>
+          <div>
+            <img className="imagenComercio" src={imageLaGuasca} alt="La Guasca" />
+            <p>La Guasca</p>
+          </div>
+          <div>
+            <img className="imagenComercio" src={imageLosTiest} alt="Los Tiest" />
+            <p>Los Tiest</p>
+          </div>
+          <div>
+            <img className="imagenComercio" src={imageFlecha} alt="Fecha" />
+          </div>
         </div>
       </div>
 

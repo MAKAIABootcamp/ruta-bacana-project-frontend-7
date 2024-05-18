@@ -14,10 +14,9 @@ function Header() {
   const { user, isAuth, request } = useSelector((store) => store.userAuth);
 
   const items = [
-    ["/", "Home"],
-    ["/destinos", "Destinos"],
-    ["/contactanos", "Contactanos"],
-    ["/sobreNosotros", "Sobre nosotros"],
+    ['/','Home'],
+    ['#Footer','Contactanos'],
+    ['about','Sobre nosotros'],
   ];
   useEffect(() => {
     if (request == "logout") {
@@ -30,13 +29,14 @@ function Header() {
       <div className="ImgLogo">
         <img src={LogoRutaBacana} alt="RutaBacana" />
       </div>
+            
       <div className="NavButton">
         <nav className="nav">
           <ul className="ul">
             {items.map((item, index) => {
               return (
                 <li key={index}>
-                  <Link to={item[0]}>{item[1]}</Link>
+                  <li key={index} ><Link to={item[0]}>{item[1]}</Link></li>
                 </li>
               );
             })}
