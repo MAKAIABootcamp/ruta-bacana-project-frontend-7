@@ -19,7 +19,7 @@ import PhoneLogin from "../pages/phoneLogin/PhoneLogin";
 import InsertCode from "../pages/insertCode/InsertCode";
 import { useDispatch, useSelector } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
-import { loginSuccess } from "../redux/UserAuth/userAuthSlice";
+import { loginSuccess } from "../redux/userAuth/userAuthSlice";
 import { auth } from "../firebase/firebaseconfig";
 import PrivateRoutes from "./PrivateRoutes";
 import PublicRoutes from "./PublicRoutes";

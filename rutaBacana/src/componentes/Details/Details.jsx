@@ -34,7 +34,7 @@ const Details = (props) => {
             <img src={moreImg} alt="" />
         </div>
 
-        <Link  to={`/destinos/${destinoSeleccionado[0].id}`}>
+        <Link  to={`/destinos/${destinoSeleccionado[0]?.id}`}>
          <button>Destinos relacionados</button>
         </Link>
 

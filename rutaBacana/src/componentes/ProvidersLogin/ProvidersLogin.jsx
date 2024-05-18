@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import "./providersLogin.scss";
-import { actionLoginWithOtherProviders } from "../../redux/UserAuth/userAuthActions";
+import { actionLoginWithOtherProviders } from "../../redux/userAuth/userAuthActions";
 
 const ProvidersLogin = ({
   name = "",

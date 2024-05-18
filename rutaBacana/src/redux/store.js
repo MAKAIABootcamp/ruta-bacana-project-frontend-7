@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import favoritosReducer from "./favoritos/favoritosSlice";
-import userAuthReducer from "./UserAuth/userAuthSlice"
+import userAuthReducer from ".//userAuth/userAuthSlice"
 import destinosReducer from "./Destinos/destinosSlice";
 import comentariosReducer from "./comentarios/comentariosSlice";
 import negociosReducer from './negocios/negociosSlice'

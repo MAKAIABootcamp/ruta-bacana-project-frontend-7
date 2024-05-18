@@ -13,20 +13,14 @@ import FilterButtons from "../FilterButtons/FilterButtons";
 const ListDestinos = () => {
   const dispatch = useDispatch();
   const [destinosCard, setDestinosCard] = useState([]);
-
-  const { destinos, isLoadingDestinos } = useSelector(
-    (store) => store.destinos
-  );
-
+  const { destinos, isLoadingDestinos } = useSelector((store) => store.destinos);
   const { favoritos } = useSelector((store) => store.favoritos);
-
   const { user } = useSelector((store) => store.userAuth);
-
   const [tipo, setTipo] = useState("all");
 
-  const handleFilter = (categoria = "all") => {
+  const handleFilter = useCallback((categoria = "all") => {
     if (categoria === "favoritos") {
-      if (favoritos.length === 0) {
+      if (user) {
         dispatch(actionGetFavoritesByUser(user.id));
       }
       return;
@@ -36,26 +30,21 @@ const ListDestinos = () => {
     } else {
       dispatch(actionFilterDestinos("categoria", categoria));
     }
-  };
-
-
-  const fetchDestinos = useCallback(() => {
-    handleFilter(tipo);
-  }, [tipo]);
+  }, [dispatch, user]);
 
   useEffect(() => {
     if (user) {
-      dispatch(actionGetFavoritesByUser(user?.id));
+      dispatch(actionGetFavoritesByUser(user.id));
     }
-  }, [user]);
+  }, [user, dispatch]);
 
   useEffect(() => {
     dispatch(actionGetDestinos());
   }, [dispatch]);
 
   useEffect(() => {
-    fetchDestinos();
-  }, [fetchDestinos]);
+    handleFilter(tipo);
+  }, [handleFilter, tipo]);
 
   useEffect(() => {
     if (tipo === "favoritos") {
@@ -70,7 +59,7 @@ const ListDestinos = () => {
   }
 
   return (
-      <>
+    <>
       <FilterButtons setTipo={setTipo} />
       <section className="cards">
         {destinosCard.map((item) => (
@@ -81,6 +70,7 @@ const ListDestinos = () => {
   );
 }
 
-
 export default ListDestinos;
+
+
 
