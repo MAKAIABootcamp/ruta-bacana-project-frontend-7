@@ -10,6 +10,8 @@
     background-color: $color-light-blue;
 }
 .destinosContainer{
+  display: flex;
+  flex-direction: column;
   padding-left: 5%;
   padding-right: 5%;
 }
