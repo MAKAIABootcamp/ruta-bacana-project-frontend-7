@@ -8,7 +8,7 @@ import Carrusel from "../../componentes/Carrusel/Carrusel";
 const home = () => { 
 
   return (
-    <div>
+    <div className="swrapper">
       <div className="containerHome">
         <Carrusel />
         <div className="destinosContainer">
