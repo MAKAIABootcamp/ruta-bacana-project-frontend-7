@@ -7,10 +7,9 @@
   }
 .swrapper{
   overflow: hidden;
+  padding-top: 0.5rem;
+  background-color: $color-light-blue;
 
-}
-.containerHome{
-    background-color: $color-light-blue;
 }
 .destinosContainer{
   display: flex;
