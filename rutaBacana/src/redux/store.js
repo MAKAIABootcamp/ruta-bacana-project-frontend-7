@@ -4,7 +4,7 @@ import userAuthReducer from ".//userAuth/userAuthSlice"
 import destinosReducer from "./Destinos/destinosSlice";
 import comentariosReducer from "./comentarios/comentariosSlice";
 import negociosReducer from './negocios/negociosSlice'
-
+import scrollReducer from './scroll/scrollSlice';
 
 const store = configureStore({
   reducer: {
@@ -12,7 +12,8 @@ const store = configureStore({
     destinos: destinosReducer,
     comentarios: comentariosReducer,
     favoritos: favoritosReducer,
-    negocios: negociosReducer
+    negocios: negociosReducer,
+    scroll: scrollReducer
   },
   devTools: process.env.NODE_ENV !== "production",
 });

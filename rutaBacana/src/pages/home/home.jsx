@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Filtros from "../../componentes/Filtros/Filtros";
 import "./home.scss";
 import Footer from "../../componentes/Footer/Footer"
