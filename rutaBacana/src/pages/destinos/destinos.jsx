@@ -31,7 +31,7 @@ const destinos = () => {
       <div className="fondo">
         {/* <Header /> */}
         {/* <ImgRelacionados /> */}
-        <img src={destinoSeleccionado[0].imagen} alt="imagen" />
+        <img src={destinoSeleccionado[0]?.imagen} alt="imagen" />
         <div className="bannerImageContainer">
           <FotoRaquira />
         </div>
