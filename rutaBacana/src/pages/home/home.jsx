@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import Filtros from "../../componentes/Filtros/Filtros";
 import "./home.scss";
 import Footer from "../../componentes/Footer/Footer";
+import FooterMinimo from "../../componentes/FooterMinimo/FooterMinimo";
 import ListDestinos from "../../componentes/ListDestinos/ListDestinos";
 import Carrusel from "../../componentes/Carrusel/Carrusel";
 import { HiViewGridAdd } from "react-icons/hi";
@@ -30,6 +31,7 @@ const home = () => {
           <ListDestinos />
         </div>
         <Footer />
+        <FooterMinimo />
       </div>
     </div>
   );
