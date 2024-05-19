@@ -30,9 +30,6 @@ const Details = (props) => {
             {destinoSeleccionado[0]?.descripcion}
             </h3>
         </div>
-        <div className='ImagenSec'>
-            <img src={moreImg} alt="" />
-        </div>
 
         <Link  to={`/destinos/${destinoSeleccionado[0]?.id}`}>
          <button>Destinos relacionados</button>

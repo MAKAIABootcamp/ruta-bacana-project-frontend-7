@@ -42,6 +42,7 @@ function Header() {
             {items.map((item, index) => (
               <li key={index}>
                 <Link
+                  className="texto"
                   to={item[0]}
                   onClick={item[0] === '#Footer' ? handleContactClick : null}
                 >
@@ -52,6 +53,7 @@ function Header() {
             <li>
               <div className="dropdown">
                 <img
+                className="userLogo"
                   src={user?.photo || userImage}
                   alt={user?.name || "avatar"}
                 />
