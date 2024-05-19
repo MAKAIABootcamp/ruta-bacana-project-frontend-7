@@ -5,11 +5,15 @@
     padding: 0;
     box-sizing: border-box;
   }
+.swrapper{
+  overflow: hidden;
+  padding-top: 0.5rem;
+  background-color: $color-light-blue;
 
-.containerHome{
-    background-color: $color-light-blue;
 }
 .destinosContainer{
+  display: flex;
+  flex-direction: column;
   padding-left: 5%;
   padding-right: 5%;
 }

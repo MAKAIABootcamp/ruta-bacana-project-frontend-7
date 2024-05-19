@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Filtros from "../../componentes/Filtros/Filtros";
 import "./home.scss";
 import Footer from "../../componentes/Footer/Footer";
@@ -13,7 +13,7 @@ const home = () => {
   const { user } = useSelector((store) => store.userAuth);
   const isAdminEmail = user && user.email === "rutabacana@gmail.com";
   return (
-    <div>
+    <div className="swrapper">
       <div className="containerHome">
         <Carrusel />
         <div className="agregarDestino">
