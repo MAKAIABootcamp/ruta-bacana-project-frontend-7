@@ -3,22 +3,26 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { actionRegisterWithEmailAndPassword } from "../../redux/userAuth/userAuthActions";
 import { useDispatch } from "react-redux";
+import Header from "../../componentes/Header/Header"
 import "./register.scss";
 
 import { useNavigate } from "react-router-dom";
+import FooterMinimo from "../../componentes/FooterMinimo/FooterMinimo";
 
 const Register = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   return (
     <div className="container">
+    <Header />
+
       {" "}
       {/* Contenedor con imagen de fondo */}
-      <h1>Ruta Bacana</h1>
+      <h1 className="rutaBacanaTitle">Ruta Bacana</h1>
       <div className="form-container">
         {" "}
         {/* Contenedor del formulario */}
-        <h1>Registro</h1>
+        <h1 className="registroTitle">Registro</h1>
         <Formik
           initialValues={{ name: "", email: "", password: "", ciudad: "" }}
           validationSchema={Yup.object().shape({
@@ -74,8 +78,12 @@ const Register = () => {
             </Form>
           )}
         </Formik>
+
       </div>
+      <FooterMinimo/>
+
     </div>
+
   );
 };
 
