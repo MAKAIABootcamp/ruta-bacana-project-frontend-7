@@ -5,49 +5,45 @@
 
   .contenedorCarrusel {
     display: flex;
-    justify-content: flex-end;
     margin-bottom: 2rem;
+    align-items: center;
 
     .titulo {
-      width: 50%; // O ajusta el ancho según necesites
-      text-align: center; // Centrar el texto
-      margin-bottom: 20px; // Ajustar el espacio debajo del contenedor del título
+      width: 50%;
+      text-align: center;
+      margin-bottom: 20px;
+      h2 {
+        font-size: 1.2rem;
+        display: inline-block; 
+      }
     }
 
     .slider {
-      width: 50%;
-      margin-right: 20px;
+      width: 60%;
+      margin-right: 5%;
 
-      h2 {
-        font-size: 1.2rem;
-        margin-bottom: 5rem; // Ajustar el margen inferior para aumentar el espacio vertical entre el título y el contenido siguiente
-        display: inline-block; // Hacer que el título sea un bloque en línea
-      }
-
-      .carousel {
+      .contenedorDelSliderA {
         display: flex;
-        flex-direction: row;
-        overflow-x: auto;
+        gap: 2rem;
+        width: 100%;
 
-        div {
-          margin-right: 20px;
-        }
+        .divContenedorDeImagen {
+          height: 20rem;
+          display: flex;
+          margin: 0 17rem;
+          
+          .imagenCarrusel {
+            width: 90%;
+            height: 15rem;
+            object-fit: cover;
+          }
 
-        img {
-          max-height: 300px;
-          width: auto;
-        }
-
-        p {
-          margin-top: 5px;
-          text-align: center;
-          margin-bottom: 10px;
+          p {
+            margin-top: 10px;
+            text-align: center;
+          }
         }
       }
     }
   }
 }
-
-
-
-
