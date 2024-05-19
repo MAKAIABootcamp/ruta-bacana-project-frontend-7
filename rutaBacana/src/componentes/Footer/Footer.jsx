@@ -26,20 +26,28 @@ const Footer = React.forwardRef((props, ref) => {
       <section className='footer'>
         <section className='leftColumn'>
           <article className='socialContainer'>
-            <img className='socialIcon' src={Instagram} alt="Instagram" />
-            <p className='socialName'>RutaBacana12</p>
+          <a href="https://www.instagram.com/ruta.bacana?igsh=MWhlaXY1Ynl5bDNpYw==" target="_blank" rel="noopener noreferrer">
+              <img className='socialIcon' src={Instagram} alt="Instagram" />
+            </a>
+            <p className='socialName'>@ruta.bacana</p>
           </article>
           <article className='socialContainer'>
-            <img className='socialIcon' src={gmail} alt="Gmail" />
+          <a href="https://accounts.google.com/ServiceLogin" target="_blank" rel="noopener noreferrer">
+              <img className='socialIcon' src={gmail} alt="Gmail" />
+            </a>
             <p className='socialName'>rutabacana@gmail.com</p>
           </article>
           <article className='socialContainer'>
-            <img className='socialIcon' src={Facebook} alt="Facebook" />
+          <a href="https://www.facebook.com/share/CFcmWNXZ1z9jyp8p/?mibextid=qi2Omg" target="_blank" rel="noopener noreferrer">
+              <img className='socialIcon' src={Facebook} alt="Facebook" />
+            </a>
             <p className='socialName'>Ruta Bacana</p>
           </article>
           <article className='socialContainer'>
-            <img className='socialIcon' src={x} alt="X" />
-            <p className='socialName'>@RutaBacana12</p>
+          <a href="https://twitter.com/BacanaRuta" target="_blank" rel="noopener noreferrer">
+              <img className='socialIcon' src={x} alt="X" />
+            </a>
+            <p className='socialName'>@BacanaRuta</p>
           </article>
         </section>
         <section className='rightColumn'>

@@ -32,9 +32,9 @@ const destinos = () => {
         {/* <Header /> */}
         {/* <ImgRelacionados /> */}
         <img src={destinoSeleccionado[0]?.imagen} alt="imagen" />
-        <div className="bannerImageContainer">
+        {/* <div className="bannerImageContainer">
           <FotoRaquira />
-        </div>
+        </div> */}
         <Destinos />
         <CalificacionUsuario />
         <ListComentarios/>
