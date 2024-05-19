@@ -18,7 +18,7 @@ const DetailsPage = () => {
     dispatch(actionGetDestinos());
   }, [dispatch]);
 
-  const destinoSeleccionado = destinos.find((destino) => destino.id === id);
+  const destinoSeleccionado = destinos.filter((destino) => destino.id === id);
 
   return (
     <div className="fondoDegradado">
