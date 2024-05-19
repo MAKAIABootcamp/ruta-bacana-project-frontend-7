@@ -24,17 +24,21 @@ const MapComponent = ({ id }) => {
   }
 
   return (
-    <div className="map-container">
-      <iframe
-        title="map"
-        width="600"
-        height="450"
-        style={{ border: 0 }}
-        src={mapSrc}
-        allowFullScreen=""
-        loading="lazy"
-      ></iframe>
+    <div className='generalContainer'>
+      <p className='ubicationTitle'>Ubicación del destino</p>
+      <div className="map-container">
+        <iframe
+          title="map"
+          width="600"
+          height="450"
+          style={{ border: 0 }}
+          src={mapSrc}
+          allowFullScreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
     </div>
+
   );
 };
 
