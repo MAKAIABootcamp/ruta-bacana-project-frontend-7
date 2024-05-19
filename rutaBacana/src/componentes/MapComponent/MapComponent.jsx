@@ -13,7 +13,7 @@ const MapComponent = ({ id }) => {
     }
   }, [dispatch, id]);
 
-  const mapSrc = `https://www.google.com/maps/embed/v1/view?key=YOUR_GOOGLE_MAPS_API_KEY&center=${lat},${lng}&zoom=12`;
+  const mapSrc = `https://www.google.com/maps/embed/v1/view?key=AIzaSyDI2Ij4fgYDO2yAEsYJ5wBvH1A7mXMcr3M&center=${lat},${lng}&zoom=12`;
 
   if (status === 'loading') {
     return <div>Loading map...</div>;

@@ -3,11 +3,10 @@ import { doc, getDoc } from 'firebase/firestore';
 import { dataBase } from '../../firebase/firebaseconfig';
 
 export const fetchLocation = createAsyncThunk('location/fetchLocation', async (id) => {
-  const docRef = doc(dataBase, 'Destinos', id); 
+  const docRef = doc(dataBase, 'destinos', id);
   const docSnap = await getDoc(docRef);
   if (docSnap.exists()) {
-    const data = docSnap.data();
-    return data.Coordenadas; 
+    return docSnap.data();
   } else {
     throw new Error('No such document!');
   }
@@ -16,8 +15,8 @@ export const fetchLocation = createAsyncThunk('location/fetchLocation', async (i
 const locationSlice = createSlice({
   name: 'location',
   initialState: {
-    lat: 4.7110,
-    lng: -74.0721,
+    lat: null,
+    lng: null,
     status: 'idle',
     error: null,
   },
