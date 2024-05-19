@@ -5,11 +5,10 @@
     margin: 0;
 }
 .dropdown {
-    position: relative;
-    display: inline-block;
-    img{
-        border-radius: 50%; 
-        object-fit: cover;
+    margin-bottom: -2rem;
+    .userLogo{
+        height: 70%;
+
     }
   }
   
@@ -74,6 +73,7 @@
 
             .ul {
                 display: flex;
+                flex-wrap: wrap;
                 gap: 5%;
                 justify-content: center;
                 align-items: center;
@@ -82,14 +82,21 @@
                     list-style: none;
                     font-size: 1.3rem;
                     width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
                     
+                    .texto{
+                        font-size: 60%;
+
+                    }
+                  
                    
 
                 }
                 
 
                     img{
-                        width: 5rem;
+                        width: 4rem;
                     }
                 
 
@@ -101,3 +108,10 @@
 
 
 
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+
+    .userLogo{
+        height: 2rem;
+    }
+    
+}
