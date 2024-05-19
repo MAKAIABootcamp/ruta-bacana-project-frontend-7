@@ -7,9 +7,9 @@ import { loginProviders } from "../../data/loginProvider";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
-import { actionLoginWithEmailAndPassword } from "../../redux/UserAuth/userAuthActions";
+import { actionLoginWithEmailAndPassword } from "../../redux/userAuth/userAuthActions";
 import Cargando from "../../componentes/cargando/Cargando";
-import { logout } from "../../redux/UserAuth/userAuthSlice";
+import { logout } from "../../redux/userAuth/userAuthSlice";
 import { GoArrowLeft } from "react-icons/go";
 import FooterMinimo from "../../componentes/FooterMinimo/FooterMinimo";
 

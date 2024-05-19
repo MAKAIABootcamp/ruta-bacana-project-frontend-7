@@ -4,7 +4,7 @@ import { actionGetDestinos } from "../../redux/Destinos/destinosActions";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./carrusel.scss"; 
+import "./carrusel.scss";
 
 const Carrusel = () => {
   const dispatch = useDispatch();
@@ -27,20 +27,21 @@ const Carrusel = () => {
   };
 
   return (
-    <div className="carousel">
-      
-      <Slider {...settings}>
-        {destinos.map((destino) => (
-          <div key={destino.id}>
-            <img
-              src={destino.imagen}
-              alt={destino.nombre}
-              className="carousel-img" 
-            />
-          </div>
-        ))}
-      </Slider>
-    </div>
+      <div className="carousel">
+
+        <Slider {...settings}>
+          {destinos.map((destino) => (
+            <div key={destino.id}>
+              <img
+                src={destino.imagen}
+                alt={destino.nombre}
+                className="carousel-img"
+              />
+            </div>
+          ))}
+        </Slider>
+      </div>
+
   );
 };
 
