@@ -7,6 +7,7 @@ import negociosReducer from './negocios/negociosSlice';
 import scrollReducer from './scroll/scrollSlice';
 import locationReducer from './location/locationSlice';
 
+
 const store = configureStore({
   reducer: {
     userAuth: userAuthReducer,
@@ -16,6 +17,7 @@ const store = configureStore({
     negocios: negociosReducer,
     scroll: scrollReducer,
     location: locationReducer
+
   },
   devTools: process.env.NODE_ENV !== "production",
 });

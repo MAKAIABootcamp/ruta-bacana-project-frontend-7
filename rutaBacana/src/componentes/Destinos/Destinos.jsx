@@ -1,33 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { actionGetDestinos } from "../../redux/Destinos/destinosActions";
 import "./destinos.scss";
+import { useNavigate } from "react-router-dom";
 
-const Destinos = () => {
+const Destinos = ({ categoria }) => {
+  const dispatch = useDispatch();
+  const { destinos } = useSelector((store) => store.destinos);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (destinos.length === 0) {
+      dispatch(actionGetDestinos());
+    }
+  }, [dispatch, destinos.length]);
+
+  const destinosFiltrados = destinos.filter(
+    (destino) => destino.categoria === categoria
+  );
+
   return (
-    <div className="contenedoPrincipal">
-      <h1>Destinos Relacionados</h1>
-      <div className="filaD">
-        <div className="imagenConTitulo">
-          <img src="src\assets\images\ImagenDestinos\mano.png" alt="Imagen 1" />
-          <h2>La mano del artesano</h2>
-        </div>
-
-        <div className="imagenConTitulo">
-          <img src="src\assets\images\ImagenDestinos\monasterio.png" alt="Imagen 1" />
-          <h2>El Monasterio de la Candelaria</h2>
-        </div>
-      </div>
-      <div className="filaD">
-        <div className="imagenConTitulo">
-          <img src="src\assets\images\ImagenDestinos\fincaB.png"  alt="Imagen 1" />
-          <h2>Finca Beraca</h2>
-        </div>
-
-        <div className="imagenConTitulo">
-          <img src="src\assets\images\ImagenDestinos\plazaV.png" alt="Imagen 1" />
-          <h2>Plaza mayor de Villa de Leyva</h2>
+    <>
+      <div className="contenedorRelacionados">
+        <h1 className="principal">Destinos Relacionados</h1>
+        <div className="relacionadosContainer">
+          {destinosFiltrados.map((destino) => (
+            <div key={destino.id} className="destinoItem">
+              <img 
+              onClick={() => navigate(`/DetailsPage/${destino.id}`)}
+              src={destino.imagen} alt={destino.nombre} />
+              <h1>{destino.nombre}</h1>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

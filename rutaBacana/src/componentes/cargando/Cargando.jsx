@@ -1,9 +1,12 @@
 import React from 'react'
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const Cargando = () => {
   return (
     <div>
-      <h2>🌀 Cargando..</h2>
+     <AiOutlineLoading3Quarters
+     size={50} />
+     <h2>Cargando</h2>
     </div>
   );
 }

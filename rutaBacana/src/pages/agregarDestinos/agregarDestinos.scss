@@ -12,6 +12,8 @@
     .back {
       position: absolute;
       color: $color-black;
+      font-family: "Michroma", sans-serif;
+      font-size: 0.6rem;
       top: 1rem;
       left: 2rem;
       width: 3rem;
@@ -98,6 +100,7 @@
       }
       button[type="submit"] {
         color: $color-black;
+        font-family: "Michroma", sans-serif;
         font-size: 1.3rem;
         padding: 5px;
         position: fixed;
