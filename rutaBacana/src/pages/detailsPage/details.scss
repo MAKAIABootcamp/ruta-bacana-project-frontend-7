@@ -1,6 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+@import '../../assets/styles/variables.scss';
 
 body{
     font-family: "Michroma", sans-serif;
+    
 }
+
+.fondoDegradado{
+  background: linear-gradient(135deg, rgba(255, 255, 0, 0.100), rgba(0, 0, 255, 0.100), rgba(255, 0, 0, 0.100));
+    margin-top: -0rem;
+    padding-top: 2rem;
+
+   .actionButtons {
+        position: absolute;
+        display: flex;
+        top: 10rem;
+        right: 5%;
+        img {
+          width: 2rem;
+          height: 2rem;
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.33);
+            padding: 5px;
+            border-radius: 50%;
+          }
+        }
+      }
+}
+
+.infoInteresDiv{
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    .infoInteres{
+        background-color: rgb(233, 233, 141);
+        font-size: 1.3rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        border-radius: $border-radius-18px;
+    }
+}
+
+
 
