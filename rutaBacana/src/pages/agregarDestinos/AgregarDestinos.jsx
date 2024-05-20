@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import imageUpload from "../../assets/images/ImagenHome/upload_9427985.png";
+import imageUpload from "../../assets/images/subiri.png";
 import { useFormik } from "formik";
 import "./agregarDestinos.scss";
 import fileUpload from "../../services/fileUpload";
@@ -16,7 +16,7 @@ const AgregarDestinos = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [image, setImage] = useState(
-    "https://www.shutterstock.com/shutterstock/photos/2252183671/display_1500/stock-photo-colombian-flag-in-the-national-park-2252183671.jpg"
+    "https://www.lacoladerata.co/wp-content/uploads/2016/03/Desierto-y-Grises-I.jpg"
   );
   const [file, setFile] = useState(null);
   const [initalState, setInitialState] = useState({});
