@@ -1,49 +1,13 @@
-// import React, { useEffect } from "react";
-// import { useSelector, useDispatch } from "react-redux";
-// import { actionGetDestinos } from "../../redux/Destinos/destinosActions";
-// import "./destinos.scss"
-
-// const Destinos = () => {
-//   const dispatch = useDispatch();
-//   const { destinos } = useSelector((store) => store.destinos);
-
-//   useEffect(() => {
-//     if (destinos.length === 0) {
-//       dispatch(actionGetDestinos());
-//     }
-//   }, [dispatch, destinos.length]);
-
- 
-//   return (
-//       <div>
-
-      
-//           {destinos.map((destino) => (
-//             <div key={destino.id}>
-//               <img
-//                 src={destino.imagen}
-//                 alt={destino.nombre}
-                
-//               />
-//             </div>
-//           ))}
-      
-//       </div>
-
-//   );
-// };
-
-// export default Destinos;
-
-
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { actionGetDestinos } from "../../redux/Destinos/destinosActions";
 import "./destinos.scss";
+import { useNavigate } from "react-router-dom";
 
-const Destinos = () => {
+const Destinos = ({ categoria }) => {
   const dispatch = useDispatch();
   const { destinos } = useSelector((store) => store.destinos);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (destinos.length === 0) {
@@ -51,19 +15,26 @@ const Destinos = () => {
     }
   }, [dispatch, destinos.length]);
 
-  // Filtrar destinos por categoría "Playas"
-  const destinosPlayas = destinos.filter(
-    (destino) => destino.categoria === "Playas"
+  const destinosFiltrados = destinos.filter(
+    (destino) => destino.categoria === categoria
   );
 
   return (
-    <div className="destinosContainer">
-      {destinosPlayas.map((destino) => (
-        <div key={destino.id} className="destinoItem">
-          <img src={destino.imagen} alt={destino.nombre} />
+    <>
+      <div className="contenedorRelacionados">
+        <h1 className="principal">Destinos Relacionados</h1>
+        <div className="relacionadosContainer">
+          {destinosFiltrados.map((destino) => (
+            <div key={destino.id} className="destinoItem">
+              <img 
+              onClick={() => navigate(`/DetailsPage/${destino.id}`)}
+              src={destino.imagen} alt={destino.nombre} />
+              <h1>{destino.nombre}</h1>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
+    </>
   );
 };
 

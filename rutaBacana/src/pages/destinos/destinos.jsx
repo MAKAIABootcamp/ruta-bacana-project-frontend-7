@@ -37,7 +37,7 @@ const destinos = () => {
         {/* <div className="bannerImageContainer">
           <FotoRaquira />
         </div> */}
-        <Destinos />
+        <Destinos categoria={destinoSeleccionado[0].categoria} />
         <CalificacionUsuario />
         <ListComentarios/>
         {/*<Comentarios />*/}

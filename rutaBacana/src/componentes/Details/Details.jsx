@@ -8,7 +8,7 @@ import third from "../../assets/images/third.png";
 import arrow from "../../assets/images/arrowblack.png";
 import { Link } from 'react-router-dom';
 
-const Details = (props) => {
+const Details = (props, destinos) => {
     const destinoSeleccionado = props.destinoSeleccionado;
     const [mostrarDescripcionCompleta, setMostrarDescripcionCompleta] = useState(false);
     const [mostrarDescripcionPequena, setMostrarDescripcionPequena] = useState(true);
@@ -46,7 +46,7 @@ const Details = (props) => {
                 )}
 
                 <Link to={`/destinos/${destinoSeleccionado[0].id}`}>
-                    <button>Destinos relacionados</button>
+                    <button className='botonRelacionados'>Ver destinos relacionados</button>
                 </Link>
             </div>
         </div>
