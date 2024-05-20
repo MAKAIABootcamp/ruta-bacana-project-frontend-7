@@ -1,16 +1,31 @@
-//estilos contenedor del carrusel
-.carousel {
-  margin-top: 20px; 
-  margin-left: 40px;
-  
-//estilos a las imagenes del carrusel
+  .carousel {
+    margin-top: 20px; 
+    margin-left: 2%;
+    
+   
+    
+  }
   .carousel-img {
-    width: 400px;
+    width: 95%;
     height: 300px;
     transition: transform 0.2s ease; 
 
     &:hover {
       transform: scale(1.05);
     }
+    &:focus {
+      outline: none;
+    }
   }
-}
+  .slick-dots {
+    bottom: -2.5rem;
+  }
+
+
+  @media only screen and (min-width: 320px) and (max-width: 767px) {
+    .carousel{
+      display: none;
+    }
+
+    
+    }

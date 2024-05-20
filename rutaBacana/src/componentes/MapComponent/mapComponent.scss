@@ -1,0 +1,15 @@
+.map-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+  
+    iframe {
+      border-radius: 8px;
+    }
+  }
+
+  .ubicationTitle{
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.3rem;
+  }

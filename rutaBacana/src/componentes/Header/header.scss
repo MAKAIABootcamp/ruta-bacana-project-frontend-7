@@ -5,11 +5,10 @@
     margin: 0;
 }
 .dropdown {
-    position: relative;
-    display: inline-block;
-    img{
-        border-radius: 50%; 
-        object-fit: cover;
+    margin-bottom: -2rem;
+    .userLogo{
+        height: 70%;
+
     }
   }
   
@@ -33,7 +32,6 @@
         font-size: 20px;
         width: 100%;
         font-weight: bold;
-        //text-align: center;
     }
   }
   
@@ -45,10 +43,10 @@
     background-color: #F9D99A;
     justify-content: space-between;
     height: 7rem;
-
+    width: 100%;
+    padding-left: 5%;
     .ImgLogo{
         height: 5rem;
-        margin-left: 7%;
 
 
         img{
@@ -68,28 +66,45 @@
         justify-content: center;
         align-items: center;
         width:70%;
-        margin-left: 10%;
+
 
         .nav {
+            width: 100%;
+            display: flex;
+            
 
             .ul {
                 display: flex;
                 gap: 5%;
+                width: 100%;
+                flex-wrap: wrap;
                 justify-content: center;
                 align-items: center;
 
+
+
                 li {
+
                     list-style: none;
-                    font-size: 1.3rem;
-                    width: 100%;
+                    font-size: 1.5rem;
+                    display: flex;
                     
+                    .texto{
+                        font-size: 60%;
+                        text-align: center;
+
+                    }
+                  
                    
 
                 }
                 
 
                     img{
-                        width: 5rem;
+                        width: 4rem;
+                        height: 4rem;
+                        margin-bottom: 1rem;
+
                     }
                 
 
@@ -98,6 +113,5 @@
     }
 
 }
-
 
 

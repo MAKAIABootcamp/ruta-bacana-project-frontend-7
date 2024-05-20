@@ -1,0 +1,49 @@
+.sliderContenedor {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+
+  .contenedorCarrusel {
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+
+    .titulo {
+      width: 50%;
+      text-align: center;
+      margin-bottom: 20px;
+      h2 {
+        font-size: 1.2rem;
+        display: inline-block; 
+      }
+    }
+
+    .slider {
+      width: 60%;
+      margin-right: 5%;
+
+      .contenedorDelSliderA {
+        display: flex;
+        gap: 2rem;
+        width: 100%;
+
+        .divContenedorDeImagen {
+          height: 20rem;
+          display: flex;
+          margin: 0 17rem;
+          
+          .imagenCarrusel {
+            width: 90%;
+            height: 15rem;
+            object-fit: cover;
+          }
+
+          p {
+            margin-top: 10px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

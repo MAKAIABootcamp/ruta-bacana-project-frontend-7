@@ -9,6 +9,7 @@ import Slider from "../../componentes/Slider/Slider"
 import "./details.scss"
 
 
+
 const details = () => {
   
   const { id } = useParams();

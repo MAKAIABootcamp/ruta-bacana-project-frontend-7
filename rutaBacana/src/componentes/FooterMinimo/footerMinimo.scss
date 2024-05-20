@@ -3,7 +3,10 @@
 
 .minimalFooterComponent{
     display: flex;
+    width: 100%;
     padding-top: 1rem;
+    justify-content: center;
+    align-items: center;
     
 
     background-color: $color-black;
@@ -14,7 +17,6 @@
         justify-content: center;
         align-items: center;
 
-        width: 100%;
         gap: 1%;
 
         img{

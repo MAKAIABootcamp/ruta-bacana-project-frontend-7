@@ -3,24 +3,31 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { actionRegisterWithEmailAndPassword } from "../../redux/userAuth/userAuthActions";
 import { useDispatch } from "react-redux";
+import Header from "../../componentes/Header/Header";
 import "./register.scss";
 
 import { useNavigate } from "react-router-dom";
+import FooterMinimo from "../../componentes/FooterMinimo/FooterMinimo";
 
 const Register = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const handleFileChange = (event, setFieldValue) => {
+    const file = event.currentTarget.files[0];
+    setFieldValue("profilePicture", file);
+  };
+
   return (
     <div className="container">
-      {" "}
+      <Header />
       {/* Contenedor con imagen de fondo */}
-      <h1>Ruta Bacana</h1>
+      <h1 className="rutaBacanaTitle">Ruta Bacana</h1>
       <div className="form-container">
-        {" "}
         {/* Contenedor del formulario */}
-        <h1>Registro</h1>
+        <h1 className="registroTitle">Registro</h1>
         <Formik
-          initialValues={{ name: "", email: "", password: "", ciudad: "" }}
+          initialValues={{ name: "", email: "", password: "", profilePicture: null }}
           validationSchema={Yup.object().shape({
             name: Yup.string().required("El nombre es requerido"),
             email: Yup.string()
@@ -29,7 +36,6 @@ const Register = () => {
             password: Yup.string()
               .min(6, "La contraseña debe tener al menos 6 caracteres")
               .required("La contraseña es requerida"),
-            // ciudad: Yup.string().required('La ciudad es requerida'),
           })}
           onSubmit={(values, actions) => {
             console.log(values); // Aquí puedes enviar los datos al servidor
@@ -38,7 +44,7 @@ const Register = () => {
             navigate("/");
           }}
         >
-          {({ isSubmitting }) => (
+          {({ isSubmitting, setFieldValue }) => (
             <Form>
               <div>
                 <label htmlFor="name">Nombre:</label>
@@ -63,9 +69,15 @@ const Register = () => {
               </div>
 
               <div>
-                <label htmlFor="ciudad">Ciudad:</label>
-                <Field type="text" name="ciudad" />
-                <ErrorMessage name="ciudad" component="div" className="error" />
+                <label htmlFor="profilePicture">Foto de Perfil:</label>
+                <input
+                  type="file"
+                  id="profilePicture"
+                  name="profilePicture"
+                  accept="image/*"
+                  onChange={(e) => handleFileChange(e, setFieldValue)}
+                />
+                <ErrorMessage name="profilePicture" component="div" className="error" />
               </div>
 
               <button type="submit" disabled={isSubmitting}>
@@ -74,7 +86,16 @@ const Register = () => {
             </Form>
           )}
         </Formik>
+
+      
       </div>
+      
+      <div className="arrow-to-home">
+          <a href="/">
+            <img src="../../assets/images/arro.png" alt="home" />
+          </a>
+        </div>
+      <FooterMinimo/>
     </div>
   );
 };

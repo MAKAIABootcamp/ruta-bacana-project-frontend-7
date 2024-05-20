@@ -5,15 +5,18 @@
     background-image: url('../../assets/images/Registerbackground.png'); 
     background-size: cover;
     background-position: center;
-    height: 100vh; 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    h1{
+    .rutaBacanaTitle{
         color: #fff;
         font-family: $fuente-michroma;
         text-align: center;
+        margin-top: 3rem;
+    }
+    h1{
+      color: $color-white;
     }
   }
   
@@ -31,10 +34,12 @@
     flex-direction: column; 
     text-align:left; 
     font-family: $fuente-michroma;
+    margin-bottom: 5rem;
   }
   
   .form-container > div {
     margin-bottom: 30px; 
+
   }
   
   label {
