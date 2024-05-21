@@ -45,7 +45,7 @@ const Details = (props, destinos) => {
                     </div>
                 )} */}
 
-                        <Link className='linkContainer' to={`/destinos/${destinoSeleccionado[0].id}`}>
+                        <Link className='linkContainer' to={`/destinos/${destinoSeleccionado[0]?.id}`}>
                             <button className='botonRelacionados'>Ver destinos relacionados</button>
                         </Link>
                     </div>

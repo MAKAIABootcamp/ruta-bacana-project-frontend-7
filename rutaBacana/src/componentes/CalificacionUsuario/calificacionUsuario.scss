@@ -36,7 +36,6 @@
   height: 7rem;
   background-color: rgba(217, 217, 217, 0.6);
   border-radius: 25px;
-  //margin-right: 2rem;
   margin: 0px 55px 30px 55px;
   & textarea {
     border: none;
@@ -57,4 +56,26 @@
     margin-top: 0;
     margin-left: 1rem;
   }
+}
+.swal2-button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%; 
+}
+
+.swal2-confirm:hover {
+  color: black;
+  border: none;
+}
+.swal2-cancel:hover {
+  color: black;
+}
+.swal2-custom-confirm {
+  padding: 10px 20px;
+  border: none;
+  
+}
+.swal2-custom-cancel {
+  padding: 10px 20px;
+  font-size: 20px;
 }

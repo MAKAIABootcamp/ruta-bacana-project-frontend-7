@@ -5,10 +5,10 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { FaStar } from "react-icons/fa";
 import { actionAddComentarios } from "../../redux/comentarios/comentariosActions";
+import 'animate.css';
 
 const CalificacionUsuario = () => {
   const { isAuth, user } = useSelector((store) => store.userAuth);
-  //const { idDestino } = useParams();
   const [inputValue, setInputValue] = useState("");
   const [isClicked, setIsClicked] = useState(false);
   const [rating, setRating] = useState(0);
@@ -25,10 +25,22 @@ const CalificacionUsuario = () => {
         title: "¡Alerta!",
         text: "Debes iniciar sesión para poder comentar.",
         icon: "warning",
+        color: "",
         showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
+        confirmButtonColor: "#75c7ff",
+        cancelButtonColor: "#f86f6f",
         confirmButtonText: "Ir al login",
+        cancelButtonText: "Cancelar",
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown',
+        },
+        customClass: {
+          popup: "animate__fadeInDown",
+          actions: 'swal2-button-container',
+          cancelButton: "swal2-confirm",
+          onfirmButton: "swal2-custom-confirm",
+          cancelButton: "swal2-custom-cancel",
+        },
       }).then((result) => {
         if (result.isConfirmed) {
           navigate("/login");
@@ -46,10 +58,13 @@ const CalificacionUsuario = () => {
     if (inputValue.trim() === "") {
       Swal.fire({
         title: "¡Alerta!",
-        text: "Debes escribir algo antes de enviar.",
+        text: "Escribe tu comentario.",
         icon: "warning",
+        confirmButtonText: "Entendido",
         confirmButtonColor: "#3085d6",
-        confirmButtonText: "Aceptar",
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown',
+        }
       });
     } else {
       dispatch(
@@ -66,15 +81,23 @@ const CalificacionUsuario = () => {
         title: "¡Éxito!",
         text: "Tu comentario se envió correctamente.",
         icon: "success",
+        confirmButtonColor: " #0ced53b0",
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown',
+        },
+        customClass:{
+        border:"none",
+        }
       });
     }
     console.log("Calificación enviada:", inputValue);
-    // Aquí puedes agregar la lógica para enviar la calificación
   };
   return (
     <>
       <div className="containerButtonCalificacion">
-        <button>Cuéntanos que lugares has visitado y que calificación le darias</button>
+        <button>
+          Cuéntanos que lugares has visitado y que calificación le darias
+        </button>
       </div>
       <div className="estrellasCalificacion">
         {Array(5)

@@ -9,7 +9,8 @@ import { actionAddDestinos, actionEditDestinos, } from "../../redux/Destinos/des
 import Cargando from "../../componentes/cargando/Cargando";
 import Swal from "sweetalert2";
 import { setSuccessRequest } from "../../redux/Destinos/destinosSlice";
-import { categoria } from "../../data/destinosOptions";
+//import { categoria } from "../../data/destinosOptions";
+import 'animate.css';
 
 const AgregarDestinos = () => {
   const { idDestino } = useParams();
@@ -72,9 +73,13 @@ const AgregarDestinos = () => {
     Swal.fire({
       title: "Oops!",
       text: idDestino
-      ? "Ha ocurrido un error en la edición de los datos de la destino"
+      ? "Ha ocurrido un error en la edición de los datos del destino"
       :"Ha ocurrido un error en la creación del nuevo destino",
       icon: "error",
+      iconColor: "#f50400",
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown',
+      }
     });
   }
 
@@ -85,6 +90,10 @@ const AgregarDestinos = () => {
       ? "Has editado con éxito los datos del destino"
       : "Has guardado con éxito un nuevo destino",
       icon: "success",
+      confirmButtonColor: " #0ced53b0",
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown',
+      }
     }).then((result) => {
       if (result.isConfirmed) {
         dispatch(setSuccessRequest());

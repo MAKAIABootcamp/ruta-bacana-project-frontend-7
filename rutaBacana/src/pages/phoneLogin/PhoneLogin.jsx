@@ -7,6 +7,8 @@ import "./phoneLogin.scss";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { auth } from "../../firebase/firebaseconfig";
 import Swal from "sweetalert2";
+import 'animate.css';
+
 
 const PhoneLogin = () => {
   const navigate = useNavigate();
@@ -32,10 +34,15 @@ const PhoneLogin = () => {
       .then((response) => {
         window.confirmationResult = response;
         console.log(response);
-        Swal.fire(
-          "Excelente",
-          `Te enviaremos un mensaje para confirmar a ${number}`,
-          "success"
+        Swal.fire({
+          title: "Excelente",
+          text: `Te enviaremos un mensaje para confirmar a ${number}`,
+          icon: "success",
+          confirmButtonColor: " #0ced53b0",
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown',
+          },
+        }
         );
       })
       .then(() => {
@@ -43,10 +50,16 @@ const PhoneLogin = () => {
       })
       .catch((error) => {
         console.log(error);
-        Swal.fire(
-          "Oops!",
-          `Ocurrió un error al realizar tu solicitud ${error.message}`,
-          "error"
+        Swal.fire({
+          title: "Oops!",
+          text: `Ocurrió un error al realizar tu solicitud: ${error.message}`,
+          icon: "error",
+          iconColor: "#f50400",
+          confirmButtonColor: " #4fa8fb",
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown',
+          },
+        }
         );
       });
   };

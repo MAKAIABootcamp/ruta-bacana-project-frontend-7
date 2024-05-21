@@ -12,9 +12,11 @@
   "dependencies": {
     "@react-google-maps/api": "^2.19.3",
     "@reduxjs/toolkit": "^2.2.3",
+    "animate.css": "^4.1.1",
     "bootstrap": "^5.3.3",
     "firebase": "^10.11.1",
     "formik": "^2.4.6",
+    "ldrs": "^1.0.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
