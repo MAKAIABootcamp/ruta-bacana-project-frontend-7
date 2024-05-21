@@ -17,7 +17,11 @@ const home = () => {
     <div className="swrapper">
       <div className="containerHome">
         <Carrusel />
-        <div className="agregarDestino">
+        <div className="agregarDestino"
+            onClick={() => navigate(`/agregarDestinos/`)}
+            style={{ cursor: "pointer" }}
+            >
+          
           {isAdminEmail && (
             <HiViewGridAdd
               onClick={() => navigate(`/agregarDestinos/`)}

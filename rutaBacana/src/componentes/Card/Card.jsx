@@ -11,7 +11,7 @@ import {
 } from "../../redux/favoritos/favoritosActions";
 import { FaHeart } from "react-icons/fa";
 import Swal from "sweetalert2";
-import 'animate.css';
+import "animate.css";
 
 const Card = ({ destino = {} }) => {
   const dispatch = useDispatch();
@@ -19,6 +19,7 @@ const Card = ({ destino = {} }) => {
   const { user, isAuth } = useSelector((store) => store.userAuth);
   const { favoritos } = useSelector((store) => store.favoritos);
   const [isFavorite, setIsFavorite] = useState(false);
+  const [isFavoriteExpanded, setIsFavoriteExpanded] = useState(false);
 
   useEffect(() => {
     if (user) {
@@ -50,6 +51,10 @@ const Card = ({ destino = {} }) => {
       }
 
       setIsFavorite(!isFavorite);
+      setIsFavoriteExpanded(true);
+      setTimeout(() => {
+        setIsFavoriteExpanded(false);
+      }, 300); // Duración de la animación
     } else {
       Swal.fire({
         title: "¡Atención!",
@@ -60,30 +65,30 @@ const Card = ({ destino = {} }) => {
         timer: 4000, // 4 segundos de tiempo de espera
         timerProgressBar: true,
         //background: "#fbfee9",
-        width:"30%",
+        width: "30%",
         showClass: {
-          popup: 'animate__animated animate__fadeInDown',
-        }
+          popup: "animate__animated animate__fadeInDown",
+        },
       });
     }
   };
 
   const handleDelete = () => {
     Swal.fire({
-      title: '¿Quieres elminarlo?',
+      title: "¿Quieres elminarlo?",
       text: "No podrás revertir esto!",
-      icon: 'warning',
+      icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#75c7ff",
       cancelButtonColor: "#f86f6f",
-      confirmButtonText: 'Sí, eliminarlo!',
+      confirmButtonText: "Sí, eliminarlo!",
       cancelButtonText: "Cancelar",
       showClass: {
-        popup: 'animate__animated animate__fadeInDown',
+        popup: "animate__animated animate__fadeInDown",
       },
       customClass: {
         popup: "animate__fadeInDown",
-        actions: 'swal2-button-container',
+        actions: "swal2-button-container",
         cancelButton: "swal2-confirm",
         onfirmButton: "swal2-custom-confirm",
         cancelButton: "swal2-custom-cancel",
@@ -96,42 +101,25 @@ const Card = ({ destino = {} }) => {
   };
 
   return (
-    <figure className="card">
-      <img
-        onClick={() => navigate(`/DetailsPage/${destino.id}`)}
-        src={destino?.imagen}
-        alt={destino?.nombre}
-      />
-      <div>
-        <FaHeart
-          className="favoriteIcon"
-          size={25}
-          onClick={handleFavoriteClick}
-          color={isFavorite ? "red" : "white"}
-          style={{ cursor: "pointer" }}
+    <>
+      <figure className="card">
+        <img
+          onClick={() => navigate(`/DetailsPage/${destino.id}`)}
+          src={destino?.imagen}
+          alt={destino?.nombre}
         />
-      </div>
-      {/* <div className="actionButtons">
-        {isAdminEmail && (
-          <>
-            <img
-              src={deleteImage}
-              alt="eliminar"
-              onClick={handleDelete}
-            />
-            <img
-              onClick={() => navigate(`edit/${destino.id}`)}
-              src={editImage}
-              alt="editar"
-            />
-          </>
-        )}
-      </div> */}
-      {/* <SlActionRedo
-        className="botonDetalle"
-      /> */}
-      <figcaption>{destino?.nombre}</figcaption>
-    </figure>
+        <div>
+          <FaHeart
+            className={`favoriteIcon ${isFavoriteExpanded ? "expanded" : ""}`}
+            size={25}
+            onClick={handleFavoriteClick}
+            color={isFavorite ? "red" : "white"}
+            style={{ cursor: "pointer" }}
+          />
+        </div>
+        <figcaption>{destino?.nombre}</figcaption>
+      </figure>
+    </>
   );
 };
 
