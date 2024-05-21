@@ -6,7 +6,6 @@ import editImage from "../../assets/edit_1159633.png";
 import "./card.scss";
 import { actionDeleteDestinos } from "../../redux/Destinos/destinosActions";
 import { actionAddFavorite, actionDeleteFavoritos } from "../../redux/favoritos/favoritosActions";
-//import { SlActionRedo } from "react-icons/sl";
 import { FaHeart } from "react-icons/fa";
 import Swal from "sweetalert2";
 
@@ -16,6 +15,7 @@ const Card = ({ destino = {} }) => {
   const { user, isAuth } = useSelector((store) => store.userAuth);
   const { favoritos } = useSelector((store) => store.favoritos);
   const [isFavorite, setIsFavorite] = useState(false);
+  const [isFavoriteExpanded, setIsFavoriteExpanded] = useState(false);
 
   useEffect(() => {
     if (user) {
@@ -39,6 +39,10 @@ const Card = ({ destino = {} }) => {
       }
 
       setIsFavorite(!isFavorite);
+      setIsFavoriteExpanded(true);
+      setTimeout(() => {
+        setIsFavoriteExpanded(false);
+      }, 300); // Duración de la animación
     } else {
       Swal.fire({
         title: "¡Alerta!",
@@ -57,7 +61,7 @@ const Card = ({ destino = {} }) => {
         src={destino?.imagen} alt={destino?.nombre} />
       <div>
         <FaHeart
-          className="favoriteIcon"
+          className={`favoriteIcon ${isFavoriteExpanded ? 'expanded' : ''}`}
           size={25}
           onClick={handleFavoriteClick}
           color={isFavorite ? "red" : "white"}
@@ -80,15 +84,10 @@ const Card = ({ destino = {} }) => {
           </>
         )}
       </div>
-      {/* <SlActionRedo
-        className="botonDetalle"
-      /> */}
       <figcaption>{destino?.nombre}</figcaption>
     </figure>
   );
 };
 
 export default Card;
-
-
 
