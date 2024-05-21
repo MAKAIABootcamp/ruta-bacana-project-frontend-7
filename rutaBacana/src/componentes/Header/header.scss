@@ -19,9 +19,17 @@
     min-width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    // padding-left: 50%;
     border-radius: 20px;
     text-align: center;
-
+    background-color: red;
+    .botonDeLogeo{
+        background-color: blue;
+        position: absolute;
+        margin-top: -4.8rem;
+        right: -90%;
+    }
+    
 
 
     button{
@@ -113,5 +121,4 @@
     }
 
 }
-
 

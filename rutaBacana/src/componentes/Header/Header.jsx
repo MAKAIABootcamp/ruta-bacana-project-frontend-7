@@ -60,6 +60,7 @@ function Header() {
                 <div className="dropdown-content">
                   {isAuth ? (
                     <button
+                    className="botonDeLogeo"
                       onClick={() => {
                         dispatch(actionLogout());
                       }}
@@ -67,7 +68,7 @@ function Header() {
                       Salir
                     </button>
                   ) : (
-                    <button onClick={() => navigate(`/login`)}>
+                    <button className="botonDeLogeo" onClick={() => navigate(`/login`)}>
                       Iniciar Sesión
                     </button>
                   )}
