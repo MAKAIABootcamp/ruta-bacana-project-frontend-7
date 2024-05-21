@@ -14,7 +14,10 @@ const FilterButtons = ({ setTipo }) => {
     <div className="containerFiltros">
       <button onClick={() => handleClick()}>Todo</button>
       {categoria.map((item) => (
-        <button key={item} onClick={() => handleClick(item)}>
+        <button key={item} onClick={() => {
+          const category = item === "Atracciones"?'Atraciones': item;
+          handleClick(category);
+        }}>
           {item}
         </button>
       ))}

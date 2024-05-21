@@ -12,6 +12,7 @@ import Cargando from "../../componentes/cargando/Cargando";
 import { logout } from "../../redux/userAuth/userAuthSlice";
 import { GoArrowLeft } from "react-icons/go";
 import FooterMinimo from "../../componentes/FooterMinimo/FooterMinimo";
+import 'animate.css';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -36,14 +37,34 @@ const Login = () => {
   });
 
   if (isLoading) return <Cargando />;
-
   if (error) {
     Swal.fire({
       title: "Oops!",
       text: "Ha ocurrido un error en el inicio de sesión, por favor verifica tus credenciales",
       icon: "error",
+      iconColor: "#f50400",
+      position: "center",
+      confirmButtonColor: " #4fa8fb",
+      width: "30%",
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown',
+      },
+      hideClass: {
+        popup: 'swal2-backdrop-hide',
+      },
+      customClass: {
+        title: "swal2-title",
+        content: "swal2-content",
+        icon: "swal2-icon-error",
+        confirmButton: "swal2-confirm",
+      },
+      timer: 4000,
+      timerProgressBar: true, 
     }).then((result) => {
-      if (result.isConfirmed) dispatch(logout());
+      if (result.dismiss === Swal.DismissReason.timer) {
+        console.log("La alerta se cerró automáticamente");
+        dispatch(logout());
+      }
     });
   }
 
@@ -52,6 +73,14 @@ const Login = () => {
       title: `¡Hola ${user.name}!`,
       text: "Has iniciado sesión exitosamente",
       icon: "success",
+      confirmButtonColor: " #4fa8fb",
+      customClass: {
+        popup: "swal2-popup",
+        title: "swal2-title",
+        content: "swal2-content",
+        icon: "swal2-icon-success",
+        confirmButton: "swal2-confirm",
+      },
     }).then((result) => {
       if (result.isConfirmed) navigate("/");
     });
