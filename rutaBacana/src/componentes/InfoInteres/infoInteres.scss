@@ -54,40 +54,4 @@
   }
 }
 
-// .carousel {
-//   position: relative;
-//   width: 100%;
-//   overflow: hidden;
 
-//   .slides {
-//     display: flex;
-//     transition: transform 0.5s ease; // Agrega una transición suave al cambiar las imágenes
-//     width: calc(100% * 3); // Ajusta el ancho del contenedor para mostrar tres imágenes
-//   }
-
-//   img {
-//     width: calc(100% / 3); // Ajusta el ancho de las imágenes para mostrar tres en el contenedor
-//     height: auto;
-//     display: block;
-//   }
-
-//   .prev,
-//   .next {
-//     position: absolute;
-//     top: 50%;
-//     transform: translateY(-50%);
-//     background-color: rgba(0, 0, 0, 0.5);
-//     color: white;
-//     border: none;
-//     cursor: pointer;
-//     padding: 10px;
-//   }
-
-//   .prev {
-//     left: 0;
-//   }
-
-//   .next {
-//     right: 0;
-//   }
-// }
