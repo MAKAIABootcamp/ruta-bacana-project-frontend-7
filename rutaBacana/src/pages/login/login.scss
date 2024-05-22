@@ -1,102 +1,144 @@
-@import 'src/assets/styles/variables.scss';
+@import "src/assets/styles/variables.scss";
 
-*{
-    padding: 0;
-    margin: 0;
+* {
+  padding: 0;
+  margin: 0;
 }
-
 
 .loginBody {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-image: url('../../assets/images/loginBackground.png');
-    background-size: 100% 100%; 
-    background-repeat: no-repeat; 
-    background-position: center; 
-    align-items: center;
-    justify-content: center;
-    font-family: $fuente-michroma;
-    color: #ffffff;
+  height: 130vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../assets/images/loginBackground.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+  font-family: $fuente-michroma;
+  color: #ffffff;
 
+  .loginMain {
+    .loginSectionContainer {
+      background-color: rgb(75, 75, 75, 65%);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      border-radius: 18px;
 
-    .loginMain{
-        
+      .logoContainer {
+        display: flex;
+        flex-direction: column;
+        width: 7rem;
+        align-self: center;
+        margin-bottom: 2.5rem;
+        margin-top: 1rem;
 
-        .loginSectionContainer{
-            background-color: rgb(75, 75, 75, 65%);
-            display: flex;
-            flex-direction: column;
-            height: 80vh;
-            border-radius: 18px;
-
-
-            .logoContainer{
-                display: flex;
-                flex-direction: column;
-                width: 7rem;
-                align-self: center;
-                margin-bottom: 2.5rem;
-                margin-top: 1rem;
-
-                .loginTitle{
-                    display: flex;
-                    align-self: center;
-                    font-size: 2rem;
-                }
-            }
-            .loginInputsContainer{
-                display: flex;
-                flex-direction: column;
-                gap: 2rem;
-                margin-left: 2rem;
-                margin-right: 2rem;
-
-                .inputContainer{
-                    display: flex;
-                    flex-direction: column;
-                    gap: 0.8rem;
-                    
-                    input{
-                        border: none;
-                        height: 2rem;
-                        outline: none;
-                        cursor: default;
-                        background-color: rgba(255, 255, 255, 0.60);
-
-                    }
-                    
-                }
-            }
-            .interactionsContianer{
-                display: flex;
-                flex-direction: column;
-                align-self: center;
-                margin-top: 2rem;
-                margin-left: 2rem;
-                margin-right: 2rem;
-                width: 70%;
-                text-align: center;
-
-                .loginButton{
-                    display: flex;
-                    border: none;
-                    color: black;
-                    align-self: center;
-                    background-color: rgba(255, 255, 255, 0.60);
-
-                    margin-bottom: 1rem;
-                    padding-left: 1rem;
-                    padding-right: 1rem;
-                    padding-top: 0.3rem;
-                    padding-bottom: 0.3rem;
-
-                }
-                button:hover{
-                    cursor: pointer;
-                }
-            }
+        .loginTitle {
+          display: flex;
+          align-self: center;
+          font-size: 2rem;
         }
+      }
+      .loginInputsContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+
+        .inputContainer {
+          display: flex;
+          flex-direction: column;
+          gap: 0.8rem;
+
+          input {
+            border: 2px solid transparent;
+            height: 2rem;
+            outline: none;
+            cursor: default;
+            background-color: rgba(255, 255, 255, 0.6);
+            transition: background-color 0.3s ease; /* Agregamos transición para un cambio suave */
+            padding: 0.5rem;
+          }
+          input:hover {
+            background-color: rgba(29, 10, 240, 0.271);
+            border-color: rgb(
+              55,
+              8,
+              247
+            ); /* Resaltamos el borde al pasar el mouse */
+          }
+        }
+      }
+      .interactionsContianer {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        margin-top: 2rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        width: 70%;
+        text-align: center;
+
+        .loginButton {
+          display: flex;
+          border: none;
+          color: black;
+          align-self: center;
+          background-color: rgba(255, 255, 255, 0.6);
+
+          margin-bottom: 1rem;
+          padding-left: 1rem;
+          padding-right: 1rem;
+          padding-top: 0.3rem;
+          padding-bottom: 0.3rem;
+        }
+        button:hover {
+          cursor: pointer;
+        }
+      }
     }
+  }
+
+  .contenedorFlechaAtras {
+    //width: 20%;
+    //height: 70px;
+
+    .flechaAtras {
+      display: flex;
+      position: absolute;
+      top: 93%;
+      width: 6%;
+      height: 70px;
+      left: 0;
+      &:hover {
+        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.837),
+          0px 10px 15px -3px rgba(0, 0, 0, 0.696);
+      }
+    }
+  }
 }
 
+
+.swal2-popup {
+  font-size: 0.6rem;
+  border-radius: 50px;
+}
+.swal2-title {
+  font-family: $fuente-michroma;
+}
+
+.swal2-confirm {
+  border: none; 
+  padding: 10px 20px;
+   width: 100px;
+ }
+
+.swal2-confirm:hover {
+  color: black;
+}
+
+// .swal2-icon-success {
+//   color: #0f1010;
+// }

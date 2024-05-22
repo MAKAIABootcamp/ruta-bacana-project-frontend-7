@@ -2,11 +2,13 @@ import React from "react";
 import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
-//import phoneImage from "../../assets/phone-call_3059446.png";
+import phoneImage from "../../assets/phone-call_3059446.png";
 import "./phoneLogin.scss";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { auth } from "../../firebase/firebaseconfig";
 import Swal from "sweetalert2";
+import 'animate.css';
+
 
 const PhoneLogin = () => {
   const navigate = useNavigate();
@@ -32,10 +34,15 @@ const PhoneLogin = () => {
       .then((response) => {
         window.confirmationResult = response;
         console.log(response);
-        Swal.fire(
-          "Excelente",
-          `Te enviaremos un mensaje para confirmar a ${number}`,
-          "success"
+        Swal.fire({
+          title: "Excelente",
+          text: `Te enviaremos un mensaje para confirmar a ${number}`,
+          icon: "success",
+          confirmButtonColor: " #0ced53b0",
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown',
+          },
+        }
         );
       })
       .then(() => {
@@ -43,10 +50,16 @@ const PhoneLogin = () => {
       })
       .catch((error) => {
         console.log(error);
-        Swal.fire(
-          "Oops!",
-          `Ocurrió un error al realizar tu solicitud ${error.message}`,
-          "error"
+        Swal.fire({
+          title: "Oops!",
+          text: `Ocurrió un error al realizar tu solicitud: ${error.message}`,
+          icon: "error",
+          iconColor: "#f50400",
+          confirmButtonColor: " #4fa8fb",
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown',
+          },
+        }
         );
       });
   };
@@ -69,13 +82,15 @@ const PhoneLogin = () => {
   });
 
   return (
-    <main className="phoneLogin">
+    <div className="mainPhoneContainer">
+<main className="phoneLogin">
       <h1>Iniciar sesión con número celular</h1>
       <form onSubmit={formik.handleSubmit}>
         <label
           htmlFor="phone"
           className={formik.touched.phone && formik.errors.phone ? "error" : ""}
         >
+          <img src={phoneImage} alt="phone" />
           <input
             type="text"
             placeholder="Ingrese un número celular"
@@ -98,6 +113,8 @@ const PhoneLogin = () => {
       </form>
       <div id="recaptcha-container"></div>
     </main>
+    </div>
+    
   );
 };
 

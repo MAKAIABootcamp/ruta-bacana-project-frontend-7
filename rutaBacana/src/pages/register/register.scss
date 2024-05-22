@@ -5,15 +5,18 @@
     background-image: url('../../assets/images/Registerbackground.png'); 
     background-size: cover;
     background-position: center;
-    height: 100vh; 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    h1{
+    .rutaBacanaTitle{
         color: #fff;
         font-family: $fuente-michroma;
         text-align: center;
+        margin-top: 3rem;
+    }
+    h1{
+      color: $color-white;
     }
   }
   
@@ -31,10 +34,12 @@
     flex-direction: column; 
     text-align:left; 
     font-family: $fuente-michroma;
+    margin-bottom: 5rem;
   }
   
   .form-container > div {
     margin-bottom: 30px; 
+
   }
   
   label {
@@ -70,4 +75,23 @@
   
   button:hover {
     background-color: #0056b3; 
+  }
+  .containerBackArrow{
+
+    .backArrow{
+      display: flex;
+      position: absolute;
+      top: 50%;
+      width: 4%;
+      height: 40px;
+      left: 22px;
+      background-color:rgba(134, 131, 131, 0.65); ;
+      box-shadow: 3px 10px 15px 3px rgba(0, 0, 0, 0.837),
+          3px 10px 15px 3px rgba(0, 0, 0, 0.696);
+          &:hover {
+            box-shadow: 3px 10px 15px 3px rgba(48, 4, 241, 0.837),
+          3px 10px 15px 3px rgba(9, 16, 211, 0.696);
+          }
+      
+    }
   }

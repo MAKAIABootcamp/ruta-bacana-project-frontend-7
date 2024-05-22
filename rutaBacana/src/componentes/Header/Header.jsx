@@ -1,45 +1,77 @@
-import React from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { actionLogout } from "../../redux/userAuth/userAuthActions";
-import { Link } from "react-router-dom";
+import { setRequest } from "../../redux/userAuth/userAuthSlice";
+import { triggerScrollToFooter } from "../../redux/scroll/scrollSlice";
+import { Link, useNavigate } from "react-router-dom";
+import userImage from "../../assets/images/User.png";
 import "./header.scss";
+import LogoRutaBacana from "../../assets/images/rutaBacanaLogo.png";
 
 function Header() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { user, isAuth, request } = useSelector((store) => store.userAuth);
 
   const items = [
-    ["/", "Home"],
-    ["destinos", "Destinos"],
-    ["contactanos", "Contactanos"],
-    ["sobreNosotros", "Sobre nosotros"],
+    ['/', 'Home'],
+    ['#Footer', 'Contactanos'],
+    ['about', 'Sobre nosotros'],
   ];
+
+  useEffect(() => {
+    if (request === "logout") {
+      navigate("/login/");
+      dispatch(setRequest());
+    }
+  }, [request, navigate, dispatch]);
+
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    dispatch(triggerScrollToFooter());
+  };
+
   return (
     <header className="headerComponent">
       <div className="ImgLogo">
-        <img src="src\assets\images\rutaBacanaLogo.png" alt="" />
+        <img src={LogoRutaBacana} alt="RutaBacana" onClick={() => navigate(`/`)}/>
       </div>
       <div className="NavButton">
         <nav className="nav">
           <ul className="ul">
-            {items.map((item, index) => {
-              return (
-                <li key={index}>
-                  <Link to={item[0]}>{item[1]}</Link>
-                </li>
-              );
-            })}
+            {items.map((item, index) => (
+              <li key={index}>
+                <Link
+                  className="texto"
+                  to={item[0]}
+                  onClick={item[0] === '#Footer' ? handleContactClick : null}
+                >
+                  {item[1]}
+                </Link>
+              </li>
+            ))}
             <li>
-            <div className="dropdown">
-                <img src="src\assets\images\User.png" alt="" />
+              <div className="dropdown">
+                <img
+                className="userLogo"
+                  src={user?.photo || userImage}
+                  alt={user?.name || "avatar"}
+                />
                 <div className="dropdown-content">
-                  <button
-                    onClick={() => {
-                      console.log("Antes de despachar la acción");
-                      dispatch(actionLogout());
-                    }}
-                  >
-                    Salir
-                  </button>
+                  {isAuth ? (
+                    <button
+                    className="botonDeLogeo"
+                      onClick={() => {
+                        dispatch(actionLogout());
+                      }}
+                    >
+                      Salir
+                    </button>
+                  ) : (
+                    <button className="botonDeLogeo" onClick={() => navigate(`/login`)}>
+                      Iniciar Sesión
+                    </button>
+                  )}
                 </div>
               </div>
             </li>

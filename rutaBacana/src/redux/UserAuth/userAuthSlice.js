@@ -5,6 +5,7 @@ const initialUser = {
   isAuth: false,
   isLoading: false,
   error: null,
+  request: null,
 };
 
 const userAuthSlice = createSlice({
@@ -16,24 +17,31 @@ const userAuthSlice = createSlice({
       state.isAuth = true;
       state.isLoading = false;
       state.error = null;
+      state.request = "login";
     },
     loginRequest: (state) => {
       state.isLoading = true;
       state.error = null;
+      state.request = "starting";
     },
     loginFail: (state, action) => {
       state.isLoading = false;
       state.error = action.payload;
+      state.request = "error";
     },
     logout: (state) => {
-      console.log("si la paso");
       state.user = initialUser.user;
       state.isAuth = initialUser.isAuth;
       state.isLoading = initialUser.isLoading;
       state.error = initialUser.error;
+      state.request = "logout";
+    },
+    setRequest: (state) => {
+      state.request = null;
     },
   },
 });
 
-export const { loginSuccess, loginRequest, loginFail, logout } = userAuthSlice.actions; //Creator actions
+export const { loginSuccess, loginRequest, loginFail, logout, setRequest } =
+  userAuthSlice.actions; //Creator actions
 export default userAuthSlice.reducer; //Función reductora

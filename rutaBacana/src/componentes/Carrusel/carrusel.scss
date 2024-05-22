@@ -1,24 +1,31 @@
-.carousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    padding-bottom: 20px; /* Agrega espacio para evitar que los slides se peguen al borde inferior */
-  
-    &::-webkit-scrollbar {
-      display: none;
+  .carousel {
+    margin-top: 20px; 
+    margin-left: 2%;
+    
+   
+    
+  }
+  .carousel-img {
+    width: 95%;
+    height: 300px;
+    transition: transform 0.2s ease; 
+
+    &:hover {
+      transform: scale(1.05);
+    }
+    &:focus {
+      outline: none;
     }
   }
-  
-  .slide {
-    flex: 0 0 auto;
-    width: 100%;
-    scroll-snap-align: start;
-    margin-right: 20px; /* Agrega espacio entre los slides */
+  .slick-dots {
+    bottom: -2.5rem;
   }
-  
-  .slide img {
-    width: 100%;
-    height: auto;
-  }
+
+
+  @media only screen and (min-width: 320px) and (max-width: 767px) {
+    .carousel{
+      display: none;
+    }
+
+    
+    }

@@ -1,9 +1,52 @@
+@import "../../assets/styles/variables.scss";
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
+.swrapper{
+  overflow: hidden;
+  padding-top: 0.5rem;
+  background-color: $color-light-blue;
 
-.containerHome{
-    background-color: rgb(173, 213, 250,26%);
+  @media only screen and (min-width: 320px) and (max-width: 375px) {
+
+    Footer{
+      display: none;
+    }
+  
+    .minimalFooterComponent{
+      display: block;
+    }
+  }
+  
+  @media only screen and (min-width: 376px) and (max-width: 2000px) {
+    Footer{
+      display: block;
+    }
+  
+    .minimalFooterComponent{
+      display: none;
+    }
+  
+  }
+
 }
+.destinosContainer{
+  display: flex;
+  flex-direction: column;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.agregarDestino{
+  display: flex;
+  position: absolute;
+  right: 2rem;
+  margin-top: 2.4rem;
+}
+
+
+
+

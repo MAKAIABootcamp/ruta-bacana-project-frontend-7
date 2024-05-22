@@ -5,11 +5,13 @@
     flex-direction: column;
     background-image: url("src/assets/images/about/about background image.png");
     background-repeat: no-repeat;
-    background-size: cover; /* Para cubrir todo el contenedor */
-    background-position: center; /* Para centrar la imagen */
+    background-size: cover;
+    /* Para cubrir todo el contenedor */
+    background-position: center;
+    /* Para centrar la imagen */
 
 
-    .logoBanner{
+    .logoBanner {
         display: flex;
         flex-direction: column;
 
@@ -17,34 +19,65 @@
         align-items: center;
         height: 20rem;
 
+        opacity: 0;
+        /* Inicialmente, la sección estará oculta */
+        transform: translateY(-50px);
+        /* La sección se moverá hacia arriba 50px */
+
+        /* Definimos la animación */
+        animation: slideIn 0.5s ease forwards;
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                /* La opacidad inicial es 0 */
+                transform: translateY(-50px);
+                /* La posición inicial es 50px hacia arriba */
+            }
+
+            to {
+                opacity: 1;
+                /* La opacidad final es 1 */
+                transform: translateY(0);
+                /* La posición final es 0 (sin desplazamiento) */
+            }
+        }
 
 
-        .logoContainer{
+
+        .logoContainer {
             height: 20rem;
 
-            img{
+            img {
                 width: 20rem;
             }
         }
-        .figcapion{
+
+        .figcapion {
             display: flex;
             flex-direction: column;
             align-items: center;
 
             margin-top: -4rem;
 
-            .figcaptionTitle{
+            .figcaptionTitle {
                 font-weight: bold;
                 font-size: 2.5rem;
             }
 
-            .figcaptionText{}
+            .figcaptionText {}
         }
+
+
+        //styles section
+
+
+
     }
 
 
 
-    .ourMission{
+    .ourMission {
         margin-top: 5rem;
         display: flex;
         justify-content: center;
@@ -52,8 +85,25 @@
         margin-left: 7%;
         margin-right: 7%;
         gap: 2%;
+        opacity: 0;
+        transform: translateY(-50px);
 
-        .missionContainer{
+        animation: slideIn 2s ease forwards;
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        .missionContainer {
             display: flex;
             flex-direction: column;
 
@@ -66,7 +116,7 @@
             width: 22rem;
             height: 39rem;
 
-            .missionTitle{
+            .missionTitle {
                 padding-left: 2rem;
                 padding-right: 2rem;
                 padding-top: 2rem;
@@ -74,7 +124,7 @@
                 font-size: 1.3rem;
             }
 
-            .missionText{
+            .missionText {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -92,100 +142,172 @@
         }
     }
 
+    .collaboratorContainer {
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-top: 30rem;
+      margin-bottom: 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-    .collaboratorContainer{
-        margin-left: 7%;
-        margin-right: 7%;
-        margin-top: 36rem;
-        .collabs{
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 5%;
-
-            .collaboratorIconContainer{
-                display: flex;
-                flex-direction: column;
-
-
-                p{
-                    color: $color-white;
-                    display: flex;
-                    align-self: center;
-                    text-align: center;
-                    width: 70%;
-                }
-            }
+    
+      .collabs {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5%;
+        opacity: 0;
+        transform: translateY(-50px);
+        animation: slideIn 2s ease forwards;
+    
+        &.hidden {
+          display: none;
         }
+    
+        .collaboratorIconContainer {
+          display: flex;
+          flex-direction: column;
+          transition: transform 0.3s ease, background-color 0.3s ease;
+          align-items: center;
+          
+          
+    
+          p {
+            color: $color-white;
+            display: flex;
+            align-self: center;
+            text-align: center;
+            width: 70%;
+          }
 
+          .socials{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            width: 10rem;
+            width: 2.5rem;
+            margin-top: 1rem;
+            
+            a{
+              img{
+                width: 2.5rem;
+                transition: transform 0.3s ease, background-color 0.3s ease;
+
+              }
+              img:hover{
+                transform:  scale(1.1);
+                cursor: pointer;
+              }
+              
+            }
+          }
+
+         
+        }
+        .collaboratorIconContainer:hover{
+          transform: scale(1.2);
+        }
+      }
+    
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     }
-    .footerBannerContainer{
+    
 
+    .footerBannerContainer {
         display: flex;
         flex-direction: column;
-
         justify-content: center;
         align-items: center;
         margin-left: 7%;
         margin-right: 7%;
         line-height: 1.6rem;
 
-
-        .passionContainer{
-            display: flex;
-            flex-direction: column;
-
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-
-
-            margin-bottom: 4rem;
-            width: 80%;
-            padding: 2rem;
-
-            .passionTitle{
-                margin-bottom: 1rem;
-                font-size: 1.5rem;
-            }
-            .passionText{
-                font-size: 1.2rem;
-                color: $color-white;
-            }
+        gap: 2rem;
+      
+        &.show {
+          .passionContainer,
+          .joinUs,
+          .thanks {
+            animation: slideIn 1s ease forwards;
+          }
         }
-
-        .joinUs{
-            display: flex;
-            flex-direction: column;
-
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-
-            background-color: $background-color-black;
-            border-radius: $border-radius-18px;
-
-            margin-bottom: 5rem;
-            width: 80%;
-            padding: 1rem;
-
-            .joinUsTitle{
-                margin-bottom: 1rem;
-                font-size: 1.5rem;
-            }
-            .joinUsText{
-                font-size: 1.2rem;
-                color: $color-white;
-                line-height: 2rem;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            }
+      
+        .passionContainer {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+      
+          .passionTitle {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            color: #ffffff;
+          }
+      
+          .passionText {
+            font-size: 1.2rem;
+            color: #ffffff;
+          }
         }
-        .thanks{
-            margin-bottom: 5rem;
-            font-size: 1.8rem;
-            width: 40%;
-            text-align: center;
+      
+        .joinUs {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          background-color: $background-color-black;
+          border-radius: $border-radius-18px;
+          margin-bottom: 5rem;
+          width: 80%;
+          padding: 1rem;
+      
+          .joinUsTitle {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+          }
+      
+          .joinUsText {
+            font-size: 1.2rem;
+            color: $color-white;
+            line-height: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          }
         }
-    }
-   
+      
+        .thanks {
+          margin-bottom: 5rem;
+          font-size: 1.8rem;
+          width: 40%;
+          text-align: center;
+        }
+      
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateY(-50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+      
+}
+
+.minimalFooterComponent{
+  display: block;
 }

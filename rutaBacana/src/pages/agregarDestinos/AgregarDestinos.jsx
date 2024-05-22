@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import imageUpload from "../../assets/images/ImagenHome/upload_9427985.png";
+import imageUpload from "../../assets/images/subiri.png";
 import { useFormik } from "formik";
 import "./agregarDestinos.scss";
 import fileUpload from "../../services/fileUpload";
@@ -9,14 +9,16 @@ import { actionAddDestinos, actionEditDestinos, } from "../../redux/Destinos/des
 import Cargando from "../../componentes/cargando/Cargando";
 import Swal from "sweetalert2";
 import { setSuccessRequest } from "../../redux/Destinos/destinosSlice";
-import { categoria } from "../../data/destinosOptions";
+//import { categoria } from "../../data/destinosOptions";
+import 'animate.css';
+import { GoArrowLeft } from "react-icons/go";
 
 const AgregarDestinos = () => {
   const { idDestino } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [image, setImage] = useState(
-    "https://www.shutterstock.com/shutterstock/photos/2252183671/display_1500/stock-photo-colombian-flag-in-the-national-park-2252183671.jpg"
+    "https://www.lacoladerata.co/wp-content/uploads/2016/03/Desierto-y-Grises-I.jpg"
   );
   const [file, setFile] = useState(null);
   const [initalState, setInitialState] = useState({});
@@ -72,9 +74,13 @@ const AgregarDestinos = () => {
     Swal.fire({
       title: "Oops!",
       text: idDestino
-      ? "Ha ocurrido un error en la edición de los datos de la destino"
+      ? "Ha ocurrido un error en la edición de los datos del destino"
       :"Ha ocurrido un error en la creación del nuevo destino",
       icon: "error",
+      iconColor: "#f50400",
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown',
+      }
     });
   }
 
@@ -85,6 +91,10 @@ const AgregarDestinos = () => {
       ? "Has editado con éxito los datos del destino"
       : "Has guardado con éxito un nuevo destino",
       icon: "success",
+      confirmButtonColor: " #0ced53b0",
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown',
+      }
     }).then((result) => {
       if (result.isConfirmed) {
         dispatch(setSuccessRequest());
@@ -94,9 +104,10 @@ const AgregarDestinos = () => {
   }
   return (
     <main className="form">
-      <button className="back" onClick={() => navigate(-1)} type="button">
+      <GoArrowLeft className="back" onClick={() => navigate(-1)} type="button"/>
+      {/* <button className="back" onClick={() => navigate(-1)} type="button">
         Ir atrás
-      </button>
+      </button> */}
       <h1>{idDestino ? "Editar Destino" : "Agregar Destino"}</h1>
       <form onSubmit={formik.handleSubmit}>
         <label htmlFor="nombre">
@@ -123,16 +134,16 @@ const AgregarDestinos = () => {
           <span>Descripción</span>
           <input id="descripcion" type="text" placeholder="" {...formik.getFieldProps("descripcion")}/>
         </label>
-        <label htmlFor="imagen">
-          <span>Foto</span>
+        <label htmlFor="imagen" className="imagenContainer">
+          {/* <span>Foto</span> */}
           <figure className="upload">
-            <img src={imageUpload} alt="upload" />
+            <img  src={imageUpload} alt="upload" />
             <figcaption>Cargar imagen</figcaption>
           </figure>
           <img className="image" src={image} alt="pet" />
           <input id="imagen" type="file" onChange={handleChangeFile} />
         </label>
-        <button type="submit">{idDestino ? "Editar" : "Guardar Destino"}</button>
+        <button type="submit">{idDestino ? "Guardar cambios" : "Guardar Destino"}</button>
       </form>
     </main>
   );

@@ -5,31 +5,50 @@
     margin: 0;
 }
 .dropdown {
-    position: relative;
-    display: inline-block;
+    margin-bottom: -2rem;
+    .userLogo{
+        height: 70%;
+
+    }
   }
   
   .dropdown-content {
-    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 100px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    top: 1rem;
+    right: 5rem;
     z-index: 1;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
+    width: 6rem;
+    padding-left: 1rem;
+    border-radius: 20px;
+    height: 5rem;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    button {
+        border: none;
+        background-color: $color-deep-blue;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        color: black;
+        font-family: "michroma";
+        width: 100%;
+        font-weight: bold;
+    }
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    transform: translateY(0);
+}
 .headerComponent {
     display: flex;
     background-color: #F9D99A;
     justify-content: space-between;
-    height: 7rem;
-
+    height: 8rem;
+    width: 100%;
+    padding-left: 5%;
     .ImgLogo{
         height: 5rem;
-        margin-left: 7%;
 
 
         img{
@@ -49,28 +68,45 @@
         justify-content: center;
         align-items: center;
         width:70%;
-        margin-left: 10%;
+
 
         .nav {
+            width: 100%;
+            display: flex;
+            
 
             .ul {
                 display: flex;
                 gap: 5%;
+                width: 100%;
+                flex-wrap: wrap;
                 justify-content: center;
                 align-items: center;
 
+
+
                 li {
+
                     list-style: none;
-                    font-size: 1.3rem;
-                    width: 100%;
+                    font-size: 1.5rem;
+                    display: flex;
                     
+                    .texto{
+                        font-size: 60%;
+                        text-align: center;
+
+                    }
+                  
                    
 
                 }
                 
 
                     img{
-                        width: 5rem;
+                        width: 4rem;
+                        height: 4rem;
+                        margin-bottom: 1rem;
+
                     }
                 
 
@@ -80,5 +116,18 @@
 
 }
 
+@media only screen and (min-width: 320px) and (max-width: 368px) {
 
+  .dropdown-content {
+    top: 6rem;
+    right: 20%;
+  }
+}
 
+@media only screen and (min-width: 369px) and (max-width: 768px) {
+    .dropdown-content {
+        top: 5rem;
+        right: 3%;
+      }
+
+}

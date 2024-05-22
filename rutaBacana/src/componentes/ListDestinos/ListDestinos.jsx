@@ -1,42 +1,58 @@
-import React, { useCallback, useEffect,  useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   actionFilterDestinos,
   actionGetDestinos,
 } from "../../redux/Destinos/destinosActions";
+import { actionGetFavoritesByUser } from "../../redux/favoritos/favoritosActions";
 import Cargando from "../cargando/Cargando";
 import Card from "../Card/Card";
 import "./listDestinos.scss";
 import FilterButtons from "../FilterButtons/FilterButtons";
-// import { Link } from "react-router-dom";
 
 const ListDestinos = () => {
   const dispatch = useDispatch();
-  const { destinos, isLoadingDestinos } = useSelector(
-    (store) => store.destinos
-  );
-
+  const [destinosCard, setDestinosCard] = useState([]);
+  const { destinos, isLoadingDestinos } = useSelector((store) => store.destinos);
+  const { favoritos } = useSelector((store) => store.favoritos);
+  const { user } = useSelector((store) => store.userAuth);
   const [tipo, setTipo] = useState("all");
 
-  const fetchDestinos = useCallback(() => {
-    handleFilter(tipo);
-  }, [tipo]);
-
-  const handleFilter = (categoria = "all") => {
+  const handleFilter = useCallback((categoria = "all") => {
+    if (categoria === "favoritos") {
+      if (user) {
+        dispatch(actionGetFavoritesByUser(user.id));
+      }
+      return;
+    }
     if (categoria === "all") {
       dispatch(actionGetDestinos());
     } else {
       dispatch(actionFilterDestinos("categoria", categoria));
     }
-  };
+  }, [dispatch, user]);
+
+  useEffect(() => {
+    if (user) {
+      dispatch(actionGetFavoritesByUser(user.id));
+    }
+  }, [user, dispatch]);
 
   useEffect(() => {
     dispatch(actionGetDestinos());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
-    fetchDestinos();
-  }, [fetchDestinos]);
+    handleFilter(tipo);
+  }, [handleFilter, tipo]);
+
+  useEffect(() => {
+    if (tipo === "favoritos") {
+      setDestinosCard(favoritos);
+    } else {
+      setDestinosCard(destinos);
+    }
+  }, [tipo, favoritos, destinos]);
 
   if (isLoadingDestinos) {
     return <Cargando />;
@@ -46,14 +62,15 @@ const ListDestinos = () => {
     <>
       <FilterButtons setTipo={setTipo} />
       <section className="cards">
-        {destinos.map((item) => (
-          // <Link to={`/details/${item.id}`}>
-            <Card key={item.id} destino={item} />
-          // </Link>
+        {destinosCard.map((item) => (
+          <Card key={item.id} destino={item} />
         ))}
       </section>
     </>
   );
-};
+}
 
 export default ListDestinos;
+
+
+

@@ -1,5 +1,11 @@
 <h1 align="center">Ruta Bacana Website ✈💛💙❤️</h1>
 
+
+<p align="center">
+  <img src="https://github.com/MAKAIABootcamp/ruta-bacana-project-frontend-7/assets/125521341/95e6c2b8-f6c6-4fa6-aa2e-4499eaf34d4f" width="300" alt="RBACANA">
+</p>
+
+
 ###
 
 <p align="left">Discover Colombia like never before through our website <strong>Ruta Bacana</strong> dedicated to Colombian tourism. Our purpose is to guide travelers to undiscovered corners, where the authentic essence of the country unfolds in a symphony of flavors, culture, and breathtaking landscapes. <br><br>
@@ -8,7 +14,7 @@ From the vibrant streets of colonial towns to the lush natural scenery, each cor
 
 ###
 
-<h2 align="left">Technologies Used in the development of the project</h2>
+<h2 align="left">Stack</h2>
 
 ###
 [![My Skills](https://skillicons.dev/icons?i=git,github,js,html,css,sass,react,vite,firebase)](https://skillicons.dev)

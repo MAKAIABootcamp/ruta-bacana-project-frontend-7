@@ -1,48 +1,47 @@
-import React, { useEffect, useState } from 'react';
-import { collection, getDocs } from "firebase/firestore";
-import { getStorage, ref, getDownloadURL } from "firebase/storage";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { actionGetDestinos } from "../../redux/Destinos/destinosActions";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./carrusel.scss";
 
 const Carrusel = () => {
-  const [imageUrls, setImageUrls] = useState([]);
+  const dispatch = useDispatch();
+  const { destinos } = useSelector((store) => store.destinos);
 
   useEffect(() => {
-    const fetchImages = async () => {
-      const storage = getStorage();
+    if (destinos.length === 0) {
+      dispatch(actionGetDestinos());
+    }
+  }, [dispatch, destinos.length]);
 
-      try {
-        // Obtener la colección 'destinos' desde Firestore
-        const querySnapshot = await getDocs(collection(firebaseApp, "destinos"));
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 1500
+  };
 
-        // Iterar sobre los documentos de la colección 'destinos'
-        const urls = [];
-        querySnapshot.forEach(async (doc) => {
-          // Obtener el campo 'imagen' de cada documento
-          const { imagen } = doc.data();
-          // Obtener la URL de la imagen desde Firebase Storage
-          const imageUrl = await getDownloadURL(ref(storage, imagen));
-          urls.push(imageUrl);
-        });
-
-        // Establecer las URLs de las imágenes en el estado
-        setImageUrls(urls);
-      } catch (error) {
-        console.error('Error fetching images from Firestore and Firebase Storage:', error);
-      }
-    };
-
-    fetchImages();
-  }, []); // Se ejecuta solo una vez al montar el componente
-
-  // Renderizar el carrusel con las imágenes obtenidas
   return (
-    <div className="carousel">
-      <h2>Carousel</h2>
-      <div className="carousel-inner">
-        {imageUrls.map((url, index) => (
-          <img key={index} src={url} alt={`Image ${index}`} />
-        ))}
+      <div className="carousel">
+
+        <Slider {...settings}>
+          {destinos.map((destino) => (
+            <div key={destino.id}>
+              <img
+                src={destino.imagen}
+                alt={destino.nombre}
+                className="carousel-img"
+              />
+            </div>
+          ))}
+        </Slider>
       </div>
-    </div>
+
   );
 };
 

@@ -1,24 +1,41 @@
-import React from "react";
-// import ImagenHome from "../../componentes/ImagenHome/ImagenHome";
+import React, { useRef } from "react";
 import Filtros from "../../componentes/Filtros/Filtros";
 import "./home.scss";
-import Header from "../../componentes/Header/Header";
-import Footer from "../../componentes/Footer/Footer"
-import Carrusel from "../../componentes/Carrusel/Carrusel";
+import Footer from "../../componentes/Footer/Footer";
+import FooterMinimo from "../../componentes/FooterMinimo/FooterMinimo";
 import ListDestinos from "../../componentes/ListDestinos/ListDestinos";
+import Carrusel from "../../componentes/Carrusel/Carrusel";
+import { HiViewGridAdd } from "react-icons/hi";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const home = () => {
- 
-
+  const navigate = useNavigate();
+  const { user } = useSelector((store) => store.userAuth);
+  const isAdminEmail = user && user.email === "rutabacana@gmail.com";
   return (
-    <div>
+    <div className="swrapper">
       <div className="containerHome">
-        <Header />
         <Carrusel />
-        {/* <Header /> */}
-        <Filtros />
-        {/* <ImagenHome /> */}
-        <ListDestinos/>
+        <div className="agregarDestino"
+            onClick={() => navigate(`/agregarDestinos/`)}
+            style={{ cursor: "pointer" }}
+            >
+          
+          {isAdminEmail && (
+            <HiViewGridAdd
+              onClick={() => navigate(`/agregarDestinos/`)}
+              size={40}
+              style={{ cursor: "pointer" }}
+            />
+          )}
+        </div>
+        <div className="destinosContainer">
+          <Filtros />
+          <ListDestinos />
+        </div>
+        <Footer />
+        <FooterMinimo />
       </div>
     </div>
   );

@@ -1,11 +1,18 @@
 import React, { useCallback, useEffect } from "react";
-import { BrowserRouter, Routes, Route, useLocation, useNavigate, useBeforeUnload} from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+  useNavigate,
+  useBeforeUnload,
+} from "react-router-dom";
 import Layout from "../componentes/layout/Layout";
 import Home from "../pages/home/home";
 import Login from "../pages/login/login";
-import Register from "../pages/register/Register";
-import About from "../pages/about/About";
-import DetailsPage from '../pages/details/details'
+import Register from "../pages/register/register";
+import About from "../pages/about/about";
+import DetailsPage from "../pages/detailsPage/DetailsPage";
 import Destinos from "../pages/destinos/destinos";
 import AgregarDestinos from "../pages/agregarDestinos/AgregarDestinos";
 import PhoneLogin from "../pages/phoneLogin/PhoneLogin";
@@ -14,7 +21,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 import { loginSuccess } from "../redux/userAuth/userAuthSlice";
 import { auth } from "../firebase/firebaseconfig";
-
+import PrivateRoutes from "./PrivateRoutes";
+import PublicRoutes from "./PublicRoutes";
 
 const AppRouter = () => {
   const { user } = useSelector((store) => store.userAuth);
@@ -52,6 +60,7 @@ const AppRouter = () => {
       }
     });
   }, [user, dispatch]);
+  
   return (
     <BrowserRouter>
       <Routes>
@@ -59,16 +68,25 @@ const AppRouter = () => {
           <Route path="/" element={<Home />} />
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="details/:id" element={<DetailsPage />} />
-          <Route path="destinos" element={<Destinos />} />
-          <Route path="agregarDestinos" element={<AgregarDestinos />} />
-          <Route path="edit/:idDestino" element={<AgregarDestinos />} />
+          <Route path="DetailsPage/:id" element={<DetailsPage />} />
+          <Route path="destinos/:id" element={<Destinos />} />
+          <Route element={<PrivateRoutes />}>
+            {user?.email === "rutabacana@gmail.com" && (
+              <>
+                <Route path="agregarDestinos" element={<AgregarDestinos />} />
+                <Route path="edit/:idDestino" element={<AgregarDestinos />} />
+                {/* Agrega otras rutas privadas */}
+              </>
+            )}
+          </Route>
         </Route>
-        
-        <Route path="login" element={<Login />} />
-        <Route path="register" element={<Register />} />
-        <Route path="phone" element={<PhoneLogin />} />
-        <Route path="phone/insertCode/:phone" element={<InsertCode />} />
+        <Route element={<PublicRoutes />}>
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="phone" element={<PhoneLogin />} />
+          <Route path="phone/insertCode/:phone" element={<InsertCode />} />
+          {/* Aquí van el resto de rutas públicas */}
+        </Route>
       </Routes>
     </BrowserRouter>
   );

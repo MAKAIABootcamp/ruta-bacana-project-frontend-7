@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
+
+body {
+  font-family: "Michroma", sans-serif;
+}
+
+.desplegable {
+  position: relative;
+  display: inline-block;
+}
+
+.puntos {
+  background-color: transparent;
+  font-size: 30px;
+  color: black;
+  font-weight: bold;
+  margin-right: -20px;
+  cursor: pointer;
+}
+
+.desplegableContent {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  min-width: 200px; 
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.contenedorBotones {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 0, 0.458);
+  margin-bottom: 10px; 
+  
+  span {
+    font-family: "Michroma";
+    color: black;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-left: 10px; 
+    cursor: pointer; 
+  }
+
+  svg {
+    font-size: 1.5rem; 
+    cursor: pointer; 
+  }
+}
+
+
+
+
+
+
+
+
+
+// @import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
+
+// body {
+//   font-family: "Michroma", sans-serif;
+// }
+
+
+// .desplegable{
+//   width: 300%;
+// }
+
+// .puntos {
+//   width: 50%;
+//   background-color: transparent;
+//   font-size: 50px;
+//   color: black;
+//   font-weight: bold;
+// }
+
+// .desplegableContent {
+//   display: flex;
+//   flex-direction: column;
+//   position: absolute;
+//   max-width: 100%;
+//   background-color: white;
+    
+  
+  
+// }
+// .contenedorBotones{
+//   width: 100%;
+//   height: 50px;
+//   border-radius: 20px;
+//   display: flex;
+//   justify-content: space-between;
+  
+//   span{
+//     font-family: "Michroma";
+//     color: black;
+//     font-size: 1.3rem;
+//     font-weight: bold;
+
+//   }
+// }
+
+// .desplegableContent button {
+//   background-color: rgba(255, 255, 0, 0.458);
+//   border-radius: 20px;
+//   padding: 12px 16px;
+//   padding-top: 0;
+//   width: 100%;
+// }

@@ -1,8 +1,17 @@
-.cards{
-    padding-top: 20px;
+.cards {
     display: flex;
-    gap: 15px;
-    justify-content: space-evenly;
     flex-wrap: wrap;
+    gap: 15px;
+    padding-top: 20px;
+    justify-content: space-evenly;
     padding-bottom: 20px;
+
 }
+.card{
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+
+}
+.cards:hover {
+    cursor: pointer;
+}
+

@@ -10,5 +10,5 @@
 //     "amorosos",
 //     "otros",
 //   ];
-  export const categoria = ["Atraciones", "Pueblos", "Reservas", "Playas", ];
+  export const categoria = ["Atracciones", "Pueblos", "Reservas", "Playas", ];
 //   export const genero = ["macho", "hembra"];

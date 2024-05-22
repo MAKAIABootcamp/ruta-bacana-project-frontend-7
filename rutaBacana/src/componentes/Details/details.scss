@@ -1,40 +1,91 @@
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+@import '../../assets/styles/variables.scss';
 body{
     font-family: "Michroma", sans-serif;
 }
 
+.linkContainer{
+
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    text-decoration: none;
+
+   
+}
+
 div {
     .ContenedorUno{
+        
         align-items: center;
         text-align: center;
         margin-top: 30px;
+        .botonRelacionados{
+         
+            background-color: transparent;
+            //background-color: rgba(255, 255, 0, 0.398);
+            color: black;
+            font-size: 1.2rem;
+            font-family: "Michroma";
+            width: 100%;
+            border-radius: 18px;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            &:hover{
+                background-color: rgb(118, 118, 212);
+                text-decoration: none;
+            }
+        }
+
      }
      .TituloDetalle{
+        width: 100%;
+        height: auto;
+        margin-bottom: none !important;
         font-size: 27px;
-        margin-bottom: 25px;
-        font-weight: normal;
+        margin-bottom: 4rem;
+   
      }
      .ImagenPrin{
+        margin-top: -45px;
+      
        img{
-        width: auto;
-        height: 700px;
+        margin-top: 0px;
+
+        width: 95%;
+        height: 70vh;
        }
      }
      .TextoUno{
+        display: flex;
+        flex-direction: column;
         h3{
-            font-size: 36px;
+            width:99%;
+            font-size: 20px;
             font-weight: normal;
+            padding-right: 5rem;
+            padding-left: 5rem;
+        }
+        button{
+            display: flex;
+            align-self: center;
+            background-color: transparent;
+            color: blue;
+            font-size: 1.2rem;
+            font-family: "Michroma";
+            width: 10%;
+            transition: box-shadow 0.3s ease;
+            &:hover{
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            }
         }
      }
-     .ImagenSec{
-        img{
-            padding-top: 40px;
-            width: 100%;
-            height: 350px;
-        }
-     }
+     
+     
      .InfoInter{
+       
         h2{
+
             width: 650px;
             font-size: 45px;
             background-color: #ECFA9B; 

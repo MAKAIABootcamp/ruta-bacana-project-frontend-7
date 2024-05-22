@@ -7,6 +7,7 @@
     background-size: cover; 
 
     display: flex;
+    justify-content: space-between;
     padding-left: 7%;
     padding-right: 7%;
     height: 20rem;
@@ -64,7 +65,6 @@
     
         .textContainer {
             display: flex;
-            margin-left: 19%;
             background-color: $background-color-black;
             padding: 1rem;
             text-align: center;
@@ -72,7 +72,7 @@
     
             p {
                 display: flex;
-                width: 90%;
+                width: 100%;
                 color: $color-white;
             }
         }
@@ -94,4 +94,61 @@
         display: flex;
         color: $color-white;
     }
+}
+
+
+
+@media only screen and (min-width: 320px) and (max-width: 858px) {
+
+   .footer{
+    display: flex;
+    flex-direction: column;
+    height: 40rem;
+    justify-content: space-around;
+    align-items: center;
+
+
+    .leftColumn{
+
+        .socialContainer{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+   
+   }
+   .logoFooterContainer{
+    display: none;
+    .logoFooter{
+        display: none;
+    }
+   }
+    
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 564px) {
+
+
+    .footer{
+        height: 20rem;
+        .rightColumn{
+            display: none;
+    
+            .textContainer{
+                display: none;
+            }
+        }
+    
+
+    }
+   
+}
+
+@media only screen and (min-width: 320px) and (max-width: 375px) {
+
+
+
 }
