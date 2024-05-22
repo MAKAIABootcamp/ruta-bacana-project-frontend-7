@@ -184,8 +184,10 @@ const About = () => {
             <p>¡Gracias por ser parte de nuestra historia!</p>
           </article>
         </section>
+
       </main>
       <FooterMinimo />
+
     </>
   );
 };
