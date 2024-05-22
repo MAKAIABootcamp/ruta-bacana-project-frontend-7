@@ -154,10 +154,10 @@ const About = () => {
               <img src={ImageCristian} alt="ImageCristian" />
               <p>Cristian Ojito</p>
               <div className='socials'>
-                <a href="https://www.linkedin.com/in/emmanuel-usme-developer/"  target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/cristian-velez-3a461330b/"  target="_blank" rel="noopener noreferrer">
                   <img src={ImageLinkedIn} alt="" />
                 </a>
-                <a href="https://github.com/EmmanuelUs4"  target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/crizvelez"  target="_blank" rel="noopener noreferrer">
                   <img src={ImageGitHub} alt="" />
                 </a>
               </div>
