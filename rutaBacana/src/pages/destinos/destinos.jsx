@@ -6,6 +6,8 @@ import FotoRaquira from "../../componentes/FotoRaquira/FotoRaquira";
 import Header from "../../componentes/Header/Header";
 import CalificacionUsuario from "../../componentes/CalificacionUsuario/CalificacionUsuario";
 import Footer from "../../componentes/Footer/Footer"
+import FooterMinimo from "../../componentes/FooterMinimo/FooterMinimo"
+
 
 // import "./comentarios.scss";
 import { useParams } from 'react-router-dom'
@@ -42,6 +44,7 @@ const destinos = () => {
         <ListComentarios/>
         {/*<Comentarios />*/}
         <Footer />
+        <FooterMinimo />
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { actionGetComentarios } from '../../redux/comentarios/comentariosActions';
 import Cargando from "../../componentes/cargando/Cargando";
 import Comment from "../../componentes/Comment/Comment"
+import './listComentarios.scss'
 //import Comentarios from '../Comentarios/Comentarios';
 
 const ListComentarios = () => {
