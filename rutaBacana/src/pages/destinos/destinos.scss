@@ -1,57 +1,61 @@
 @import "../../assets/styles/variables.scss";
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
-
 div {
-  .bannerImageContainer{
+  .bannerImageContainer {
     overflow: hidden;
   }
-    .fondo{
-      background: linear-gradient(to bottom, $color-1, $color-2, $color-3);
-      background-repeat: no-repeat;
-      @media only screen and (min-width: 320px) and (max-width: 375px) {
-
-        Footer{
-          display: none;
-        }
-      
-        .minimalFooterComponent{
-          display: block;
-          margin-top: 2rem;
-        }
+  .fondo {
+    background: linear-gradient(to bottom, $color-1, $color-2, $color-3);
+    background-repeat: no-repeat;
+    @media only screen and (min-width: 320px) and (max-width: 375px) {
+      Footer {
+        display: none;
       }
-      
-      @media only screen and (min-width: 376px) and (max-width: 2000px) {
-        Footer{
-          display: block;
-        }
-      
-        .minimalFooterComponent{
-          display: none;
-        }
-      
+
+      .minimalFooterComponent {
+        display: block;
+        margin-top: 2rem;
       }
     }
+
+    @media only screen and (min-width: 376px) and (max-width: 2000px) {
+      Footer {
+        display: block;
+      }
+
+      .minimalFooterComponent {
+        display: none;
+      }
+    }
+  }
 }
 
-.tamañoimg{
+.tamañoimg {
   width: 100%;
   height: 40vh;
-  img{
-   width: 100%;
+  img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-
   }
-
-  
 }
-
-
+.categoria {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  .tituloCategoria {
+    display: flex;
+    align-self: center;
+    font-size: 2rem;
+    font-weight: bolder;
+  }
+}
