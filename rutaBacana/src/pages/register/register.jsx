@@ -1,14 +1,14 @@
 import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
-import { actionRegisterWithEmailAndPassword } from "../../redux/userAuth/userAuthActions";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import { actionRegisterWithEmailAndPassword } from "../../redux/userAuth/userAuthActions";
+import fileUpload from "../../services/fileUpload";
 import { GoArrowLeft } from "react-icons/go";
 import Header from "../../componentes/Header/Header";
-import "./register.scss";
-
-import { useNavigate } from "react-router-dom";
 import FooterMinimo from "../../componentes/FooterMinimo/FooterMinimo";
+import * as Yup from "yup";
+import "./register.scss";
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -38,8 +38,10 @@ const Register = () => {
               .min(6, "La contraseña debe tener al menos 6 caracteres")
               .required("La contraseña es requerida"),
           })}
-          onSubmit={(values, actions) => {
-            console.log(values); // Aquí puedes enviar los datos al servidor
+          onSubmit={async(values, actions) => {
+            const photo = await fileUpload(values.profilePicture);
+            values.photo = photo;
+            // Aquí puedes enviar los datos al servidor
             dispatch(actionRegisterWithEmailAndPassword(values));
             actions.setSubmitting(false);
             navigate("/");
