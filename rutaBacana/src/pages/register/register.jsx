@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { actionRegisterWithEmailAndPassword } from "../../redux/userAuth/userAuthActions";
 import { useDispatch } from "react-redux";
+import { GoArrowLeft } from "react-icons/go";
 import Header from "../../componentes/Header/Header";
 import "./register.scss";
 
@@ -90,11 +91,10 @@ const Register = () => {
       
       </div>
       
-      <div className="arrow-to-home">
-          <a href="/">
-            <img src="../../assets/images/arro.png" alt="home" />
-          </a>
-        </div>
+      <div className="containerBackArrow">
+            <GoArrowLeft
+              className="backArrow"onClick={() => navigate("/")}/>
+      </div>
       <FooterMinimo/>
     </div>
   );

@@ -76,3 +76,14 @@
   button:hover {
     background-color: #0056b3; 
   }
+  .containerBackArrow{
+
+    .backArrow{
+      display: flex;
+      position: absolute;
+      top: 50%;
+      width: 6%;
+      height: 70px;
+      left: 22px;
+    }
+  }
