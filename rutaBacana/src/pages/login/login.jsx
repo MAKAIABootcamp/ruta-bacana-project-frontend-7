@@ -49,23 +49,23 @@ const Login = () => {
       showClass: {
         popup: 'animate__animated animate__fadeInDown',
       },
-      hideClass: {
-        popup: 'swal2-backdrop-hide',
-      },
+      // hideClass: {
+      //   popup: 'swal2-backdrop-hide',
+      // },
       customClass: {
-        title: "swal2-title",
-        content: "swal2-content",
-        icon: "swal2-icon-error",
-        confirmButton: "swal2-confirm",
+        //title: "swal2-title",
+        //content: "swal2-content",
+        //icon: "swal2-icon-error",
+        //confirmButton: "swal2-confirm",
       },
       timer: 4000,
       timerProgressBar: true, 
     }).then((result) => {
-      if (result.dismiss === Swal.DismissReason.timer) {
-        console.log("La alerta se cerró automáticamente");
+      // if (result.dismiss === Swal.DismissReason.timer) {
+      //   console.log("La alerta se cerró automáticamente");
         dispatch(logout());
       }
-    });
+    );
   }
 
   if (isAuth && user.name) {
@@ -74,12 +74,15 @@ const Login = () => {
       text: "Has iniciado sesión exitosamente",
       icon: "success",
       confirmButtonColor: " #4fa8fb",
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown',
+      },
       customClass: {
-        popup: "swal2-popup",
-        title: "swal2-title",
-        content: "swal2-content",
-        icon: "swal2-icon-success",
-        confirmButton: "swal2-confirm",
+        //popup: "swal2-popup",
+        //title: "swal2-title",
+        //content: "swal2-content",
+        //icon: "swal2-icon-success",
+        //confirmButton: "swal2-confirm",
       },
     }).then((result) => {
       if (result.isConfirmed) navigate("/");
