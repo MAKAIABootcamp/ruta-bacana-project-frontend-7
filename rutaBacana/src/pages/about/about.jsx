@@ -128,10 +128,10 @@ const About = () => {
               <img src={ImageValentina} alt="ImageValentina" />
               <p>Valentina Flórez</p>
               <div className='socials'>
-                <a href="https://www.linkedin.com/in/emmanuel-usme-developer/"  target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/valentina-flórez-cantor-frontend-developer"  target="_blank" rel="noopener noreferrer">
                   <img src={ImageLinkedIn} alt="" />
                 </a>
-                <a href="https://github.com/EmmanuelUs4"  target="_blank" rel="noopener noreferrer">
+                <a href=" https://github.com/valenflorezcantor"  target="_blank" rel="noopener noreferrer">
                   <img src={ImageGitHub} alt="" />
                 </a>
               </div>
