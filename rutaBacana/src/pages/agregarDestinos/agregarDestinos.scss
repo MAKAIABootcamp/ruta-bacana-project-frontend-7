@@ -1,131 +1,137 @@
 @import "../../assets/styles/variables.scss";
 
 .form {
-    z-index: 2;
-    background-color: $color-light-blue;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    // height: 90vh;
+  z-index: 2;
+  background-image: url(https://cdn.pixabay.com/photo/2016/05/27/00/33/laguna-1418870_1280.jpg);
+  //background-color: $color-light-blue;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // height: 90vh;
 
-    .back {
-      position: absolute;
+  .back {
+    position: absolute;
+    color: $color-black;
+    font-family: "Michroma", sans-serif;
+    font-size: 5rem;
+    top: 1rem;
+    left: 2rem;
+    width: 3rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 53px;
+    margin-top: 60px;
+  }
+  form {
+    background-color:rgba(134, 131, 131, 0.65);
+    //background-color: $color-white;
+    border-radius: $border-radius-18px;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 10px;
+    overflow-y: auto;
+    width: 50%;
+    height: 85%;
+    padding: 1.5rem;
+
+    .imagenContainer {
+      .image {
+        width: 50%;
+        border-radius: $border-radius-18px;
+      }
+    }
+
+    label {
+      display: flex;
+      color: $color-black;
+      gap: 5rem;
+      align-items: center;
+      // background-color: transparent;
+      span {
+        width: 10%;
+      }
+
+      input,
+      select {
+        flex-grow: 1;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid gray;
+        background-color:rgba(246, 245, 245, 0.65);
+        outline: none;
+        &:focus {
+          border: 2px solid #1976d2;
+        }
+      }
+      input[type="file"] {
+        display: none;
+      }
+
+      .upload {
+        padding: 8px;
+        background-color: #1976d2;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        img {
+          filter: invert(100%) sepia(6%) saturate(55%) hue-rotate(61deg)
+            brightness(113%) contrast(100%);
+          width: 50px;
+          height: 50px;
+        }
+        &:hover {
+          background-color: #114f8d;
+        }
+      }
+    }
+    button[type="submit"] {
       color: $color-black;
       font-family: "Michroma", sans-serif;
-      font-size: 0.6rem;
-      top: 1rem;
-      left: 2rem;
-      width: 3rem;
-      border-radius: 50%;
-      border: none;
+      font-size: 1.3rem;
+      padding: 5px;
+      margin: 0 auto;
+      background-color:rgba(246, 245, 245, 0.65);
+      bottom: 5%;
+      right: 3rem;
+      width: 10rem;
       cursor: pointer;
       &:hover {
-        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
-          0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-          
-      }
-    }
-    h1 {
-      text-align: center;
-    }
-    form {
-      background-color: $color-white;
-      border-radius: $border-radius-18px;
-      display: flex;
-      align-self: center;
-      flex-direction: column;
-      gap: 1rem;
-      margin-bottom: 10px;
-      overflow-y: auto;
-      width: 95%;
-      height: 85%;
-      padding: 0.5rem;
-
-      .imagenContainer{
-
-        .image{
-          width: 80%;
-          border-radius: $border-radius-18px;
-        }
-
-
-      }
-
-      label {
-        display: flex;
-        color: $color-black;
-        gap: 1rem;
-        align-items: center;
-        // background-color: transparent;
-        span{
-          width: 10%;
-        }
-        
-        input,
-        select {
-          flex-grow: 1;
-          padding: 5px;
-          border-radius: 5px;
-          border: 1px solid gray;
-          background-color: transparent;
-          outline: none;
-          &:focus {
-            border: 2px solid #1976d2;
-          }
-        }
-        input[type="file"] {
-          display: none;
-        }
-        
-        .upload {
-          padding: 8px;
-          background-color: #1976d2;
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          color: white;
-          border-radius: 5px;
-          cursor: pointer;
-          img {
-            filter: invert(100%) sepia(6%) saturate(55%) hue-rotate(61deg)
-              brightness(113%) contrast(100%);
-              width: 50px;
-              height: 50px;
-          }
-          &:hover {
-            background-color: #114f8d;
-          }
-        }
-      }
-      button[type="submit"] {
-        color: $color-black;
-        font-family: "Michroma", sans-serif;
-        font-size: 1.3rem;
-        padding: 5px;
-        position: fixed;
-        bottom: 5%;
-        right: 3rem;
-        width: 7rem;
-        cursor: pointer;
+        background-color: #1976d2;
       }
     }
   }
-  /* Estilos para la barra de desplazamiento en navegadores WebKit (Chrome, Safari, etc.) */
-  ::-webkit-scrollbar {
-    width: 10px; /* Ancho de la barra de desplazamiento */
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1d4; /* Color de fondo de la pista de la barra de desplazamiento */
-    border-radius: 6px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: #888888c0; /* Color del pulgar de la barra de desplazamiento */
-    border-radius: 6px; /* Radio de borde del pulgar */
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Color del pulgar de la barra de desplazamiento al pasar el mouse */
-  }
+}
+/* Estilos para la barra de desplazamiento en navegadores WebKit (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+  width: 10px; /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1d4; /* Color de fondo de la pista de la barra de desplazamiento */
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888888c0; /* Color del pulgar de la barra de desplazamiento */
+  border-radius: 6px; /* Radio de borde del pulgar */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color del pulgar de la barra de desplazamiento al pasar el mouse */
+}

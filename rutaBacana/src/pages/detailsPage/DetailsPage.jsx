@@ -1,5 +1,5 @@
 // src/pages/DetailsPage.jsx
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Details from "../../componentes/Details/Details";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,10 +11,11 @@ import deleteImage from "../../assets/delete_3405244.png";
 import editImage from "../../assets/edit_1159633.png";
 import { actionDeleteDestinos } from "../../redux/Destinos/destinosActions";
 import { useNavigate } from "react-router-dom";
+import MenuDesplegable from "../../componentes/MenuDesplegable/MenuDesplegable";
 import "./details.scss";
 import Swal from "sweetalert2";
 
-const DetailsPage = ( ) => {
+const DetailsPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -29,6 +30,14 @@ const DetailsPage = ( ) => {
 
   const destinoSeleccionado = destinos.filter((destino) => destino.id === id);
   const destino = destinos.find((destino) => destino.id === id);
+
+  //AGREGE Y LA IMPORTACION
+
+  const [menuDesplegable, setmenuDesplegable] = useState(false);
+
+  const toggleDesplegable = () => {
+    setmenuDesplegable(!menuDesplegable);
+  };
 
   const handleDelete = () => {
     if (!destino) return;
@@ -47,13 +56,13 @@ const DetailsPage = ( ) => {
       customClass: {
         popup: "animate__fadeInDown",
         actions: "swal2-button-container",
-        cancelButton: "swal2-confirm",
-        onfirmButton: "swal2-custom-confirm",
+        confirmButton: "swal2-custom-confirm",
         cancelButton: "swal2-custom-cancel",
       },
     }).then((result) => {
       if (result.isConfirmed) {
         dispatch(actionDeleteDestinos(destino.id));
+        toggleDesplegable();
         navigate("/");
       }
     });
@@ -63,7 +72,16 @@ const DetailsPage = ( ) => {
     <div className="fondoDegradado">
       {destino && (
         <>
-      <div className="actionButtons">
+          <div className="actionButtons">
+            {isAdminEmail && (
+              <MenuDesplegable
+                onDelete={handleDelete}
+                onEdit={() => navigate(`/edit/${destino.id}`)}
+              />
+            )}
+          </div>
+
+          {/* <div className="actionButtons">
         {isAdminEmail && (
           <>
             <img src={deleteImage} alt="eliminar" onClick={handleDelete} />
@@ -74,16 +92,16 @@ const DetailsPage = ( ) => {
             />
           </>
         )}
-      </div>
-      <Details destinoSeleccionado={destinoSeleccionado} />
-      <MapComponent id={id} />
-      {/*<InfoInteres />*/}
-      <div className="infoInteresDiv">
-        <p className="infoInteres">Información de interés</p>
-      </div>
-      <Slider destinoId={id} />
-      <Footer />
-      </>
+      </div> */}
+          <Details destinoSeleccionado={destinoSeleccionado} />
+          <MapComponent id={id} />
+          {/*<InfoInteres />*/}
+          <div className="infoInteresDiv">
+            <p className="infoInteres">Información de interés</p>
+          </div>
+          <Slider destinoId={id} />
+          <Footer />
+        </>
       )}
     </div>
   );
