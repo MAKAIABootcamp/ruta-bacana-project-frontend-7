@@ -7,6 +7,8 @@ import ImageValentina from "../../assets/images/about/valentina.png"
 import ImageVanessa from "../../assets/images/about//vanessa.png"
 import ImageLina from "../../assets/images/about/lina.png"
 import ImageCristian from "../../assets/images/about/cristian.png"
+import ImageLinkedIn from "../../assets/images/about/linkedin.png"
+import ImageGitHub from "../../assets/images/about/github.png"
 
 const About = () => {
   const [showMission, setShowMission] = useState(false);
@@ -99,26 +101,66 @@ const About = () => {
             <article className='collaboratorIconContainer'>
               <img src={ImageEmmanuel} alt="ImageEmmanuel" />
               <p>Emmanuel Usme</p>
+              <div className='socials'>
+                <a href="https://www.linkedin.com/in/emmanuel-usme-developer/"  target="_blank" rel="noopener noreferrer">
+                  <img src={ImageLinkedIn} alt="" />
+                </a>
+                <a href="https://github.com/EmmanuelUs4"  target="_blank" rel="noopener noreferrer">
+                  <img src={ImageGitHub} alt="" />
+                </a>
+              </div>
             </article>
 
             <article className='collaboratorIconContainer'>
               <img src={ImageVanessa} alt="ImageVanessa" />
               <p>Vanessa Sánchez</p>
+              <div className='socials'>
+                <a href="https://www.linkedin.com/in/emmanuel-usme-developer/"  target="_blank" rel="noopener noreferrer">
+                  <img src={ImageLinkedIn} alt="" />
+                </a>
+                <a href="https://github.com/EmmanuelUs4"  target="_blank" rel="noopener noreferrer">
+                  <img src={ImageGitHub} alt="" />
+                </a>
+              </div>
             </article>
 
             <article className='collaboratorIconContainer'>
               <img src={ImageValentina} alt="ImageValentina" />
               <p>Valentina Flórez</p>
+              <div className='socials'>
+                <a href="https://www.linkedin.com/in/emmanuel-usme-developer/"  target="_blank" rel="noopener noreferrer">
+                  <img src={ImageLinkedIn} alt="" />
+                </a>
+                <a href="https://github.com/EmmanuelUs4"  target="_blank" rel="noopener noreferrer">
+                  <img src={ImageGitHub} alt="" />
+                </a>
+              </div>
             </article>
 
             <article className='collaboratorIconContainer'>
               <img src={ImageLina} alt="ImageLina" />
               <p>Lina Naranjo</p>
+              <div className='socials'>
+                <a href="https://www.linkedin.com/in/emmanuel-usme-developer/"  target="_blank" rel="noopener noreferrer">
+                  <img src={ImageLinkedIn} alt="" />
+                </a>
+                <a href="https://github.com/EmmanuelUs4"  target="_blank" rel="noopener noreferrer">
+                  <img src={ImageGitHub} alt="" />
+                </a>
+              </div>
             </article>
 
             <article className='collaboratorIconContainer'>
               <img src={ImageCristian} alt="ImageCristian" />
               <p>Cristian Ojito</p>
+              <div className='socials'>
+                <a href="https://www.linkedin.com/in/emmanuel-usme-developer/"  target="_blank" rel="noopener noreferrer">
+                  <img src={ImageLinkedIn} alt="" />
+                </a>
+                <a href="https://github.com/EmmanuelUs4"  target="_blank" rel="noopener noreferrer">
+                  <img src={ImageGitHub} alt="" />
+                </a>
+              </div>
             </article>
           </section>
         </section>

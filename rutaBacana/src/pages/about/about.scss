@@ -143,14 +143,19 @@
     }
 
     .collaboratorContainer {
-      margin-left: 7%;
-      margin-right: 7%;
-      margin-top: 36rem;
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-top: 30rem;
       margin-bottom: 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
     
       .collabs {
         width: 100%;
         display: flex;
+        align-items: center;
         justify-content: center;
         gap: 5%;
         opacity: 0;
@@ -165,6 +170,8 @@
           display: flex;
           flex-direction: column;
           transition: transform 0.3s ease, background-color 0.3s ease;
+          align-items: center;
+          
           
     
           p {
@@ -174,9 +181,33 @@
             text-align: center;
             width: 70%;
           }
+
+          .socials{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            width: 10rem;
+            width: 2.5rem;
+            margin-top: 1rem;
+            
+            a{
+              img{
+                width: 2.5rem;
+                transition: transform 0.3s ease, background-color 0.3s ease;
+
+              }
+              img:hover{
+                transform:  scale(1.1);
+                cursor: pointer;
+              }
+              
+            }
+          }
+
+         
         }
         .collaboratorIconContainer:hover{
-          transform: scale(1.1);
+          transform: scale(1.2);
         }
       }
     
