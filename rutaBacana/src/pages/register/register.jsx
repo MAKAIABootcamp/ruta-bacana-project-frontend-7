@@ -5,7 +5,6 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { actionRegisterWithEmailAndPassword } from "../../redux/userAuth/userAuthActions";
 import fileUpload from "../../services/fileUpload";
 import { GoArrowLeft } from "react-icons/go";
-import Header from "../../componentes/Header/Header";
 import FooterMinimo from "../../componentes/FooterMinimo/FooterMinimo";
 import * as Yup from "yup";
 import "./register.scss";
@@ -21,7 +20,6 @@ const Register = () => {
 
   return (
     <div className="container">
-      <Header />
       {/* Contenedor con imagen de fondo */}
       <h1 className="rutaBacanaTitle">Ruta Bacana</h1>
       <div className="form-container">

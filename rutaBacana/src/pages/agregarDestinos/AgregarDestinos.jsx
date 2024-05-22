@@ -11,6 +11,7 @@ import Swal from "sweetalert2";
 import { setSuccessRequest } from "../../redux/Destinos/destinosSlice";
 //import { categoria } from "../../data/destinosOptions";
 import 'animate.css';
+import { GoArrowLeft } from "react-icons/go";
 
 const AgregarDestinos = () => {
   const { idDestino } = useParams();
@@ -103,9 +104,10 @@ const AgregarDestinos = () => {
   }
   return (
     <main className="form">
-      <button className="back" onClick={() => navigate(-1)} type="button">
+      <GoArrowLeft className="back" onClick={() => navigate(-1)} type="button"/>
+      {/* <button className="back" onClick={() => navigate(-1)} type="button">
         Ir atrás
-      </button>
+      </button> */}
       <h1>{idDestino ? "Editar Destino" : "Agregar Destino"}</h1>
       <form onSubmit={formik.handleSubmit}>
         <label htmlFor="nombre">
@@ -133,7 +135,7 @@ const AgregarDestinos = () => {
           <input id="descripcion" type="text" placeholder="" {...formik.getFieldProps("descripcion")}/>
         </label>
         <label htmlFor="imagen" className="imagenContainer">
-          <span>Foto</span>
+          {/* <span>Foto</span> */}
           <figure className="upload">
             <img  src={imageUpload} alt="upload" />
             <figcaption>Cargar imagen</figcaption>
