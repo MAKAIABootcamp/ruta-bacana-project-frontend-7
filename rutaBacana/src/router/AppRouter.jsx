@@ -62,7 +62,7 @@ const AppRouter = () => {
   }, [user, dispatch]);
   
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/ruta-bacana-project-frontend-7'>
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />

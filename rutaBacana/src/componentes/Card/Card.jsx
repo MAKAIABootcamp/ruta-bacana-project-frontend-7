@@ -89,8 +89,8 @@ const Card = ({ destino = {} }) => {
       customClass: {
         popup: "animate__fadeInDown",
         actions: "swal2-button-container",
-        cancelButton: "swal2-confirm",
-        onfirmButton: "swal2-custom-confirm",
+        //cancelButton: "swal2-confirm",
+        confirmButton: "swal2-custom-confirm",
         cancelButton: "swal2-custom-cancel",
       },
     }).then((result) => {
