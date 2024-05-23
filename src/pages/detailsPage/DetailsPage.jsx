@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { actionGetDestinos } from "../../redux/Destinos/destinosActions";
 import Footer from "../../componentes/Footer/Footer";
+import FooterMinimo from "../../componentes/FooterMinimo/FooterMinimo"
 import Slider from "../../componentes/Slider/Slider";
 import MapComponent from "../../componentes/MapComponent/MapComponent";
 import deleteImage from "../../assets/delete_3405244.png";
@@ -100,6 +101,7 @@ const DetailsPage = () => {
             <p className="infoInteres">Información de interés</p>
           </div>
           <Slider destinoId={id} />
+          <FooterMinimo />
           <Footer />
         </>
       )}

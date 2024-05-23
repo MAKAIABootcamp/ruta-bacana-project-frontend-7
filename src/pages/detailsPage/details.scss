@@ -26,6 +26,28 @@ body{
           }
         }
       }
+      @media only screen and (min-width: 320px) and (max-width: 375px) {
+
+        Footer{
+          display: none;
+        }
+      
+        .minimalFooterComponent{
+          display: block;
+        }
+      }
+      
+      @media only screen and (min-width: 376px) and (max-width: 2000px) {
+        Footer{
+          display: block;
+        }
+      
+        .minimalFooterComponent{
+          display: none;
+        }
+      
+      }
+    
 }
 
 .infoInteresDiv{
@@ -34,6 +56,7 @@ body{
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
+    text-align: center;
 
     .infoInteres{
         background-color: rgb(233, 233, 141);

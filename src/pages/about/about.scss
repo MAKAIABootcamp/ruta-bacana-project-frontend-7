@@ -89,6 +89,7 @@
         margin-right: 7%;
         gap: 2%;
         opacity: 0;
+        height: 100%;
         transform: translateY(-50px);
 
         animation: slideIn 2s ease forwards;
@@ -329,8 +330,6 @@
   }
 
   .collabs{
-    margin: -2rem;
-
     display: flex;
     flex-wrap: wrap;
   }
