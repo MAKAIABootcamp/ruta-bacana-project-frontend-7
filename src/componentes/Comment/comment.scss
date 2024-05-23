@@ -26,8 +26,12 @@ body {
   align-items: center;
   justify-content: flex-end;
   margin-bottom: 2rem;
-}
 
+ 
+}
+.imagenAvatar{
+  width: 8rem;
+}
 .contenedorCalificacion {
   display: flex;
   width: 50%;
@@ -77,6 +81,19 @@ body {
 
   .imagenAvatar img {
     height: 4rem;
+  }
+
+  .contenedorComentarios{
+    .comentarios{
+
+      .fila {
+      
+        .imagenAvatar{
+          width: 7rem;
+        }
+      
+      }
+    }
   }
 
 
