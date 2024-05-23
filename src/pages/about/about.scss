@@ -322,6 +322,10 @@
 .aboutUsMainContainer{
   .ourMission{
     flex-wrap: wrap;
+
+    .missionContainer {
+      margin-bottom: 1rem;
+    }
   }
 
   .collabs{
