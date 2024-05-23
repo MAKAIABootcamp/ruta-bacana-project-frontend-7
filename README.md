@@ -24,37 +24,68 @@ From the vibrant streets of colonial towns to the lush natural scenery, each cor
 
 ## Functionalities
 
+## Functionalities
+
 1. **Explore and Filter by Categories**:
    - Users can explore destinations and filter them by categories such as:
      - Attractions
      - Towns
      - Reservations
-     - Beaches
+     - Beaches 
+       <p align="center">
+         <img src="https://github.com/MAKAIABootcamp/ruta-bacana-project-frontend-7/assets/125521341/92362da9-3699-4c7f-b104-c2d39567b617" alt="parte1" width="400">
+       </p>
 
 2. **Social Media in the Footer**:
    - In the footer, users will find links redirecting to Ruta Bacana's social media.
+     <p align="center">
+       <img src="https://github.com/MAKAIABootcamp/ruta-bacana-project-frontend-7/assets/125521341/0ffd60f3-60a9-4ff9-8a08-3e98fdfbc77f" alt="footer" width="400">
+     </p>
 
 3. **Login Options**:
    - Normal login with email and password.
    - Login with Google.
    - Login with phone number.
+     <p align="center">
+       <img src="https://github.com/MAKAIABootcamp/ruta-bacana-project-frontend-7/assets/125521341/7b24d002-ba8f-41d0-8f83-dd46850a50ef" alt="login" width="400">
+     </p>
+
 
 4. **Authenticated User Interactions**:
    - Once logged in, the user can:
-     - Like destinations.
      - Access an additional category called "Favorites," where destinations marked with "like" are stored.
-     - Comment on destinations.
+     - Like destinations.
+       <p align="center">
+         <img src="https://github.com/MAKAIABootcamp/ruta-bacana-project-frontend-7/assets/125521341/3341c6f8-89e9-47a5-a55d-f340c2c24bf8" alt="favs" width="400">
+       </p>
+     - Comment on destinations
+       <p align="center">
+         <img src="https://github.com/MAKAIABootcamp/ruta-bacana-project-frontend-7/assets/125521341/965e51d1-e047-4a78-bf84-49d77706a286" alt="coments" width="400">
+       </p>
      - Rate destinations with a star rating.
+       <p align="center">
+         <img src="https://github.com/MAKAIABootcamp/ruta-bacana-project-frontend-7/assets/125521341/d792f7ee-6ae9-4f9a-810a-b1e1f5dad9a6" alt="COMENT" width="400">
+       </p>
 
 5. **Geolocation**:
    - Destinations have geolocation via Google Maps.
    - Users can view each destination individually on the map.
+     <p align="center">
+       <img src="https://github.com/MAKAIABootcamp/ruta-bacana-project-frontend-7/assets/125521341/58fe5a1c-a6d4-44ea-ba56-83312648e0e4" alt="ubicacion" width="400">
+     </p>
 
 6. **Administrator Profile**:
    - Administrators have permissions to:
-     - Edit existing destinations.
+     - Edit existing destinations and delete destinations.
+       <p align="center">
+         <img src="https://github.com/MAKAIABootcamp/ruta-bacana-project-frontend-7/assets/125521341/463c6713-ef2a-49cb-890a-a5b39f1574eb" alt="CRUD1" width="400">
+       </p>
      - Add new destinations.
-     - Delete destinations.
+       <p align="center">
+         <img src="https://github.com/MAKAIABootcamp/ruta-bacana-project-frontend-7/assets/125521341/e1591235-8334-43a6-a748-011f4c27fb4f" alt="CRUD" width="400">
+       </p>
+
+
 
 ## Installation
 
@@ -85,7 +116,7 @@ cd ruta-bacana-project-frontend-7
 |:---------------------------:|
 | [![Prototype](https://skillicons.dev/icons?i=figma)](https://www.figma.com/file/n3O2sZo342StJ9rjyRA54e/MOCKUP?type=design&node-id=0-1&mode=design&t=RYfowUZZFq6HOxFX-0) |
 
-## Version Control (Git and GitHub)
+## Version Control (Git and GitHub) and Deploy
 
 | Technology | Description |
 |------------|-------------|
