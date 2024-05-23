@@ -22,7 +22,9 @@ From the vibrant streets of colonial towns to the lush natural scenery, each cor
 - **Reviews and Ratings**: Access to reviews from other users about places and services.
 - **Gastronomy and Accommodation**: Consultation of gastronomy and accommodation suggestions by destination.
 
-## Functionalities
+    <p align="center">
+         <img src="https://github.com/MAKAIABootcamp/ruta-bacana-project-frontend-7/assets/125521341/6d61dbf1-1ddd-4082-9ca5-0eef933ac571" alt="parte1" width="400">
+       </p>
 
 ## Functionalities
 
