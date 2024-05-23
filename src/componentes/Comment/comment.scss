@@ -27,11 +27,11 @@ body {
   justify-content: flex-end;
   margin-bottom: 2rem;
 
- 
+  .imagenAvatar{
+    width: 8.1rem;
+  }
 }
-.imagenAvatar{
-  width: 8.1rem;
-}
+
 .contenedorCalificacion {
   display: flex;
   width: 50%;
