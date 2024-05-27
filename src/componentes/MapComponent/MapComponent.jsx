@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchLocation } from '../../redux/location/locationSlice';
-import Cript from "../../assets/Cript/Cript"
 import './mapComponent.scss';
 
 const MapComponent = ({ id }) => {
